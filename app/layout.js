@@ -1,3 +1,4 @@
+import CursorControl from "./components/CursorControl";
 import "./globals.css";
 
 export const metadata = {
@@ -8,7 +9,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="cursor1"></div>
+        <div className="cursor2"></div>
+        
+        <CursorControl />
+        {children}
+      </body>
     </html>
   );
 }
