@@ -1,3 +1,4 @@
+import StackAnim from "./StackAnim";
 import "./styles/HomePage.css";
 
 const HomePage = () => {
@@ -24,7 +25,10 @@ const HomePage = () => {
             <div className="border grid grid-cols-2 gap-2 items-center">
               <div>
                 <h2 className="text-3xl font-bold uppercase">Hi, Nkem Benjamin Here!</h2>
-                <p className="font-semibold text-lg">A <span className="text-purple-600">Fullstack Web Developer</span></p>
+                <p className="font-semibold text-lg">
+                  {/* Animation part */}A <span className="text-purple-600" id="stack">---</span>
+                  <StackAnim />
+                </p>
                 <p className="leading-relaxed mt-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quidem cum ex exercitationem!
                   Consectetur cumque enim natus
@@ -39,9 +43,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="border-2 border-orange-600 rounded-md h-full w-3/4 mx-auto">
-                
-              </div>
+              <div className="border-2 border-orange-600 rounded-md h-full w-3/4 mx-auto"></div>
             </div>
             <div className="border"></div>
           </div>
