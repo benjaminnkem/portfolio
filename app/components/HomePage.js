@@ -1,4 +1,4 @@
-import StackAnim from "./StackAnim";
+import Image from "next/image";
 import "./styles/HomePage.css";
 
 const HomePage = () => {
@@ -22,7 +22,7 @@ const HomePage = () => {
         </section>
 
         <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem] my-10 section" id="me">
-          <div className="items-center gap-2 md:grid" style={{ gridTemplateColumns: "2fr 1fr" }}>
+          <div className="items-center grid-cols-2 gap-4 md:grid">
             <div>
               <h2 className="text-lg font-semibold text-orange-500 uppercase toTop" style={{ transitionDelay: ".2s" }}>
                 Hi, Nkem Benjamin Here!
@@ -36,9 +36,9 @@ const HomePage = () => {
 
               <div className="mt-4">
                 <p className="font-light opacity-80 toTop" style={{ transitionDelay: ".6s" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, quae alias? Tenetur consequuntur ipsa
-                  sapiente quod. Temporibus porro voluptatum facilis. sapiente quod. Temporibus porro voluptatum
-                  facilis.sapiente quod. Temporibus porro voluptatum facilis.
+                  I&apos;m A 100LVL Student in the Federal University of Agriculture, Abeokuta{" "}
+                  <span className="font-semibold">(FUNAAB)</span>. Ever since I&apos;ve been 13 I&apos;ve always wanted
+                  to develop games, websites and softwares, I fell for Web Development and decided to expand on it.
                 </p>
 
                 <div className="mt-4 toTop" style={{ transitionDelay: ".8s" }}>
@@ -49,11 +49,11 @@ const HomePage = () => {
               </div>
             </div>
             <div
-              className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center toTop"
+              className="grid bg-transparent border border-orange-500 rounded-3xl h-[32rem] place-content-center toTop -z-20"
               id="me1"
               style={{ transitionDelay: ".5s", transition: "1s" }}
             >
-              <p>Pic Coming soon...</p>
+              {/* <p>Pic Coming soon...</p> */}
             </div>
           </div>
         </section>
@@ -117,32 +117,25 @@ const HomePage = () => {
                     <div className="p-4 border border-orange-500 rounded-md">
                       <div className="space-y-8">
                         <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                          <p className="font-semibold">English</p>
+                          <p className="font-semibold">Reading</p>
                           <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
                             <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
                           </div>
                           <p>100%</p>
                         </div>
                         <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                          <p className="font-semibold">Igbo</p>
+                          <p className="font-semibold">Games</p>
                           <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
                             <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
                           </div>
                           <p>60%</p>
                         </div>
                         <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                          <p className="font-semibold">Yoruba</p>
+                          <p className="font-semibold">Travelling</p>
                           <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
                             <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
                           </div>
                           <p>80%</p>
-                        </div>
-                        <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                          <p className="font-semibold">Spanish</p>
-                          <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                            <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
-                          </div>
-                          <p>33%</p>
                         </div>
                       </div>
                     </div>
@@ -164,20 +157,131 @@ const HomePage = () => {
           <div>
             <h3 className="mb-5 text-4xl font-bold uppercase">Projects</h3>
             <div className="grid grid-cols-3 gap-4">
-              <div className="p-4 duration-200 border border-orange-500 rounded-md hover:scale-105">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                architecto accusamus nihil alias sed a quia placeat cum facilis maiores eaque tenetur, cupiditate
-                aperiam, ad necessitatibus explicabo soluta. Deserunt quae nulla itaque ad nihil libero natus.
+              <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+                <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
+                  <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
+                    <p className="font-light leading-loose">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium
+                      praesentium a
+                    </p>
+
+                    <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                      View <i className="ri-rocket-line"></i>
+                    </button>
+                  </div>
+                </div>
+                <Image
+                  src={"/images/others/proj1.jpg"}
+                  alt="Project 1"
+                  width={100}
+                  height={100}
+                  className="object-cover w-full aspect-square"
+                />
               </div>
-              <div className="p-4 duration-200 border border-orange-500 rounded-md hover:scale-105">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                architecto accusamus nihil alias sed a quia placeat cum facilis maiores eaque tenetur, cupiditate
-                aperiam, ad necessitatibus explicabo soluta. Deserunt quae nulla itaque ad nihil libero natus.
+              <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+                <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
+                  <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
+                    <p className="font-light leading-loose">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium
+                      praesentium a
+                    </p>
+
+                    <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                      View <i className="ri-rocket-line"></i>
+                    </button>
+                  </div>
+                </div>
+                <Image
+                  src={"/images/others/proj2.png"}
+                  alt="Project 2"
+                  width={100}
+                  height={100}
+                  className="object-cover w-full aspect-square"
+                />
               </div>
-              <div className="p-4 duration-200 border border-orange-500 rounded-md hover:scale-105">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                architecto accusamus nihil alias sed a quia placeat cum facilis maiores eaque tenetur, cupiditate
-                aperiam, ad necessitatibus explicabo soluta. Deserunt quae nulla itaque ad nihil libero natus.
+              <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+                <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
+                  <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
+                    <p className="font-light leading-loose">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium
+                      praesentium a
+                    </p>
+
+                    <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                      View <i className="ri-rocket-line"></i>
+                    </button>
+                  </div>
+                </div>
+                <Image
+                  src={"/images/others/proj3.jpg"}
+                  alt="Project 3"
+                  width={100}
+                  height={100}
+                  className="object-cover w-full aspect-square"
+                />
+              </div>
+              <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+                <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
+                  <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
+                    <p className="font-light leading-loose">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium
+                      praesentium a
+                    </p>
+
+                    <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                      View <i className="ri-rocket-line"></i>
+                    </button>
+                  </div>
+                </div>
+                <Image
+                  src={"/images/others/proj1.jpg"}
+                  alt="Project 1"
+                  width={100}
+                  height={100}
+                  className="object-cover w-full aspect-square"
+                />
+              </div>
+              <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+                <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
+                  <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
+                    <p className="font-light leading-loose">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium
+                      praesentium a
+                    </p>
+
+                    <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                      View <i className="ri-rocket-line"></i>
+                    </button>
+                  </div>
+                </div>
+                <Image
+                  src={"/images/others/proj2.png"}
+                  alt="Project 2"
+                  width={100}
+                  height={100}
+                  className="object-cover w-full aspect-square"
+                />
+              </div>
+              <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+                <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
+                  <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
+                    <p className="font-light leading-loose">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium
+                      praesentium a
+                    </p>
+
+                    <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                      View <i className="ri-rocket-line"></i>
+                    </button>
+                  </div>
+                </div>
+                <Image
+                  src={"/images/others/proj2.png"}
+                  alt="Project 2"
+                  width={100}
+                  height={100}
+                  className="object-cover w-full aspect-square"
+                />
               </div>
             </div>
 

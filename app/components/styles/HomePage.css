@@ -66,12 +66,12 @@
 }
 
 #me1 {
-  background: url("/images/uploads/me.jpg") no-repeat bottom;
+  background: url("/images/uploads/me1.jpg") no-repeat top;
   background-size: cover;
 }
 
-#me2 {
-  background: url("/images/uploads/me.jpg") no-repeat bottom;
+#mes2 {
+  background: url("/images/uploads/me1.jpg") no-repeat top;
   background-size: cover;
 }
 
@@ -106,4 +106,8 @@
 
 .blurThenAppear {
   filter: blur(8px);
+}
+
+.project-cover {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.951), rgba(0, 0, 0, 0.527), rgba(255, 255, 255, 0.103));
 }
