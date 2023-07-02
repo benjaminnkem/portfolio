@@ -1,4 +1,4 @@
-import Script from "next/script";
+"use client";
 import CursorControl from "./components/CursorControl";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
@@ -19,9 +19,8 @@ export default function RootLayout({ children }) {
 
         <CursorControl />
         <Navbar />
-        {children}
 
-        {/* <Script src="/js/intersectAnimation.js"></Script> */}
+        {children}
       </body>
       <Footer></Footer>
     </html>

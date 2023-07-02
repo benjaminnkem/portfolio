@@ -2,18 +2,44 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.3 } },
+};
+
+const projects = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const meTopVariants = {
+  hidden: { opacity: 0, y: 70 },
+  visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.5 } },
+};
+
+const curveVariant = {
+  hidden: {
+    pathLength: 0,
+    fill: "#3D3D3D00",
+  },
+  visible: {
+    pathLength: 1,
+    fill: "#3D3D3D",
+  },
+};
+
 const HomeContent = () => {
   return (
     <>
-      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem] my-10 section" id="me">
+      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[38rem] my-10 section" id="me">
         <div className="items-center gap-4 md:grid" style={{ gridTemplateColumns: "2fr 1fr" }}>
-          <div className="space-y-2">
+          <motion.div variants={meTopVariants} initial="hidden" animate="visible" className="space-y-3">
             <h2 className="text-6xl font-extrabold">
               Hey, I&apos;m Ben<span className="text-orange-500">.</span>
             </h2>
             <p className="text-xl">
               I&apos;m A{" "}
-              <span className="relative font-bold text-orange-400" id="stack">
+              <span className="relative font-extrabold text-orange-400" id="stack">
                 Fullstack Web Developer
               </span>
               .
@@ -30,7 +56,7 @@ const HomeContent = () => {
                 Get In Touch <i className="ri-rocket-line"></i>
               </button>
             </div>
-          </div>
+          </motion.div>
           <div
             className="grid bg-transparent border border-orange-500 rounded-3xl h-[24rem] place-content-center -z-20"
             id="me1"
@@ -42,11 +68,14 @@ const HomeContent = () => {
 
       <section className="my-10 section" id="language">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
+          <motion.path
+            variants={curveVariant}
             fill="#3D3D3D"
+            initial="hidden"
+            animate="visible"
             fillOpacity="1"
             d="M0,256L120,256C240,256,480,256,720,224C960,192,1200,128,1320,96L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-          ></path>
+          ></motion.path>
         </svg>
         <div style={{ backgroundColor: "#3D3D3D" }}>
           <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
@@ -142,8 +171,13 @@ const HomeContent = () => {
           <h3 className="mb-5 text-4xl font-bold uppercase">
             Projects<span className="text-orange-500">.</span>
           </h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+          <motion.div variants={variants} initial="hidden" animate="show" className="grid grid-cols-3 gap-4">
+            <motion.div
+              variants={projects}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group"
+            >
               <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
                 <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
                   <p className="font-light leading-loose">
@@ -163,8 +197,13 @@ const HomeContent = () => {
                 height={400}
                 className="object-cover w-full aspect-square"
               />
-            </div>
-            <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+            </motion.div>
+            <motion.div
+              variants={projects}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group"
+            >
               <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
                 <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
                   <p className="font-light leading-loose">
@@ -184,8 +223,13 @@ const HomeContent = () => {
                 height={400}
                 className="object-cover w-full aspect-square"
               />
-            </div>
-            <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
+            </motion.div>
+            <motion.div
+              variants={projects}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group"
+            >
               <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
                 <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
                   <p className="font-light leading-loose">
@@ -205,71 +249,8 @@ const HomeContent = () => {
                 height={400}
                 className="object-cover w-full aspect-square"
               />
-            </div>
-            <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
-              <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
-                <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
-                  <p className="font-light leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                    a
-                  </p>
-
-                  <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
-                    View <i className="ri-arrow-right-circle-line"></i>
-                  </button>
-                </div>
-              </div>
-              <Image
-                src={"/images/others/proj1.jpg"}
-                alt="Project 1"
-                width={400}
-                height={400}
-                className="object-cover w-full aspect-square"
-              />
-            </div>
-            <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
-              <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
-                <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
-                  <p className="font-light leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                    a
-                  </p>
-
-                  <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
-                    View <i className="ri-arrow-right-circle-line"></i>
-                  </button>
-                </div>
-              </div>
-              <Image
-                src={"/images/others/proj2.png"}
-                alt="Project 2"
-                width={400}
-                height={400}
-                className="object-cover w-full aspect-square"
-              />
-            </div>
-            <div className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group">
-              <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
-                <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
-                  <p className="font-light leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                    a
-                  </p>
-
-                  <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
-                    View <i className="ri-arrow-right-circle-line"></i>
-                  </button>
-                </div>
-              </div>
-              <Image
-                src={"/images/others/proj2.png"}
-                alt="Project 2"
-                width={400}
-                height={400}
-                className="object-cover w-full aspect-square"
-              />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div className="mt-5 text-center">
             <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 rounded-sm hover:bg-orange-500 hover:text-black group">

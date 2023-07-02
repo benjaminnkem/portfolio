@@ -27,11 +27,15 @@ const Navbar = () => {
   return (
     <>
       <nav className="relative z-20 w-full mx-auto text-lg font-bold">
-        <div className="fixed top-0 left-0 w-full navbarBlur"> {/* ref */}
+        <div className="fixed top-0 left-0 w-full navbarBlur">
+          {" "}
+          {/* ref */}
           <div className="md:w-[1024px] w-11/12 py-6 mx-auto">
             <ul className="flex justify-between">
               <li>
-                <Link href={"/"}>Ben.t</Link>
+                <Link href={"/"} className="font-bold">
+                  B<span className="text-orange-500">.</span>{" "}
+                </Link>
               </li>
               <li>
                 <div className="flex items-center space-x-4">
