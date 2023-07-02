@@ -1,9 +1,11 @@
+import "./projects.css"
+
 const ProjectsPage = () => {
   return (
     <>
-      <div>
+      <main className="fixed top-0 left-0 w-full h-full">
         <h1>Hi Projects</h1>
-      </div>
+      </main>
     </>
   );
 };

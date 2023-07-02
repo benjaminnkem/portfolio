@@ -3,7 +3,7 @@ const Footer = () => {
     <>
       <footer className="py-10 border-t border-orange-500">
         <div className="md:max-w-[1024px] w-11/12 mx-auto">
-          <div className="grid items-center grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-10">
             <div className="text-white ">
               <div className="space-y-5">
                 <div>
@@ -15,16 +15,19 @@ const Footer = () => {
                 <div>
                   <h4 className="text-2xl font-semibold">Quotes</h4>
                   <p className="text-lg font-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum iure deleniti voluptates quidem
-                    ipsam. Ducimus totam odit accusamus esse libero beatae unde quam consectetur quibusdam, corporis
-                    praesentium perferendis expedita mollitia.
+                    <blockquote className="italic">
+                      &quot;Web development is the art of transforming ideas into engaging and functional online
+                      experiences, where creativity meets technology to create a digital masterpiece.&quot;
+                    </blockquote>
                   </p>
                 </div>
                 <div>
                   <h4 className="text-2xl font-semibold">Dedication</h4>
-                  <p className="text-lg font-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum iure deleniti voluptates quidem
-                    ipsam. Ducimus totam odit accusamus esse
+                  <p className="text-lg italic font-light">
+                    &quot;To my remarkable mother, whose unwavering dedication and support have shaped my journey. This
+                    portfolio is a heartfelt tribute to your tireless hard work, love, and guidance. Thank you for
+                    believing in me and inspiring me to reach new heights. I am forever grateful for everything you do.
+                    With boundless love and appreciation, this portfolio is dedicated to you, my incredible mum.&quot;
                   </p>
                 </div>
               </div>
