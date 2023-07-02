@@ -66,7 +66,7 @@ const HomeContent = () => {
         </div>
       </section>
 
-      <section className="my-10 section" id="language">
+      <section className="my-10 section" id="about">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <motion.path
             variants={curveVariant}
@@ -81,79 +81,8 @@ const HomeContent = () => {
           <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
             <div>
               <h3 className="mb-5 text-4xl font-bold uppercase">
-                Personal Statistics<span className="text-orange-500">.</span>
+                About Me<span className="text-orange-500">.</span>
               </h3>
-              <div className="grid gap-6" style={{ gridTemplateColumns: "1.5fr 2fr" }}>
-                <div>
-                  <div className="p-4 border border-orange-500 rounded-md">
-                    <div className="space-y-8">
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">English</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
-                        </div>
-                        <p>100%</p>
-                      </div>
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Igbo</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
-                        </div>
-                        <p>60%</p>
-                      </div>
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Yoruba</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
-                        </div>
-                        <p>80%</p>
-                      </div>
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Spanish</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
-                        </div>
-                        <p>33%</p>
-                      </div>
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Turkish</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
-                        </div>
-                        <p>33%</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="p-4 border border-orange-500 rounded-md">
-                    <div className="space-y-8">
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Reading</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
-                        </div>
-                        <p>100%</p>
-                      </div>
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Games</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
-                        </div>
-                        <p>60%</p>
-                      </div>
-                      <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                        <p className="font-semibold">Travelling</p>
-                        <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                          <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
-                        </div>
-                        <p>80%</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -164,6 +93,87 @@ const HomeContent = () => {
             d="M0,288L120,256C240,224,480,160,720,128C960,96,1200,96,1320,96L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
           ></path>
         </svg>
+      </section>
+
+      <section className="my-10 section">
+        <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
+          <div>
+            <h3 className="mb-5 text-4xl font-bold uppercase">
+              Personal Statistics<span className="text-orange-500">.</span>
+            </h3>
+            <div className="grid gap-6" style={{ gridTemplateColumns: "1.5fr 2fr" }}>
+              <div>
+                <div className="p-4 border border-orange-500 rounded-md">
+                  <div className="space-y-8">
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">English</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
+                      </div>
+                      <p>100%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Igbo</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
+                      </div>
+                      <p>60%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Yoruba</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
+                      </div>
+                      <p>80%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Spanish</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
+                      </div>
+                      <p>33%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Turkish</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
+                      </div>
+                      <p>33%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="p-4 border border-orange-500 rounded-md">
+                  <div className="space-y-8">
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Reading</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
+                      </div>
+                      <p>100%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Games</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
+                      </div>
+                      <p>60%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Travelling</p>
+                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
+                        <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
+                      </div>
+                      <p>80%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-10 section" id="projects">
