@@ -9,8 +9,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 20px;
 }
 
 body {
@@ -87,7 +85,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  html {
-    scroll-padding-top: 80px;
+  .cursor1, .cursor2 {
+    display: none;
   }
 }

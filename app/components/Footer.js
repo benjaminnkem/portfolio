@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <>
@@ -15,10 +17,10 @@ const Footer = () => {
                 <div>
                   <h4 className="text-2xl font-semibold">Quotes</h4>
                   <p className="text-lg font-light">
-                    <blockquote className="italic">
+                    <span className="italic">
                       &quot;Web development is the art of transforming ideas into engaging and functional online
                       experiences, where creativity meets technology to create a digital masterpiece.&quot;
-                    </blockquote>
+                    </span>
                   </p>
                 </div>
                 <div>
@@ -40,16 +42,25 @@ const Footer = () => {
                   </h4>
                   <ul className="space-y-2">
                     <li>
-                      <p className="text-lg font-light">Home</p>
+                      <Link href={"/"}>
+                        <p className="text-lg font-light duration-200 hover:text-orange-500">Home</p>
+                      </Link>
                     </li>
                     <li>
-                      <p className="text-lg font-light">Contact</p>
+                      <Link href={"/contact"}>
+                        <p className="text-lg font-light duration-200 hover:text-orange-500">Contact</p>
+                      </Link>
                     </li>
                     <li>
-                      <p className="text-lg font-light">Projects</p>
+                      <Link href={"/projects"}>
+                        {" "}
+                        <p className="text-lg font-light duration-200 hover:text-orange-500">Projects</p>
+                      </Link>
                     </li>
                     <li>
-                      <p className="text-lg font-light">About</p>
+                      <a href="#about">
+                        <p className="text-lg font-light duration-200 hover:text-orange-500">About</p>
+                      </a>
                     </li>
                   </ul>
                 </div>

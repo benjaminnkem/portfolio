@@ -110,9 +110,13 @@ const HomeContent = () => {
                       Outside the coding/development space, I read books, play games, watch movies and explore trending
                       technologies. <br />
                       <br />
-                      If you&apos;re interested in recruiting me to work on a project/company, I&apos;m totally free!
+                      If you&apos;re interested in recruiting me to work on a project/company, I&apos;m open for offers!
                       Let&apos;s Connect <i className="ri-link-m"></i>
                     </p>
+
+                    <button className="px-4 py-2 mt-4 duration-200 border border-orange-500 rounded-md hover:bg-orange-600 text-orange-50">
+                      Contact Me <i className="ri-link-m"></i>
+                    </button>
                   </div>
                 </div>
                 <div className="p-4">
@@ -131,6 +135,16 @@ const HomeContent = () => {
                       <li>
                         <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
                           <i className="ri-css3-fill"></i> <span>CSS</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-css3-fill"></i> <span>Tailwind CSS</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-css3-fill"></i> <span>Bootstrap</span>
                         </div>
                       </li>
                       <li>
@@ -175,7 +189,7 @@ const HomeContent = () => {
                       </li> */}
                       <li>
                         <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                          <span>Unity 2D</span>
+                          <i className="ri-gamepad-line"></i> <span>Unity 2D</span>
                         </div>
                       </li>
                       <li>
