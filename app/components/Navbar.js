@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
@@ -29,25 +30,59 @@ const Navbar = () => {
         <div ref={navBar} className="top-0 left-0 w-full">
           <div className="md:w-[1024px] w-11/12 py-6 mx-auto">
             <ul className="flex justify-between">
-              <li>Ben.t</li>
+              <li>
+                <Link href={"/"}>Ben.t</Link>
+              </li>
               <li>
                 <div className="flex items-center space-x-4">
                   <div className="group">
-                    <div
-                      className={`flex items-center space-x-1  border border-transparent  group-hover:rounded-md group-hover:px-1 ${
-                        pathName === "/"
-                          ? "text-orange-500 group-hover:border-orange-500"
-                          : "text-white group-hover:border-white"
-                      }`}
-                    >
-                      <i className="overflow-hidden text-xl duration-200 ri-home-2-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[52px]">
-                        <span>Home</span>
+                    <Link href={"/"}>
+                      <div
+                        className={`flex items-center space-x-1 border border-transparent  group-hover:rounded-md group-hover:px-1 ${
+                          pathName === "/"
+                            ? "text-orange-500 group-hover:border-orange-500"
+                            : "text-white group-hover:border-white"
+                        }`}
+                      >
+                        <i className="overflow-hidden text-xl duration-200 ri-home-2-line"></i>
+                        <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[52px]">
+                          <span>Home</span>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
-                  <p>Projects</p>
-                  <p>Contact</p>
+                  <div className="group">
+                    <Link href={"/projecs"}>
+                      <div
+                        className={`flex items-center space-x-1 border border-transparent  group-hover:rounded-md group-hover:px-1 ${
+                          pathName === "/projects"
+                            ? "text-orange-500 group-hover:border-orange-500"
+                            : "text-white group-hover:border-white"
+                        }`}
+                      >
+                        <i className="overflow-hidden text-xl duration-200 ri-tools-line"></i>
+                        <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
+                          <span>Projects</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="group">
+                    <Link href={"/contact"}>
+                      <div
+                        className={`flex items-center space-x-1  border border-transparent  group-hover:rounded-md group-hover:px-1 ${
+                          pathName === "/contact"
+                            ? "text-orange-500 group-hover:border-orange-500"
+                            : "text-white group-hover:border-white"
+                        }`}
+                      >
+                        <i className="overflow-hidden text-xl duration-200 ri-phone-fill"></i>
+                        <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
+                          <span>Contact</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </li>
               <li className="flex space-x-2 font-light">
