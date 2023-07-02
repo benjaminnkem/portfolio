@@ -5,8 +5,8 @@ const HomePage = () => {
   return (
     <>
       <main>
-        <div className="flex flex-col justify-between absolute top-0 left-0 w-full h-full">
-          <nav className="flex justify-between items-centers px-10 py-5">
+        <div className="absolute top-0 left-0 flex flex-col justify-between w-full h-full">
+          <nav className="flex justify-between px-10 py-5 items-centers">
             <h1 className="text-3xl font-bold">BenT</h1>
 
             <ul className="flex items-center space-x-4">
@@ -14,7 +14,7 @@ const HomePage = () => {
               <li>About</li>
               <li>Contact Me</li>
               <li>Projects</li>
-              <li className="bg-orange-500 text-orange-100 px-2 py-1 rounded-md">Download Resume</li>
+              <li className="px-2 py-1 text-orange-100 bg-orange-500 rounded-md">Download Resume</li>
             </ul>
           </nav>
           <div
@@ -22,28 +22,28 @@ const HomePage = () => {
             style={{ gridTemplateColumns: "1fr 6fr 1fr" }}
           >
             <div className="border"></div>
-            <div className="border grid grid-cols-2 gap-2 items-center">
+            <div className="grid items-center grid-cols-2 gap-2 border">
               <div>
                 <h2 className="text-3xl font-bold uppercase">Hi, Nkem Benjamin Here!</h2>
-                <p className="font-semibold text-lg">
+                <p className="text-lg font-semibold">
                   {/* Animation part */}A <span className="text-purple-600" id="stack">---</span>
                   <StackAnim />
                 </p>
-                <p className="leading-relaxed mt-4">
+                <p className="mt-4 leading-relaxed">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quidem cum ex exercitationem!
                   Consectetur cumque enim natus
                 </p>
-                <div className="mt-4 flex space-x-2">
-                  <button className="px-4 py-1 rounded-md border border-orange-500 duration-200 hover:bg-orange-500 hover:text-orange-50 shadow-md">
+                <div className="flex mt-4 space-x-2">
+                  <button className="px-4 py-1 duration-200 border border-orange-500 rounded-md shadow-md hover:bg-orange-500 hover:text-orange-50">
                     Resume 🧾📙
                   </button>
-                  <button className="px-4 py-1 rounded-md border border-orange-500 duration-200 hover:bg-orange-500 hover:text-orange-50 shadow-md">
+                  <button className="px-4 py-1 duration-200 border border-orange-500 rounded-md shadow-md hover:bg-orange-500 hover:text-orange-50">
                     Projects ⚒👨‍🏭
                   </button>
                 </div>
               </div>
 
-              <div className="border-2 border-orange-600 rounded-md h-full w-3/4 mx-auto"></div>
+              <div className="w-3/4 h-full mx-auto border-2 border-orange-600 rounded-md"></div>
             </div>
             <div className="border"></div>
           </div>
