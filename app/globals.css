@@ -77,3 +77,7 @@ body {
     height: 35px;
   }
 }
+
+.navbarBlur {
+  backdrop-filter: blur(8px);
+}

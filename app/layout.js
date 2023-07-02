@@ -2,6 +2,7 @@ import Script from "next/script";
 import CursorControl from "./components/CursorControl";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
+import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "Benjamin Nkem - Portfolio",
@@ -16,7 +17,8 @@ export default function RootLayout({ children }) {
         <div className="cursor2"></div>
 
         <CursorControl />
-        <div className="mx-auto w-11/12 md:w-[1024px]">{children}</div>
+        <Navbar />
+        {children}
 
         <Script src="/js/intersectAnimation.js"></Script>
       </body>

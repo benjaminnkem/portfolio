@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import StackAnim from "./StackAnim";
 import "./styles/HomePage.css";
 
@@ -6,9 +5,8 @@ const HomePage = () => {
   return (
     <>
       <main>
-        <section className="section" id="overAllSect">
-          <Navbar />
-          <div className="h-screen md:h-[28rem] xl:h-[30rem]  flex justify-center items-center">
+        <section className="md:w-[1024px] w-11/12 mx-auto section" id="overAllSect">
+          <div className="h-screen md:h-[28rem] xl:h-[30rem] flex justify-center items-center">
             <div className="text-center uppercase">
               <h1 className="text-5xl font-bold tracking-wider text-orange-500 toDown topDownStyle">Take A Peek</h1>
               <p
@@ -21,7 +19,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="my-40 section" id="meSect">
+        <section className="md:w-[1024px] w-11/12 mx-auto my-40 section" id="meSect">
           <div className="items-center gap-2 md:grid" style={{ gridTemplateColumns: "2fr 1fr" }}>
             <div>
               <h2
@@ -53,14 +51,15 @@ const HomePage = () => {
             </div>
             <div
               className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center toTop downTopStyle"
-              id="me1" style={{ transitionDelay: '.5s', transition: '1s' }}
+              id="me1"
+              style={{ transitionDelay: ".5s", transition: "1s" }}
             >
               <p>Pic Coming soon...</p>
             </div>
           </div>
         </section>
 
-        <section className="my-40 section">
+        <section className="md:w-[1024px] w-11/12 mx-auto my-40 section">
           <div className="grid gap-6" style={{ gridTemplateColumns: "1.5fr 2fr" }}>
             <div className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center" id="me2">
               <p>Pic Coming soon...</p>
@@ -103,27 +102,23 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="my-40 section">
+        <section className="md:w-[1024px] w-11/12 mx-auto my-40 section">
           <div className="p-4">
             <h3 className="text-3xl font-bold text-center uppercase delay-150 blurApp blurThenAppear">Projects</h3>
 
             <div className="flex flex-wrap mt-10 justify-evenly">
-              <div
-                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
-                style={{ transitionDelay: ".2s" }}
-              ></div>
-              <div
-                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
-                style={{ transitionDelay: ".4s" }}
-              ></div>
-              <div
-                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
-                style={{ transitionDelay: ".6s" }}
-              ></div>
-              <div
-                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
-                style={{ transitionDelay: ".8s" }}
-              ></div>
+              <div className=" toTop downTopStyle" style={{ transitionDelay: ".2s" }}>
+                <div className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105"></div>
+              </div>
+              <div className=" toTop downTopStyle" style={{ transitionDelay: ".4s" }}>
+                <div className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105"></div>
+              </div>
+              <div className=" toTop downTopStyle" style={{ transitionDelay: ".6s" }}>
+                <div className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105"></div>
+              </div>
+              <div className=" toTop downTopStyle" style={{ transitionDelay: ".8s" }}>
+                <div className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105"></div>
+              </div>
             </div>
 
             <div className="my-5 text-center">
