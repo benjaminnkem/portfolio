@@ -1,5 +1,7 @@
+import Script from "next/script";
 import CursorControl from "./components/CursorControl";
 import "./globals.css";
+import "remixicon/fonts/remixicon.css"
 
 export const metadata = {
   title: "Benjamin Nkem - Portfolio",
@@ -15,6 +17,8 @@ export default function RootLayout({ children }) {
         
         <CursorControl />
         {children}
+
+        <Script src="/js/intersectAnimation.js"></Script>
       </body>
     </html>
   );

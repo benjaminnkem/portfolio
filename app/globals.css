@@ -8,7 +8,8 @@
 }
 
 html {
-  scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {

@@ -2,15 +2,18 @@
 const Navbar = () => {
   return (
     <>
-      <div className="mx-auto w-11/12 md:w-[1024px] py-10 font-bold">
-        <nav className="text-xl">
-          <ul className="flex justify-between">
-            <li>Ben.t</li>
-            <li className="text-orange-500">Overview</li>
-            <li>Projects</li>
-          </ul>
-        </nav>
-      </div>
+      <nav className="py-10 text-xl font-bold">
+        <ul className="flex justify-between">
+          <li>Ben.t</li>
+          <li className="text-orange-500">Overview</li>
+          <li className="flex space-x-2 font-light">
+            <i className="ri-facebook-circle-line"></i>
+            <i className="ri-instagram-line"></i>
+            <i className="ri-twitter-line"></i>
+            <i className="ri-github-line"></i>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
