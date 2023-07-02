@@ -6,52 +6,63 @@ const HomePage = () => {
   return (
     <>
       <main>
-        <section className="mx-auto w-11/12 md:w-[1024px] section">
+        <section className="section" id="overAllSect">
           <Navbar />
           <div className="h-screen md:h-[28rem] xl:h-[30rem]  flex justify-center items-center">
             <div className="text-center uppercase">
-              <h1 className="text-5xl font-bold tracking-wider text-orange-500">Take A Peek</h1>
-              <p className="mt-5 text-lg tracking-wide opacity-80 text-orange-50">
+              <h1 className="text-5xl font-bold tracking-wider text-orange-500 toDown topDownStyle">Take A Peek</h1>
+              <p
+                className="mt-5 text-lg tracking-wide opacity-80 text-orange-50 toDown topDownStyle"
+                style={{ transitionDelay: "0.7s" }}
+              >
                 <i className="ri-arrow-down-line"></i> Scroll Down <i className="ri-arrow-down-line"></i>
               </p>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto w-11/12 md:w-[1024px] section my-40">
-          <div className="grid items-center gap-2" style={{ gridTemplateColumns: "2fr 1fr" }}>
+        <section className="my-40 section" id="meSect">
+          <div className="items-center gap-2 md:grid" style={{ gridTemplateColumns: "2fr 1fr" }}>
             <div>
-              <h2 className="text-lg font-semibold text-orange-500 uppercase">Hi, Nkem Benjamin Here!</h2>
-              <p className="text-5xl font-bold uppercase stack">
+              <h2
+                className="text-lg font-semibold text-orange-500 uppercase toTop downTopStyle"
+                style={{ transitionDelay: ".2s" }}
+              >
+                Hi, Nkem Benjamin Here!
+              </h2>
+              <p className="text-5xl font-bold uppercase stack toTop downTopStyle" style={{ transitionDelay: ".4s" }}>
                 I&apos;m A{" "}
-                <span className="text-orange-400" id="stack">
+                <span className="relative text-orange-400" id="stack">
                   Web Developer
                 </span>
               </p>
 
               <div className="mt-4">
-                <p className="font-light opacity-80">
+                <p className="font-light opacity-80 toTop downTopStyle" style={{ transitionDelay: ".6s" }}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, quae alias? Tenetur consequuntur ipsa
                   sapiente quod. Temporibus porro voluptatum facilis. sapiente quod. Temporibus porro voluptatum
                   facilis.sapiente quod. Temporibus porro voluptatum facilis.
                 </p>
 
-                <div className="mt-4">
+                <div className="mt-4 toTop downTopStyle" style={{ transitionDelay: ".8s" }}>
                   <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
-                    Hire Me <i className="ri-rocket-line"></i>
+                    Get In Touch <i className="ri-rocket-line"></i>
                   </button>
                 </div>
               </div>
             </div>
-            <div className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center">
+            <div
+              className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center toTop downTopStyle"
+              id="me1" style={{ transitionDelay: '.5s', transition: '1s' }}
+            >
               <p>Pic Coming soon...</p>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto w-11/12 md:w-[1024px] section my-40">
+        <section className="my-40 section">
           <div className="grid gap-6" style={{ gridTemplateColumns: "1.5fr 2fr" }}>
-            <div className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center">
+            <div className="grid bg-transparent border border-orange-500 rounded-lg h-96 place-content-center" id="me2">
               <p>Pic Coming soon...</p>
             </div>
             <div>
@@ -92,18 +103,30 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="mx-auto w-11/12 md:w-[1024px] section my-40">
+        <section className="my-40 section">
           <div className="p-4">
-            <h3 className="text-3xl font-bold text-center uppercase">Projects</h3>
+            <h3 className="text-3xl font-bold text-center uppercase delay-150 blurApp blurThenAppear">Projects</h3>
 
-            <div className="flex mt-10 justify-evenly">
-              <div className="border border-orange-500 rounded-md w-52 h-52"></div>
-              <div className="border border-orange-500 rounded-md w-52 h-52"></div>
-              <div className="border border-orange-500 rounded-md w-52 h-52"></div>
-              <div className="border border-orange-500 rounded-md w-52 h-52"></div>
+            <div className="flex flex-wrap mt-10 justify-evenly">
+              <div
+                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
+                style={{ transitionDelay: ".2s" }}
+              ></div>
+              <div
+                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
+                style={{ transitionDelay: ".4s" }}
+              ></div>
+              <div
+                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
+                style={{ transitionDelay: ".6s" }}
+              ></div>
+              <div
+                className="duration-200 border border-orange-500 rounded-md w-52 h-52 hover:scale-105 toTop downTopStyle"
+                style={{ transitionDelay: ".8s" }}
+              ></div>
             </div>
 
-            <div className="py-5 text-center">
+            <div className="my-5 text-center">
               <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
                 View All Projects
               </button>
@@ -111,7 +134,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        <StackAnim />
+        {/* <StackAnim /> */}
         <div className="h-96"></div>
       </main>
     </>

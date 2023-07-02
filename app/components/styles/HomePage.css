@@ -1,6 +1,21 @@
 .stack {
   text-shadow: 10px 10px 20px rgba(226, 123, 13, 0.183);
 }
+/* 
+#stack::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+} */
+
+/* #meSect, #overAllSect {
+  scroll-snap-align: start;
+} */
 
 .progress {
   animation: progress 1.5s linear;
@@ -17,7 +32,7 @@
 
 @keyframes progress {
   0% {
-    width: .1%;
+    width: 0.1%;
   }
   100% {
     width: 100%;
@@ -25,7 +40,7 @@
 }
 @keyframes progress1 {
   0% {
-    width: .1%;
+    width: 0.1%;
   }
   60% {
     width: 60%;
@@ -33,7 +48,7 @@
 }
 @keyframes progress2 {
   0% {
-    width: .1%;
+    width: 0.1%;
   }
   80% {
     width: 80%;
@@ -41,9 +56,52 @@
 }
 @keyframes progress3 {
   0% {
-    width: .1%;
+    width: 0.1%;
   }
   80% {
     width: 33%;
   }
+}
+
+#me1 {
+  background: url("/images/uploads/me.jpg") no-repeat bottom;
+  background-size: cover;
+}
+
+#me2 {
+  background: url("/images/uploads/me.jpg") no-repeat bottom;
+  background-size: cover;
+}
+
+.toDown,
+.toTop,
+.toRight,
+.toLeft,
+.blurApp {
+  opacity: 1;
+  transition: 0.8s;
+  filter: none;
+  transform: translate(0%) scale(1) rotate(0deg);
+}
+
+.topDownStyle {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(-100%);
+}
+
+.downTopStyle {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(100%);
+}
+
+.scaleDownStyle {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(1.1);
+}
+
+.blurThenAppear {
+  filter: blur(8px);
 }

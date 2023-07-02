@@ -7,27 +7,26 @@ const StackAnim = () => {
 
   const animControl = () => {
     const spanText = document.querySelector("#stack");
-    let totalTimeForAnimation = 2000;
+    let totalTimeForAnimation = 100;
     let currentSkillsIndex = 0;
 
     setInterval(() => {
       spanText.textContent = skills[currentSkillsIndex];
-      if (currentSkillsIndex < skills.length - 1) {
-        currentSkillsIndex++;
-        spanText.textContent = skills[currentSkillsIndex];
-      } else {
-        currentSkillsIndex = 0;
-        spanText.textContent = skills[currentSkillsIndex];
-      }
 
-      console.log(currentSkillsIndex);
+      // if (currentSkillsIndex < skills.length - 1) {
+      //   currentSkillsIndex++;
+      //   spanText.textContent = skills[currentSkillsIndex];
+      // } else {
+      //   currentSkillsIndex = 0;
+      //   spanText.textContent = skills[currentSkillsIndex];
+      // }
     }, totalTimeForAnimation);
   };
 
   useEffect(() => {
     animControl();
     return undefined;
-  }, []);
+  });
 };
 
 export default StackAnim;
