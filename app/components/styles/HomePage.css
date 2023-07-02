@@ -3,7 +3,16 @@
 }
 
 .progress {
-  animation: progress 1s linear;
+  animation: progress 1.5s linear;
+}
+.progress1 {
+  animation: progress1 1.5s linear;
+}
+.progress2 {
+  animation: progress2 1.5s linear;
+}
+.progress3 {
+  animation: progress3 1.5s linear;
 }
 
 @keyframes progress {
@@ -11,6 +20,30 @@
     width: .1%;
   }
   100% {
+    width: 100%;
+  }
+}
+@keyframes progress1 {
+  0% {
+    width: .1%;
+  }
+  60% {
+    width: 60%;
+  }
+}
+@keyframes progress2 {
+  0% {
+    width: .1%;
+  }
+  80% {
     width: 80%;
+  }
+}
+@keyframes progress3 {
+  0% {
+    width: .1%;
+  }
+  80% {
+    width: 33%;
   }
 }
