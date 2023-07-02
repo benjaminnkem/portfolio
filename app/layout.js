@@ -3,6 +3,7 @@ import CursorControl from "./components/CursorControl";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Benjamin Nkem - Portfolio",
@@ -20,8 +21,9 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
 
-        <Script src="/js/intersectAnimation.js"></Script>
+        {/* <Script src="/js/intersectAnimation.js"></Script> */}
       </body>
+      <Footer></Footer>
     </html>
   );
 }

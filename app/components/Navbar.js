@@ -7,27 +7,27 @@ const Navbar = () => {
   const pathName = usePathname();
   const navBar = useRef(null);
 
-  const scrollFunction = () => {
-    const scrollY = window.scrollY;
+  // const scrollFunction = () => {
+  //   const scrollY = window.scrollY;
 
-    if (scrollY > 250) {
-      navBar.current.classList.add("fixed", "navbarBlur");
-    } else {
-      navBar.current.classList.remove("fixed", "navbarBlur");
-    }
-  };
+  //   if (scrollY > 250) {
+  //     navBar.current.classList.add("fixed", "navbarBlur");
+  //   } else {
+  //     navBar.current.classList.remove("fixed", "navbarBlur");
+  //   }
+  // };
 
-  useEffect(() => {
-    document.addEventListener("scroll", scrollFunction);
-    return () => {
-      document.removeEventListener("scroll", scrollFunction);
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("scroll", scrollFunction);
+  //   return () => {
+  //     document.removeEventListener("scroll", scrollFunction);
+  //   };
+  // }, []);
 
   return (
     <>
       <nav className="relative z-20 w-full mx-auto text-lg font-bold">
-        <div ref={navBar} className="top-0 left-0 w-full">
+        <div className="fixed top-0 left-0 w-full navbarBlur"> {/* ref */}
           <div className="md:w-[1024px] w-11/12 py-6 mx-auto">
             <ul className="flex justify-between">
               <li>
@@ -52,7 +52,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                   <div className="group">
-                    <Link href={"/projecs"}>
+                    <Link href={"/projects"}>
                       <div
                         className={`flex items-center space-x-1 border border-transparent  group-hover:rounded-md group-hover:px-1 ${
                           pathName === "/projects"

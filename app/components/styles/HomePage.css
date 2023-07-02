@@ -13,8 +13,9 @@
   background-color: red;
 } */
 
-/* #meSect, #overAllSect {
+/* #meSect, #overAllSect, #language, #projects {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 } */
 
 .progress {

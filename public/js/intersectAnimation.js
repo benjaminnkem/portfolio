@@ -8,6 +8,8 @@ const topToDown = new IntersectionObserver((entry) => {
   entry.forEach((entries) => {
     if (entries.isIntersecting) {
       entries.target.classList.remove("topDownStyle");
+    } else {
+      entries.target.classList.add("topDownStyle");
     }
   });
 });

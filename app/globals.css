@@ -10,6 +10,7 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  scroll-padding-top: 20px;
 }
 
 body {
@@ -80,4 +81,10 @@ body {
 
 .navbarBlur {
   backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
 }
