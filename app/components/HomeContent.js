@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -78,11 +79,114 @@ const HomeContent = () => {
           ></motion.path>
         </svg>
         <div style={{ backgroundColor: "#3D3D3D" }}>
-          <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
+          <div className="md:max-w-[1024px] w-11/12 mx-auto min-h-[32rem]">
             <div>
-              <h3 className="mb-5 text-4xl font-bold uppercase">
-                About Me<span className="text-orange-500">.</span>
-              </h3>
+              <div className="flex items-center justify-center">
+                <span className="flex-1 h-1 bg-orange-500 rounded-md"></span>
+                <h3 className="px-4 mb-5 text-4xl font-bold uppercase">
+                  About Me<span className="text-orange-500">.</span>
+                </h3>
+                <span className="flex-1 h-1 bg-orange-500 rounded-md"></span>
+              </div>
+
+              <div className="grid grid-cols-2">
+                <div className="p-4 border-r border-opacity-50 border-orange-50">
+                  <div>
+                    <p>
+                      <span>Hi</span>, My name is <span className="font-bold text-white">Nkem Benjamin</span> and
+                      I&apos;m a passionate Fullstack Web Develper, 2D Unity Game Developer residing in Nigeria.
+                      I&apos;m also the Developer and Founder of{" "}
+                      <Link
+                        href={"https://ceelyrics.com"}
+                        target="_blank"
+                        className="font-bold text-orange-500 duration-200 hover:text-orange-400"
+                      >
+                        Ceelyrics
+                      </Link>{" "}
+                      I also enjoy exploring new technologies and frameworks to enhance my skills and deliver innovative
+                      solutions to clients. <br /> <br />I strive to create seamless user experiences by combining my
+                      strong problem-solving abilities with a keen eye for design aesthetics. <br />
+                      <br />
+                      Outside the coding/development space, I read books, play games, watch movies and explore trending
+                      technologies. <br />
+                      <br />
+                      If you&apos;re interested in recruiting me to work on a project/company, I&apos;m totally free!
+                      Let&apos;s Connect <i className="ri-link-m"></i>
+                    </p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <div>
+                    <div className="flex items-center justify-center">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <h3 className="px-4 mb-2 text-2xl font-bold text-center">Skills</h3>
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                    </div>
+                    <ul className="flex flex-wrap justify-center space-x-2">
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-html5-fill"></i> <span>HTML</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-css3-fill"></i> <span>CSS</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-javascript-fill"></i> <span>Javascript</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-node-tree"></i> <span>NodeJS</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-reactjs-fill"></i> <span>ReactJs</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <span>NextJs</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <span>VueJs</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <span>MongoDB</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <i className="ri-database-2-line"></i> <span>MySQL</span>
+                        </div>
+                      </li>
+                      {/* <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <span>Python</span>
+                        </div>
+                      </li> */}
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <span>Unity 2D</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
+                          <span>Rest APIs</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

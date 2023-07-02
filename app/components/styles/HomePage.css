@@ -72,7 +72,7 @@
 
 #mes2 {
   background: url("/images/uploads/me.jpg") no-repeat top;
-  background-size: cover;
+  background-size: 300px 300px;
 }
 
 .toDown,
