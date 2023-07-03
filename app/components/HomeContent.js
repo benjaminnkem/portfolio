@@ -1,16 +1,10 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const variants = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.3 } },
-};
-
-const projects = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 const meTopVariants = {
@@ -32,7 +26,7 @@ const curveVariant = {
 const HomeContent = () => {
   return (
     <>
-      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section" id="me">
+      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section mt-32" id="me">
         <div className="grid items-center gap-4 megrid">
           <motion.div
             variants={meTopVariants}
@@ -53,7 +47,7 @@ const HomeContent = () => {
 
             <p className="font-light opacity-80">
               I&apos;m A 100LVL Student in the Federal University of Agriculture, Abeokuta{" "}
-              <span className="font-semibold">(FUNAAB)</span>. Ever since I&apos;ve been 13 I&apos;ve always wanted to
+              <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to
               develop games, websites and softwares, I fell for Web Development and decided to expand on it.
             </p>
 
@@ -302,7 +296,12 @@ const HomeContent = () => {
           <h3 className="mb-5 text-4xl font-bold uppercase">
             Projects<span className="text-orange-500">.</span>
           </h3>
-          <motion.div variants={variants} initial="hidden" animate="show" className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+          <motion.div
+            variants={variants}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
+          >
             <div className="z-10 border border-orange-500 rounded-md">
               <div className="w-full h-32 bg-slate-800"></div>
               <div className="p-4 space-y-3">

@@ -1,18 +1,33 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { motion, useAnimationControls } from "framer-motion";
+
+const parentMobileMenuVariant = {
+  hidden: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
+  show: { opacity: 1 },
+  exit: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
+};
+
+const mobileLinksVariant = {
+  hidden: { opacity: 0, x: 30, transition: { scale: 0.9 } },
+  show: { opacity: 1, x: 0, transition: { scale: 1 } },
+};
 
 const Navbar = () => {
   const pathName = usePathname();
   const hamburger = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const controls = useAnimationControls();
+
   function toggleMenu() {
     if (isMenuOpen) {
       setIsMenuOpen(!isMenuOpen);
       hamburger.current.classList.toggle("active");
     } else {
+      controls.start({ opacity: 0, transition: { staggerChildren: 0.5, delay: 2, duration: 2 } });
       setIsMenuOpen(!isMenuOpen);
       hamburger.current.classList.toggle("active");
     }
@@ -20,11 +35,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-20 w-full mx-auto text-lg font-bold navbarBlur">
+      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
         <div className="md:max-w-[1024px] w-11/12 py-6 mx-auto">
           <ul className="flex items-center justify-between">
             <li>
-              <Link href={"/"} className="text-2xl font-bold md:text-4xl">
+              <Link href={"/"} className="text-4xl font-bold md:text-5xl">
                 B<span className="text-orange-500">.</span>{" "}
               </Link>
             </li>
@@ -81,18 +96,32 @@ const Navbar = () => {
               </div>
             </li>
 
-            <li className="flex space-x-4 font-light">
-              <i className="ri-facebook-circle-line"></i>
-              <i className="ri-instagram-line"></i>
-              <i className="ri-twitter-line"></i>
+            <li className="flex space-x-5 text-2xl font-light">
+              <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank">
+                <i className="cursor-pointer ri-facebook-circle-fill"></i>
+              </Link>
+              <Link href={"https://www.instagram.com/iambenjaminnkem/"} target="_blank">
+                <i className="cursor-pointer ri-instagram-fill"></i>
+              </Link>
+              <Link href={"https://twitter.com/MainNkem"} target="_blank">
+                <i className="cursor-pointer ri-twitter-fill"></i>
+              </Link>
               <Link href={"https://github.com/benjaminnkem"} target="_blank">
-                <i className="ri-github-line"></i>
+                <i className="cursor-pointer ri-github-fill"></i>
               </Link>
             </li>
 
-            <li className="relative block w-10 md:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 200 200" ref={hamburger} onClick={toggleMenu}>
-                <g stroke-width="6.5" strokeLinecap="round">
+            <li className="relative z-40 block w-10 md:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                viewBox="0 0 200 200"
+                ref={hamburger}
+                onClick={toggleMenu}
+                className="cursor-pointer"
+              >
+                <g strokeWidth="6.5" strokeLinecap="round">
                   <path d="M72 82.286h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
                   <path
                     d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
@@ -113,6 +142,64 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <motion.div
+        className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-200 place-content-center overflow-hidden ${
+          isMenuOpen ? "text-orange-50 bg-black z-20 bg-opacity-75 w-full" : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
+        }`}
+        variants={parentMobileMenuVariant}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
+        <motion.div
+          variants={mobileLinksVariant}
+          initial="hidden"
+          animate="show"
+          onClick={toggleMenu}
+          className={`duration-200  ${pathName === "/" ? "text-orange-500" : "text-white"}`}
+        >
+          <Link href={"/"}>
+            <p>Home</p>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={mobileLinksVariant}
+          initial="hidden"
+          animate="show"
+          onClick={toggleMenu}
+          className={`duration-200 ${pathName === "/contact" ? "text-orange-500" : "text-white"}`}
+        >
+          <Link href={"/contact"}>
+            <p>Contact</p>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={mobileLinksVariant}
+          initial="hidden"
+          animate="show"
+          onClick={toggleMenu}
+          className={`duration-200 ${pathName === "/projects" ? "text-orange-500" : "text-white"}`}
+        >
+          <Link href={"/projects"}>
+            <p>Projects</p>
+          </Link>
+        </motion.div>
+
+        <div className="mt-4 space-x-5 text-2xl">
+          <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank">
+            <i className="cursor-pointer ri-facebook-circle-fill"></i>
+          </Link>
+          <Link href={"https://www.instagram.com/iambenjaminnkem/"} target="_blank">
+            <i className="cursor-pointer ri-instagram-fill"></i>
+          </Link>
+          <Link href={"https://twitter.com/MainNkem"} target="_blank">
+            <i className="cursor-pointer ri-twitter-fill"></i>
+          </Link>
+          <Link href={"https://github.com/benjaminnkem"} target="_blank">
+            <i className="cursor-pointer ri-github-fill"></i>
+          </Link>
+        </div>
+      </motion.div>
     </>
   );
 };
