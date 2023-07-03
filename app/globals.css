@@ -84,8 +84,26 @@ body {
   backdrop-filter: blur(8px);
 }
 
+.megrid {
+  grid-template-columns: 2fr 1fr;
+}
+
+
+.grid-start-base {
+  grid-row: auto;
+}
+
 @media (max-width: 768px) {
-  .cursor1, .cursor2 {
+  .cursor1,
+  .cursor2 {
     display: none;
+  }
+
+  .grid-start-base {
+    grid-row: 1/1;
+  }
+
+  .megrid {
+    grid-template-columns: 1fr;
   }
 }

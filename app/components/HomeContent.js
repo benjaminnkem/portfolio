@@ -32,9 +32,14 @@ const curveVariant = {
 const HomeContent = () => {
   return (
     <>
-      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[38rem] my-10 section" id="me">
-        <div className="items-center gap-4 md:grid" style={{ gridTemplateColumns: "2fr 1fr" }}>
-          <motion.div variants={meTopVariants} initial="hidden" animate="visible" className="space-y-3">
+      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section" id="me">
+        <div className="grid items-center gap-4 megrid">
+          <motion.div
+            variants={meTopVariants}
+            initial="hidden"
+            animate="visible"
+            className="py-10 space-y-3 text-center md:text-start md:py-0"
+          >
             <h2 className="text-6xl font-extrabold">
               Hey, I&apos;m Ben<span className="text-orange-500">.</span>
             </h2>
@@ -59,11 +64,9 @@ const HomeContent = () => {
             </div>
           </motion.div>
           <div
-            className="grid bg-transparent border border-orange-500 rounded-3xl h-[24rem] place-content-center -z-20"
+            className="grid bg-transparent border border-orange-500 rounded-3xl h-[24rem] place-content-center -z-20 grid-start-base"
             id="me1"
-          >
-            {/* <p>Pic Coming soon...</p> */}
-          </div>
+          ></div>
         </div>
       </section>
 
@@ -89,8 +92,8 @@ const HomeContent = () => {
                 <span className="flex-1 h-1 bg-orange-500 rounded-md"></span>
               </div>
 
-              <div className="grid grid-cols-2">
-                <div className="p-4 border-r border-opacity-50 border-orange-50">
+              <div className="grid md:grid-cols-2">
+                <div className="p-4 border-b border-opacity-50 md:border-r md:border-b-0 border-orange-50">
                   <div>
                     <p>
                       <span>Hi</span>, My name is <span className="font-bold text-white">Nkem Benjamin</span> and
@@ -121,12 +124,12 @@ const HomeContent = () => {
                 </div>
                 <div className="p-4">
                   <div>
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center md:justify-center">
                       <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
                       <h3 className="px-4 mb-2 text-2xl font-bold text-center">Skills</h3>
                       <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
                     </div>
-                    <ul className="flex flex-wrap justify-center space-x-2">
+                    <ul className="flex flex-wrap space-x-2 md:justify-center">
                       <li>
                         <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
                           <i className="ri-html5-fill"></i> <span>HTML</span>
@@ -216,10 +219,10 @@ const HomeContent = () => {
       <section className="my-10 section">
         <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
           <div>
-            <h3 className="mb-5 text-4xl font-bold uppercase">
+            <h3 className="mb-5 text-3xl font-bold text-center uppercase md:text-4xl md:text-start">
               Personal Statistics<span className="text-orange-500">.</span>
             </h3>
-            <div className="grid gap-6" style={{ gridTemplateColumns: "1.5fr 2fr" }}>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <div className="p-4 border border-orange-500 rounded-md">
                   <div className="space-y-8">
@@ -294,90 +297,75 @@ const HomeContent = () => {
         </div>
       </section>
 
-      <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-10 section" id="projects">
+      <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20 section" id="projects">
         <div>
           <h3 className="mb-5 text-4xl font-bold uppercase">
             Projects<span className="text-orange-500">.</span>
           </h3>
-          <motion.div variants={variants} initial="hidden" animate="show" className="grid grid-cols-3 gap-4">
-            <motion.div
-              variants={projects}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group"
-            >
-              <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
-                <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
-                  <p className="font-light leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                    a
-                  </p>
-
-                  <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
-                    View <i className="ri-arrow-right-circle-line"></i>
-                  </button>
+          <motion.div variants={variants} initial="hidden" animate="show" className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+            <div className="z-10 border border-orange-500 rounded-md">
+              <div className="w-full h-32 bg-slate-800"></div>
+              <div className="p-4 space-y-3">
+                <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
+                  <h4 className="font-bold text-orange-500">A Caculator Appp built with plain Typescript</h4>
+                  <div className="flex items-center space-x-1 text-xl">
+                    <i className="ri-github-fill" title="View On Github"></i>
+                    <i className="ri-link-m" title="View Live"></i>
+                  </div>
                 </div>
-              </div>
-              <Image
-                src={"/images/others/proj1.jpg"}
-                alt="Project 1"
-                width={400}
-                height={400}
-                className="object-cover w-full aspect-square"
-              />
-            </motion.div>
-            <motion.div
-              variants={projects}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group"
-            >
-              <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
-                <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
-                  <p className="font-light leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                    a
-                  </p>
+                <p className="font-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nam laboriosam rem quidem
+                  necessitatibus at quae dolore doloribus unde ratione recusandae aperiam magnam, architecto ea incidunt
+                  officiis libero exercitationem sequi.
+                </p>
 
-                  <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
-                    View <i className="ri-arrow-right-circle-line"></i>
-                  </button>
-                </div>
+                <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                  View
+                </button>
               </div>
-              <Image
-                src={"/images/others/proj2.png"}
-                alt="Project 2"
-                width={400}
-                height={400}
-                className="object-cover w-full aspect-square"
-              />
-            </motion.div>
-            <motion.div
-              variants={projects}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative self-start overflow-hidden duration-200 border border-orange-500 rounded-md hover:scale-105 group"
-            >
-              <div className="absolute top-0 left-0 grid w-full h-full text-center project-cover place-content-center">
-                <div className="p-4 duration-200 opacity-0 group-hover:opacity-100">
-                  <p className="font-light leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nam ratione accusantium praesentium
-                    a
-                  </p>
+            </div>
+            <div className="z-10 border border-orange-500 rounded-md">
+              <div className="w-full h-32 bg-slate-800"></div>
+              <div className="p-4 space-y-3">
+                <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
+                  <h4 className="font-bold text-orange-500">A Caculator Appp built with plain Typescript</h4>
+                  <div className="flex items-center space-x-1 text-xl">
+                    <i className="ri-github-fill" title="View On Github"></i>
+                    <i className="ri-link-m" title="View Live"></i>
+                  </div>
+                </div>
+                <p className="font-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nam laboriosam rem quidem
+                  necessitatibus at quae dolore doloribus unde ratione recusandae aperiam magnam, architecto ea incidunt
+                  officiis libero exercitationem sequi.
+                </p>
 
-                  <button className="px-3 py-1 mt-2 text-orange-500 duration-200 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-black">
-                    View <i className="ri-arrow-right-circle-line"></i>
-                  </button>
-                </div>
+                <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                  View
+                </button>
               </div>
-              <Image
-                src={"/images/others/proj4.jpg"}
-                alt="Project 3"
-                width={400}
-                height={400}
-                className="object-cover w-full aspect-square"
-              />
-            </motion.div>
+            </div>
+            <div className="z-10 border border-orange-500 rounded-md">
+              <div className="w-full h-32 bg-slate-800"></div>
+              <div className="p-4 space-y-3">
+                <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
+                  <h4 className="font-bold text-orange-500">A Caculator Appp built with plain Typescript</h4>
+                  <div className="flex items-center space-x-1 text-xl">
+                    <i className="ri-github-fill" title="View On Github"></i>
+                    <i className="ri-link-m" title="View Live"></i>
+                  </div>
+                </div>
+                <p className="font-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nam laboriosam rem quidem
+                  necessitatibus at quae dolore doloribus unde ratione recusandae aperiam magnam, architecto ea incidunt
+                  officiis libero exercitationem sequi.
+                </p>
+
+                <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                  View
+                </button>
+              </div>
+            </div>
           </motion.div>
 
           <div className="mt-5 text-center">
