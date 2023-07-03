@@ -40,7 +40,7 @@ const HomeContent = () => {
             animate="visible"
             className="py-10 space-y-3 text-center md:text-start md:py-0"
           >
-            <h2 className="text-6xl font-extrabold">
+            <h2 className="text-5xl font-extrabold sm:text-6xl">
               Hey, I&apos;m Ben<span className="text-orange-500">.</span>
             </h2>
             <p className="text-xl">
