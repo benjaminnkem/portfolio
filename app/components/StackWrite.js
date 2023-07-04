@@ -8,10 +8,10 @@ const StackWrite = () => {
   useEffect(() => {
     const allStack = [
       "Frontend Developer 💖",
-      "Backend Developer 👩‍💻",
+      "Backend Developer 🧘‍♂️",
       "2D Unity Game Developer 🎮",
-      "Graphics Designer 🎨",
       "C# Developer 💚",
+      "Graphics Designer 🎨",
     ];
     setCurrentStack(allStack[index]);
 

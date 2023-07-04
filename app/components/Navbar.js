@@ -97,16 +97,32 @@ const Navbar = () => {
             </li>
 
             <li className="flex space-x-5 text-2xl font-light">
-              <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank" className="hover:text-blue-600 duration-200 hover:animate-pulse">
+              <Link
+                href={"https://web.facebook.com/etzbenjamin.nkem"}
+                target="_blank"
+                className="hover:text-blue-600 duration-200 hover:animate-pulse"
+              >
                 <i className="cursor-pointer ri-facebook-circle-fill"></i>
               </Link>
-              <Link href={"https://www.instagram.com/iambenjaminnkem/"} target="_blank" className="hover:text-pink-600 duration-200 hover:animate-pulse">
+              <Link
+                href={"https://www.instagram.com/iambenjaminnkem/"}
+                target="_blank"
+                className="hover:text-pink-600 duration-200 hover:animate-pulse"
+              >
                 <i className="cursor-pointer ri-instagram-fill"></i>
               </Link>
-              <Link href={"https://twitter.com/MainNkem"} target="_blank" className="hover:text-cyan-600 duration-200 hover:animate-pulse">
+              <Link
+                href={"https://twitter.com/MainNkem"}
+                target="_blank"
+                className="hover:text-cyan-600 duration-200 hover:animate-pulse"
+              >
                 <i className="cursor-pointer ri-twitter-fill"></i>
               </Link>
-              <Link href={"https://github.com/benjaminnkem"} target="_blank" className="hover:text-slate-600 duration-200 hover:animate-pulse">
+              <Link
+                href={"https://github.com/benjaminnkem"}
+                target="_blank"
+                className="hover:text-slate-600 duration-200 hover:animate-pulse"
+              >
                 <i className="cursor-pointer ri-github-fill"></i>
               </Link>
             </li>
@@ -144,7 +160,9 @@ const Navbar = () => {
       </nav>
       <motion.div
         className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-200 place-content-center overflow-hidden ${
-          isMenuOpen ? "text-orange-50 bg-black z-20 bg-opacity-75 w-full" : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
+          isMenuOpen
+            ? "text-orange-50 bg-black z-20 bg-opacity-75 w-full"
+            : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
         }`}
         variants={parentMobileMenuVariant}
         initial="hidden"
@@ -167,21 +185,22 @@ const Navbar = () => {
           initial="hidden"
           animate="show"
           onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/contact" ? "text-orange-500" : "text-white"}`}
+          className={`duration-200 ${pathName === "/projects" ? "text-orange-500" : "text-white"}`}
         >
-          <Link href={"/contact"}>
-            <p>Contact</p>
+          <Link href={"/projects"}>
+            <p>Projects</p>
           </Link>
         </motion.div>
+
         <motion.div
           variants={mobileLinksVariant}
           initial="hidden"
           animate="show"
           onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/projects" ? "text-orange-500" : "text-white"}`}
+          className={`duration-200 ${pathName === "/contact" ? "text-orange-500" : "text-white"}`}
         >
-          <Link href={"/projects"}>
-            <p>Projects</p>
+          <Link href={"/contact"}>
+            <p>Contact</p>
           </Link>
         </motion.div>
 
