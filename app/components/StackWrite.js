@@ -5,9 +5,6 @@ const StackWrite = () => {
   const [currentStack, setCurrentStack] = useState("");
   const [index, setIndex] = useState(0);
 
-  const [typingIndex, setTypingIndex] = useState(0);
-  const [test, setTest] = useState([]);
-
   useEffect(() => {
     const allStack = [
       "Frontend Developer 💖",
@@ -25,7 +22,6 @@ const StackWrite = () => {
         setIndex(index + 1);
       }
 
-      setTypingIndex(0);
       clearInterval(interval);
     // }, allStack[index].length * 500 - 5000);
     }, 2000);
@@ -33,7 +29,7 @@ const StackWrite = () => {
     // function typingEffect() {
 
     // }
-  }, [index, test]);
+  }, [index]);
 
   return (
     <>
