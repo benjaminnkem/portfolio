@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import StackWrite from "./StackWrite";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -42,11 +43,7 @@ const HomeContent = () => {
               Hey, I&apos;m Ben<span className="text-orange-500">.</span>
             </h2>
             <p className="text-xl">
-              I&apos;m A{" "}
-              <span className="relative font-extrabold text-orange-400" id="stack">
-                Fullstack Web Developer
-              </span>
-              .
+              I&apos;m A <StackWrite />
             </p>
 
             <p className="font-light opacity-80">
