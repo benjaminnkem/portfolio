@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
-        <div className="md:max-w-[1024px] w-11/12 py-6 mx-auto">
+        <div className="md:max-w-[1024px] w-11/12 md:py-6 py-4 mx-auto">
           <ul className="flex items-center justify-between">
             <li>
               <Link href={"/"} className="text-4xl font-bold md:text-5xl">
@@ -97,16 +97,16 @@ const Navbar = () => {
             </li>
 
             <li className="flex space-x-5 text-2xl font-light">
-              <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank">
+              <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank" className="hover:text-blue-600 duration-200 hover:animate-pulse">
                 <i className="cursor-pointer ri-facebook-circle-fill"></i>
               </Link>
-              <Link href={"https://www.instagram.com/iambenjaminnkem/"} target="_blank">
+              <Link href={"https://www.instagram.com/iambenjaminnkem/"} target="_blank" className="hover:text-pink-600 duration-200 hover:animate-pulse">
                 <i className="cursor-pointer ri-instagram-fill"></i>
               </Link>
-              <Link href={"https://twitter.com/MainNkem"} target="_blank">
+              <Link href={"https://twitter.com/MainNkem"} target="_blank" className="hover:text-cyan-600 duration-200 hover:animate-pulse">
                 <i className="cursor-pointer ri-twitter-fill"></i>
               </Link>
-              <Link href={"https://github.com/benjaminnkem"} target="_blank">
+              <Link href={"https://github.com/benjaminnkem"} target="_blank" className="hover:text-slate-600 duration-200 hover:animate-pulse">
                 <i className="cursor-pointer ri-github-fill"></i>
               </Link>
             </li>

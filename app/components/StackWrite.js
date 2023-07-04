@@ -6,6 +6,7 @@ const StackWrite = () => {
   const [index, setIndex] = useState(0);
 
   const [typingIndex, setTypingIndex] = useState(0);
+  const [test, setTest] = useState([]);
 
   useEffect(() => {
     const allStack = [
@@ -17,25 +18,22 @@ const StackWrite = () => {
     ];
     setCurrentStack(allStack[index]);
 
-    let typingInterval;
     const interval = setInterval(() => {
       if (index === allStack.length - 1) {
         setIndex(0);
       } else {
-        typingInterval = setInterval(() => {
-          for (let i = 0; i < allStack[index].length; i++) {
-            console.log(allStack[index]);
-          }
-        }, allStack[index].length / 2);
-
         setIndex(index + 1);
       }
 
       setTypingIndex(0);
       clearInterval(interval);
-      clearInterval(typingInterval);
-    }, allStack[index].length * 500 + 1000);
-  }, [index]);
+    // }, allStack[index].length * 500 - 5000);
+    }, 2000);
+
+    // function typingEffect() {
+
+    // }
+  }, [index, test]);
 
   return (
     <>
