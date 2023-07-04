@@ -48,7 +48,7 @@ const ProjectCon = ({ project, index }) => {
               alt={project.alt_attr}
               width={1000}
               height={1000}
-              className="h-full object-cover"
+              className="w-full h-full object-cover"
               draggable="false"
             />
 
@@ -84,11 +84,7 @@ const ProjectCon = ({ project, index }) => {
 
           <div className="space-y-2">
             <h2 className="font-semibold tracking-wide text-3xl">{project.name}</h2>
-            <p className="font-light text-base whitespace-pre-line">
-              {project.description} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas non officia ullam
-              a odio voluptatem tenetur quos illo? <br />
-              <br /> Mollitia necessitatibus maiores odio fugit ut modi doloremque at nulla labore veritatis!
-            </p>
+            <p className="font-light text-base whitespace-pre-line">{project.description}</p>
           </div>
 
           <div className="space-y-2">

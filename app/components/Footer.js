@@ -57,11 +57,6 @@ const Footer = () => {
                         <p className="text-lg font-light duration-200 hover:text-orange-500">Projects</p>
                       </Link>
                     </li>
-                    <li>
-                      <a href="#about">
-                        <p className="text-lg font-light duration-200 hover:text-orange-500">About</p>
-                      </a>
-                    </li>
                   </ul>
                 </div>
                 <div>
