@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const variants = {
@@ -26,7 +27,10 @@ const curveVariant = {
 const HomeContent = () => {
   return (
     <>
-      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section mt-32" id="me">
+      <section
+        className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section mt-32"
+        id="me"
+      >
         <div className="grid items-center gap-4 megrid">
           <motion.div
             variants={meTopVariants}
@@ -47,8 +51,8 @@ const HomeContent = () => {
 
             <p className="font-light opacity-80">
               I&apos;m A 100LVL Student in the Federal University of Agriculture, Abeokuta{" "}
-              <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to
-              develop games, websites and softwares, I fell for Web Development and decided to expand on it.
+              <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to develop
+              games, websites and softwares, I fell for Web Development and decided to expand on it.
             </p>
 
             <div className="mt-4">
@@ -302,20 +306,33 @@ const HomeContent = () => {
             animate="show"
             className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
           >
-            <div className="z-10 border border-orange-500 rounded-md">
-              <div className="w-full h-32 bg-slate-800"></div>
-              <div className="p-4 space-y-3">
+            <div className="z-10 border border-orange-500 rounded-md overflow-hidden self-start">
+              <div className="w-full h-32 overflow-hidden">
+                <Image
+                  src={"/images/projects/bjncalc.png"}
+                  alt="BenCalc Screenshot"
+                  width={500}
+                  height={500}
+                  className="object-cover w-full"
+                ></Image>
+              </div>
+              <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="font-bold text-orange-500">A Caculator Appp built with plain Typescript</h4>
+                  <h4 className="font-bold text-orange-500 text-lg">BenCalc</h4>
                   <div className="flex items-center space-x-1 text-xl">
-                    <i className="ri-github-fill" title="View On Github"></i>
-                    <i className="ri-link-m" title="View Live"></i>
+                    <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
+                      <i className="ri-github-fill" title="View On Github"></i>
+                    </Link>
+                    <Link href={"https://adorable-biscuit-b109dd.netlify.app/"} target="_blank">
+                      <i className="ri-link-m" title="View Live"></i>
+                    </Link>
                   </div>
                 </div>
                 <p className="font-light">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nam laboriosam rem quidem
-                  necessitatibus at quae dolore doloribus unde ratione recusandae aperiam magnam, architecto ea incidunt
-                  officiis libero exercitationem sequi.
+                  BenCalc is a web calculator built using HTML, CSS & Typescript. <br />
+                  <br />
+                  It performs basic calculations like addition, subtraction, division, multiplication and support
+                  decimal values...
                 </p>
 
                 <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
@@ -323,20 +340,33 @@ const HomeContent = () => {
                 </button>
               </div>
             </div>
-            <div className="z-10 border border-orange-500 rounded-md">
-              <div className="w-full h-32 bg-slate-800"></div>
-              <div className="p-4 space-y-3">
+            <div className="z-10 border border-orange-500 rounded-md overflow-hidden self-start">
+              <div className="w-full h-32 overflow-hidden">
+                <Image
+                  src={"/images/projects/typimon.png"}
+                  alt="BenCalc Screenshot"
+                  width={500}
+                  height={500}
+                  className="object-cover w-full"
+                ></Image>
+              </div>
+              <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="font-bold text-orange-500">A Caculator Appp built with plain Typescript</h4>
+                  <h4 className="font-bold text-orange-500 text-lg">Typimon</h4>
                   <div className="flex items-center space-x-1 text-xl">
-                    <i className="ri-github-fill" title="View On Github"></i>
-                    <i className="ri-link-m" title="View Live"></i>
+                    <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
+                      <i className="ri-github-fill" title="View On Github"></i>
+                    </Link>
+                    <Link href={"https://adorable-biscuit-b109dd.netlify.app/"} target="_blank">
+                      <i className="ri-link-m" title="View Live"></i>
+                    </Link>
                   </div>
                 </div>
                 <p className="font-light">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nam laboriosam rem quidem
-                  necessitatibus at quae dolore doloribus unde ratione recusandae aperiam magnam, architecto ea incidunt
-                  officiis libero exercitationem sequi.
+                  Typimon: The typing challenge bot is a basic bot that challenge users to typing contents <br />
+                  <br />
+                  It was built using HTML, CSS, Vanilla Javascript and uses the <em>fetch</em> API to get random
+                  words...
                 </p>
 
                 <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
@@ -344,20 +374,32 @@ const HomeContent = () => {
                 </button>
               </div>
             </div>
-            <div className="z-10 border border-orange-500 rounded-md">
-              <div className="w-full h-32 bg-slate-800"></div>
-              <div className="p-4 space-y-3">
+            <div className="z-10 border border-orange-500 rounded-md overflow-hidden self-start">
+              <div className="w-full h-32 overflow-hidden">
+                <Image
+                  src={"/images/projects/kaygrey.png"}
+                  alt="BenCalc Screenshot"
+                  width={500}
+                  height={500}
+                  className="object-cover w-full"
+                ></Image>
+              </div>
+              <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="font-bold text-orange-500">A Caculator Appp built with plain Typescript</h4>
+                  <h4 className="font-bold text-orange-500 text-lg">KaygreyKennel</h4>
                   <div className="flex items-center space-x-1 text-xl">
-                    <i className="ri-github-fill" title="View On Github"></i>
-                    <i className="ri-link-m" title="View Live"></i>
+                    <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
+                      <i className="ri-github-fill" title="View On Github"></i>
+                    </Link>
+                    <Link href={"https://adorable-biscuit-b109dd.netlify.app/"} target="_blank">
+                      <i className="ri-link-m" title="View Live"></i>
+                    </Link>
                   </div>
                 </div>
                 <p className="font-light">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nam laboriosam rem quidem
-                  necessitatibus at quae dolore doloribus unde ratione recusandae aperiam magnam, architecto ea incidunt
-                  officiis libero exercitationem sequi.
+                  KaygreyKennel is a lightweight pet store, mostly dogs. <br />
+                  <br /> It comes with an administrator&apos;s dashboard for creating, deleting, updating posts about
+                  pets...
                 </p>
 
                 <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
@@ -366,7 +408,6 @@ const HomeContent = () => {
               </div>
             </div>
           </motion.div>
-
           <div className="mt-5 text-center">
             <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 rounded-sm hover:bg-orange-500 hover:text-black group">
               View More Projects <i className="ri-arrow-right-circle-line"></i>
