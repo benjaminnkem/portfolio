@@ -25,7 +25,14 @@ const ProjectsPage = () => {
       description: `KaygreyKennel is a pet store (mostly dogs), KaygreyKennel was inspired by my love for dogs and pets in general. It also comes with an admin interface for admins to perform CRUD operations on posts data.
         It also has search & sort functionality, which makes users to search for things easily, improving User Experience. 
         `,
-      images: ["/images/projects/kaygrey.png", "/images/projects/bjncalc.png"],
+      images: [
+        "/images/projects/kaygrey.png",
+        "/images/projects/thedogspark_.png",
+        "/images/projects/thedogspark__.png",
+        "/images/projects/thedogspark___.png",
+        "/images/projects/thedogspark_____.png",
+        "/images/projects/thedogspark______.png",
+      ],
       alt_attr: "Typimon Illustration",
       techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
     },
@@ -33,7 +40,12 @@ const ProjectsPage = () => {
       name: "BenCalc",
       description:
         "BenCalc is a lightweight pet store, mostly dogs.\nIt comes with an administrator's dashboard for creating, deleting, updating posts about pets...",
-      images: ["/images/projects/typimon.png", "/images/projects/react_todo.png"],
+      images: [
+        "/images/projects/bjncalc.png",
+        "/images/projects/ben_calc1.png",
+        "/images/projects/ben_calc3.png",
+        "/images/projects/ben_calc4.png",
+      ],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS", "Typescript"],
     },
@@ -49,7 +61,7 @@ const ProjectsPage = () => {
       name: "Youtube Clone",
       description:
         "Youtube Clone is a lightweight pet store, mostly dogs.\nIt comes with an administrator's dashboard for creating, deleting, updating posts about pets...",
-      images: ["/images/projects/kaygrey.png", "/images/projects/bjncalc.png"],
+      images: ["/images/projects/youtube_clone.png"],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS"],
     },
@@ -68,7 +80,7 @@ const ProjectsPage = () => {
       <main>
         <PageContainer>
           <div className="md:max-w-[1024px] w-11/12 mx-auto my-10 section mt-28 md:mt-32">
-            <h1 className="text-4xl font-bold mb-8 text-center md:text-start">
+            <h1 className="mb-8 text-4xl font-bold text-center md:text-start">
               Projects<span className="text-orange-500">.</span>
             </h1>
 

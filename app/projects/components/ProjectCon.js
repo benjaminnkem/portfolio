@@ -16,10 +16,10 @@ const ProjectCon = ({ project, index }) => {
         <span className="mx-4 text-xl font-bold">{index + 1}</span>
         <span className="flex-1 bg-orange-500 h-[0.5px]"></span>
       </div>
-      <div className="grid md:gap-6 gap-1" id="all-projects">
+      <div className="grid gap-1 md:gap-6" id="all-projects">
         <div className="hidden md:block">
-          <p className="text-center mt-4 font-semibold">Screenshots</p>
-          <div className="flex flex-wrap justify-center items-center">
+          <p className="mt-4 font-semibold text-center">Screenshot(s)</p>
+          <div className="flex flex-wrap items-center justify-center">
             {project.images.map((image, i) => (
               <div
                 key={i}
@@ -33,7 +33,7 @@ const ProjectCon = ({ project, index }) => {
                   alt={project.alt_attr}
                   width={200}
                   height={200}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                   draggable="false"
                 />
               </div>
@@ -48,14 +48,14 @@ const ProjectCon = ({ project, index }) => {
               alt={project.alt_attr}
               width={1000}
               height={1000}
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
               draggable="false"
             />
 
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-50 z-10 duration-200"></div>
+            <div className="absolute top-0 left-0 z-10 w-full h-full duration-200 bg-black opacity-0 group-hover:opacity-50"></div>
             <Link href={`http://localhost:3000${project.images[currentImgIndex]}`} target="_blank">
               <i
-                className="ri-external-link-line text-white font-semibold bottom-2 right-4 absolute opacity-0 group-hover:opacity-100 duration-200 z-20 text-lg"
+                className="absolute z-20 text-lg font-semibold text-white duration-200 opacity-0 ri-external-link-line bottom-2 right-4 group-hover:opacity-100"
                 title="Open In a new tab"
               ></i>
             </Link>
@@ -75,7 +75,7 @@ const ProjectCon = ({ project, index }) => {
                   alt={project.alt_attr}
                   width={200}
                   height={200}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                   draggable="false"
                 />
               </div>
@@ -83,17 +83,17 @@ const ProjectCon = ({ project, index }) => {
           </div>
 
           <div className="space-y-2">
-            <h2 className="font-semibold tracking-wide text-3xl">{project.name}</h2>
-            <p className="font-light text-base whitespace-pre-line">{project.description}</p>
+            <h2 className="text-3xl font-semibold tracking-wide">{project.name}</h2>
+            <p className="text-base font-light whitespace-pre-line">{project.description}</p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="font-semibold tracking-wide text-2xl">Tools</h3>
+            <h3 className="text-2xl font-semibold tracking-wide">Tools</h3>
             <div className="md:space-x-2">
               {project.techs.map((tech, index) => (
                 <div
                   key={index}
-                  className="md:rounded-lg rounded-md px-2 py-1 text-sm md:text-base cursor-pointer select-none text-orange-500 border-orange-500 border inline-block"
+                  className="inline-block px-2 py-1 text-sm text-orange-500 border border-orange-500 rounded-md cursor-pointer select-none md:rounded-lg md:text-base"
                 >
                   {tech}
                 </div>
