@@ -332,9 +332,11 @@ const HomeContent = () => {
                   decimal values...
                 </p>
 
-                <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
-                  View
-                </button>
+                <Link href={"/projects"}>
+                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                    View
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="z-10 border border-orange-500 rounded-md overflow-hidden self-start">
@@ -366,9 +368,11 @@ const HomeContent = () => {
                   words...
                 </p>
 
-                <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
-                  View
-                </button>
+                <Link href={"/projects"}>
+                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                    View
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="z-10 border border-orange-500 rounded-md overflow-hidden self-start">
@@ -399,9 +403,11 @@ const HomeContent = () => {
                   pets...
                 </p>
 
-                <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
-                  View
-                </button>
+                <Link href={"/projects"}>
+                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                    View
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

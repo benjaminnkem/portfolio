@@ -37,13 +37,13 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
         <div className="md:max-w-[1024px] w-11/12 md:py-6 py-4 mx-auto">
-          <ul className="flex items-center justify-between">
+          <ul className="grid grid-cols-3 items-center">
             <li>
-              <Link href={"/"} className="text-4xl font-bold md:text-5xl">
+              <Link href={"/"} className="text-3xl font-bold md:text-4xl">
                 B<span className="text-orange-500">.</span>{" "}
               </Link>
             </li>
-            <li className="hidden md:block">
+            <li className="hidden md:block mx-auto">
               <div className="flex items-center space-x-4">
                 <div className="group">
                   <Link href={"/"}>
@@ -96,7 +96,7 @@ const Navbar = () => {
               </div>
             </li>
 
-            <li className="flex space-x-5 text-2xl font-light">
+            <li className="flex space-x-5 text-2xl font-light ml-auto">
               <Link
                 href={"https://web.facebook.com/etzbenjamin.nkem"}
                 target="_blank"
@@ -127,7 +127,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="relative z-40 block w-10 md:hidden">
+            <li className="relative z-40 block w-10 md:hidden ml-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="60"
