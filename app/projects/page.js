@@ -38,8 +38,7 @@ const ProjectsPage = () => {
     },
     {
       name: "BenCalc",
-      description:
-        "BenCalc is a lightweight pet store, mostly dogs.\nIt comes with an administrator's dashboard for creating, deleting, updating posts about pets...",
+      description: `BenCalc is a well functioning calculator built in TypeScript, HTML and CSS`,
       images: [
         "/images/projects/bjncalc.png",
         "/images/projects/ben_calc1.png",
@@ -51,9 +50,10 @@ const ProjectsPage = () => {
     },
     {
       name: "Typimon",
-      description:
-        "Typimon is a lightweight pet store, mostly dogs.\nIt comes with an administrator's dashboard for creating, deleting, updating posts about pets...",
-      images: ["/images/projects/typimon.png", "/images/projects/react_todo.png"],
+      description: `Typimon is a basic AI implementation for typing, How it works is a random sentence or phrase gets generated on starting, the user gets a typing field where his/her typing goes. While typimon starts typing at a speed which is easily adjustable by the users.
+      
+      It also comes with a 'correct word' indicator that tells the user if they've made a mistake while typing`,
+      images: ["/images/projects/typimon.png"],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS", "Vanilla Javascript", "Fetch API"],
     },
