@@ -3,7 +3,7 @@ import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import ScrollProgress from "./components/scrollYProgress";
 
 export default function RootLayout({ children }) {
   return (
@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
         <div className="cursor2"></div>
 
         <CursorControl />
+        <ScrollProgress />
         <Navbar />
 
         {children}
