@@ -53,7 +53,7 @@ const ProjectCon = ({ project, index }) => {
             />
 
             <div className="absolute top-0 left-0 z-10 w-full h-full duration-200 bg-black opacity-0 group-hover:opacity-50"></div>
-            <Link href={`http://localhost:3000${project.images[currentImgIndex]}`} target="_blank">
+            <Link href={`${process.env.SITE_URL}${project.images[currentImgIndex]}`} target="_blank">
               <i
                 className="absolute z-20 text-lg font-semibold text-white duration-200 opacity-0 ri-external-link-line bottom-2 right-4 group-hover:opacity-100"
                 title="Open In a new tab"

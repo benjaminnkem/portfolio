@@ -53,22 +53,14 @@ const ProjectsPage = () => {
       description: `Typimon is a basic AI implementation for typing, How it works is a random sentence or phrase gets generated on starting, the user gets a typing field where his/her typing goes. While typimon starts typing at a speed which is easily adjustable by the users.
       
       It also comes with a 'correct word' indicator that tells the user if they've made a mistake while typing`,
-      images: ["/images/projects/typimon.png"],
+      images: ["/images/projects/typimonreal.png", "/images/projects/typimon2.png", "/images/projects/typimon3.png"],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS", "Vanilla Javascript", "Fetch API"],
     },
     {
-      name: "Youtube Clone",
-      description:
-        "Youtube Clone is a lightweight pet store, mostly dogs.\nIt comes with an administrator's dashboard for creating, deleting, updating posts about pets...",
-      images: ["/images/projects/youtube_clone.png"],
-      alt_attr: "Typimon Illustration",
-      techs: ["HTML", "CSS"],
-    },
-    {
       name: "YouNote",
       description:
-        "YouNote is a lightweight pet store, mostly dogs.\nIt comes with an administrator's dashboard for creating, deleting, updating posts about pets...",
+        "YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.",
       images: ["/images/projects/kaygrey.png", "/images/projects/bjncalc.png"],
       alt_attr: "Typimon Illustration",
       techs: ["ReactJs", "CSS"],

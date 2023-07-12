@@ -97,7 +97,7 @@ const HomeContent = () => {
                 <div className="p-4 border-b border-opacity-50 md:border-r md:border-b-0 border-orange-50">
                   <div>
                     <motion.div
-                      initial={{ opacity: 0, x: -100 }}
+                      initial={{ opacity: 0, x: 0 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ type: "linear" }}
                     >
@@ -280,9 +280,9 @@ const HomeContent = () => {
             </motion.div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <motion.div
-                initial={{ opacity: 0, x: -100 }}
+                initial={{ opacity: 0, x: 0 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.25, type: "linear" }}
+                transition={{ delay: 0.5, type: "linear" }}
               >
                 <div className="p-4 border border-orange-500 rounded-md">
                   <div className="space-y-8">
@@ -326,9 +326,9 @@ const HomeContent = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: 100 }}
+                initial={{ opacity: 0, x: 0 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.35, type: "linear" }}
+                transition={{ delay: 1, type: "linear" }}
               >
                 <div className="p-4 border border-orange-500 rounded-md">
                   <div className="space-y-8">
@@ -347,7 +347,7 @@ const HomeContent = () => {
                       <p>60%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
-                      <p className="font-semibold">Travelling</p>
+                      <p className="font-semibold">Traveling</p>
                       <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
                         <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
                       </div>
