@@ -33,7 +33,7 @@ const GameContainer = ({ games }) => {
           <div className="mt-4">
             {selectedGame === "Tic Tak Toe" && (
               <div>
-                <TicTokToe curTurn={curTurn} setCurTurn={setCurTurn} />
+                <TicTokToe curTurn={curTurn} setCurTurn={setCurTurn} setInfo={setInfo}/>
                 <p className="opacity-40 text-sm text-center mt-4">{info}</p>
               </div>
             )}

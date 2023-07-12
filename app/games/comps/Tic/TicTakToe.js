@@ -1,7 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import TikBox from "./TicBox";
 
-const TicTokToe = ({ curTurn, setCurTurn }) => {
+const winningCombos = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 3, 7],
+  [2, 5, 8],
+  [2, 4, 6],
+  [0, 4, 8],
+];
+
+const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
   const [boxes, setBoxes] = useState([
     { id: 1, sign: "" },
     { id: 2, sign: "" },
@@ -13,9 +24,30 @@ const TicTokToe = ({ curTurn, setCurTurn }) => {
     { id: 8, sign: "" },
     { id: 9, sign: "" },
   ]);
-  const [someoneWon, setSomeoneWon] = useState(false);
 
+  const [someoneWon, setSomeoneWon] = useState(false);
   const squareRef = useRef(null);
+
+  useEffect(() => {
+    const allSquares = document.querySelectorAll(".square");
+    winningCombos.forEach((arr) => {
+      const circleWins = arr.every((cell) => allSquares[cell].firstChild?.classList.contains("circle"));
+      if (circleWins) {
+        setCurTurn("Circle wins");
+        setSomeoneWon(true);
+        setInfo("Circle wins!");
+        return;
+      }
+      
+      const crossWins = arr.every((cell) => allSquares[cell].firstChild?.classList.contains("cross"));
+      if (crossWins) {
+        setCurTurn("Cross wins");
+        setSomeoneWon(true);
+        setInfo("Cross wins!");
+        return;
+      }
+    });
+  }, [boxes]);
 
   function changeTurns() {
     if (curTurn === "X") {
@@ -35,35 +67,7 @@ const TicTokToe = ({ curTurn, setCurTurn }) => {
 
     setBoxes(tempHolder);
 
-    const winningCombos = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 3, 7],
-      [2, 5, 8],
-      [2, 4, 6],
-      [0, 4, 8],
-    ];
-
-    const allSquares = document.querySelectorAll(".square");
-    winningCombos.forEach((arr) => {
-      const circleWins = arr.every((cell) => allSquares[cell].firstChild?.classList.contains("circle"));
-      if (circleWins) {
-        setCurTurn("Circle wins");
-        setSomeoneWon(true)
-        console.log("circle wins");
-        return;
-      }
-      
-      const crossWins = arr.every((cell) => allSquares[cell].firstChild?.classList.contains("cross"));
-      if (crossWins) {
-        setCurTurn("Cross wins");
-        setSomeoneWon(true)
-        console.log("Cross wins");
-        return;
-      }
-    });
+    
   }
 
   return (
