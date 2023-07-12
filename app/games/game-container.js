@@ -5,6 +5,7 @@ import { useState } from "react";
 const GameContainer = ({ games }) => {
   const [selectedGame, setSelectedGame] = useState("none");
   const [curTurn, setCurTurn] = useState(["X", "O"][Math.floor(Math.random() * ["X", "O"].length)]);
+  const [info, setInfo] = useState(`${curTurn} Turn`)
 
   const handleSelection = (name) => {
     setSelectedGame(name);
@@ -33,7 +34,7 @@ const GameContainer = ({ games }) => {
             {selectedGame === "Tic Tak Toe" && (
               <div>
                 <TicTokToe curTurn={curTurn} setCurTurn={setCurTurn} />
-                <p className="opacity-40 text-sm text-center mt-4">*{curTurn} Turn*</p>
+                <p className="opacity-40 text-sm text-center mt-4">{info}</p>
               </div>
             )}
           </div>
