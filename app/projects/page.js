@@ -3,8 +3,8 @@ import ProjectCon from "./components/ProjectCon";
 import "./projects.css";
 
 export const metadata = {
-  title: "Benjamin Nkem - Projects",
-  description: "Find all my dev projects",
+  title: "Benjamin Nkem - Projects 🔬🧘‍♂️",
+  description: "Find some of my dev projects",
 };
 
 const ProjectsPage = () => {
@@ -37,18 +37,6 @@ const ProjectsPage = () => {
       techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
     },
     {
-      name: "BenCalc",
-      description: `BenCalc is a well functioning calculator built in TypeScript, HTML and CSS`,
-      images: [
-        "/images/projects/bjncalc.png",
-        "/images/projects/ben_calc1.png",
-        "/images/projects/ben_calc3.png",
-        "/images/projects/ben_calc4.png",
-      ],
-      alt_attr: "Typimon Illustration",
-      techs: ["HTML", "CSS", "Typescript"],
-    },
-    {
       name: "Typimon",
       description: `Typimon is a basic AI implementation for typing, How it works is a random sentence or phrase gets generated on starting, the user gets a typing field where his/her typing goes. While typimon starts typing at a speed which is easily adjustable by the users.
       
@@ -61,16 +49,28 @@ const ProjectsPage = () => {
       name: "YouNote",
       description:
         "YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.",
-      images: ["/images/projects/kaygrey.png", "/images/projects/bjncalc.png"],
+      images: ["/images/projects/younote.png", "/images/projects/younote2.png"],
       alt_attr: "Typimon Illustration",
       techs: ["ReactJs", "CSS"],
+    },
+    {
+      name: "BenCalc",
+      description: `BenCalc is a well functioning calculator built in TypeScript, HTML and CSS`,
+      images: [
+        "/images/projects/bjncalc.png",
+        "/images/projects/ben_calc1.png",
+        "/images/projects/ben_calc3.png",
+        "/images/projects/ben_calc4.png",
+      ],
+      alt_attr: "Typimon Illustration",
+      techs: ["HTML", "CSS", "Typescript"],
     },
   ];
 
   return (
     <>
-      <main>
-        <PageContainer>
+      <PageContainer>
+        <main>
           <div className="md:max-w-[1024px] w-11/12 mx-auto my-10 section mt-28 md:mt-32">
             <h1 className="mb-8 text-4xl font-bold text-center md:text-start">
               Projects<span className="text-orange-500">.</span>
@@ -81,8 +81,8 @@ const ProjectsPage = () => {
                 projects.map((project_data, index) => <ProjectCon key={index} project={project_data} index={index} />)}
             </div>
           </div>
-        </PageContainer>
-      </main>
+        </main>
+      </PageContainer>
     </>
   );
 };

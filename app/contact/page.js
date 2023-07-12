@@ -3,7 +3,7 @@ import ContactContent from "./contact-content";
 import "./contact.css";
 
 export const metadata = {
-  title: "Contact Me - Benjamin Nkem",
+  title: "Benjamin Nkem - Contact Me 🤙☎",
 };
 
 const ContactPage = () => {

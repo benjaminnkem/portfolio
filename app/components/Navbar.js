@@ -64,7 +64,7 @@ const Navbar = () => {
                 <div className="group">
                   <Link href={"/projects"}>
                     <div
-                      className={`flex items-center space-x-1 border border-transparent  group-hover:rounded-md group-hover:px-1 ${
+                      className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
                         pathName === "/projects"
                           ? "text-orange-500 group-hover:border-orange-500"
                           : "text-white group-hover:border-white"
@@ -80,7 +80,7 @@ const Navbar = () => {
                 <div className="group">
                   <Link href={"/contact"}>
                     <div
-                      className={`flex items-center space-x-1  border border-transparent  group-hover:rounded-md group-hover:px-1 ${
+                      className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
                         pathName === "/contact"
                           ? "text-orange-500 group-hover:border-orange-500"
                           : "text-white group-hover:border-white"
@@ -89,6 +89,22 @@ const Navbar = () => {
                       <i className="overflow-hidden text-xl duration-200 ri-phone-fill"></i>
                       <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
                         <span>Contact</span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+                <div className="group">
+                  <Link href={"/games"}>
+                    <div
+                      className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
+                        pathName === "/games"
+                          ? "text-orange-500 group-hover:border-orange-500"
+                          : "text-white group-hover:border-white"
+                      }`}
+                    >
+                      <i className="overflow-hidden text-xl duration-200 ri-game-line"></i>
+                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[60px]">
+                        <span>Games</span>
                       </div>
                     </div>
                   </Link>

@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
         <div className="cursor2"></div>
 
         <CursorControl />
-        <ScrollProgress />
+        {/* <ScrollProgress /> */}
         <Navbar />
 
         {children}
