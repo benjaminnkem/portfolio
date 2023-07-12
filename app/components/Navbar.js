@@ -144,32 +144,41 @@ const Navbar = () => {
             </li>
 
             <li className="relative z-40 block w-10 md:hidden ml-auto">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 200 200"
-                ref={hamburger}
-                onClick={toggleMenu}
-                className="cursor-pointer"
-              >
-                <g strokeWidth="6.5" strokeLinecap="round">
-                  <path d="M72 82.286h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
-                  <path
-                    d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
-                    fill="none"
-                    stroke="#fff"
-                  />
-                  <path d="M72 125.143h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
-                  <path
-                    d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
-                    fill="none"
-                    stroke="#fff"
-                  />
-                  <path d="M100.75 82.286h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
-                  <path d="M100.75 125.143h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
-                </g>
-              </svg>
+              <div className="flex items-center pr-4">
+                <div>
+                  <Link href="/games" className="hover:text-orange-600 duration-200" title="Games">
+                    <i className="cursor-pointer ri-game-line"></i>
+                  </Link>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="60"
+                    height="60"
+                    viewBox="0 0 200 200"
+                    ref={hamburger}
+                    onClick={toggleMenu}
+                    className="cursor-pointer"
+                  >
+                    <g strokeWidth="6.5" strokeLinecap="round">
+                      <path d="M72 82.286h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
+                      <path
+                        d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                        fill="none"
+                        stroke="#fff"
+                      />
+                      <path d="M72 125.143h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
+                      <path
+                        d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                        fill="none"
+                        stroke="#fff"
+                      />
+                      <path d="M100.75 82.286h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
+                      <path d="M100.75 125.143h28.75" fill="#009100" fillRule="evenodd" stroke="#fff" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -217,6 +226,18 @@ const Navbar = () => {
         >
           <Link href={"/contact"}>
             <p>Contact</p>
+          </Link>
+        </motion.div>
+
+        <motion.div
+          variants={mobileLinksVariant}
+          initial="hidden"
+          animate="show"
+          onClick={toggleMenu}
+          className={`duration-200 ${pathName === "/games" ? "text-orange-500" : "text-white"}`}
+        >
+          <Link href={"/games"}>
+            <p>Games</p>
           </Link>
         </motion.div>
 

@@ -38,7 +38,7 @@ const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
         setInfo("Circle wins!");
         return;
       }
-      
+
       const crossWins = arr.every((cell) => allSquares[cell].firstChild?.classList.contains("cross"));
       if (crossWins) {
         setCurTurn("Cross wins");
@@ -66,13 +66,11 @@ const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
     tempHolder[index] = tempBoxData;
 
     setBoxes(tempHolder);
-
-    
   }
 
   return (
     <>
-      <h3 className="font-bold text-xl text-center">Tic Tak Toe</h3>
+      {/* <h3 className="font-bold text-xl text-center">Tic Tak Toe</h3> */}
 
       <div className="mt-4">
         <div
@@ -86,6 +84,7 @@ const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
               boxes={boxes}
               curTurn={curTurn}
               squareRef={squareRef}
+              setInfo={setInfo}
               changeTurns={changeTurns}
               updateBoxSign={updateBoxSign}
               someoneWon={someoneWon}
