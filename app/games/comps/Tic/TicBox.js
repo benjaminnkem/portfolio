@@ -1,14 +1,13 @@
 import { useRef, useState } from "react";
-import TicX from "./TicX";
-import TicO from "./TicO";
 
-const TikBox = ({ changeTurns, curTurn }) => {
+const TikBox = ({ changeTurns, curTurn, updateBoxSign, index }) => {
   const [numOfClick, setNumOfClick] = useState(0);
   const [showSign, setShowSign] = useState(false);
   const box = useRef(null);
 
   function handleAllClick() {
     setNumOfClick(numOfClick + 1);
+    updateBoxSign(index, curTurn)
     if (numOfClick >= 1) return;
 
     if (curTurn === "X") {

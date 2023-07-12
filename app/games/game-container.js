@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const GameContainer = ({ games }) => {
   const [selectedGame, setSelectedGame] = useState("none");
-  const [curTurn, setCurTurn] = useState("X");
+  const [curTurn, setCurTurn] = useState(["X", "O"][Math.floor(Math.random() * ["X", "O"].length)]);
 
   const handleSelection = (name) => {
     setSelectedGame(name);
