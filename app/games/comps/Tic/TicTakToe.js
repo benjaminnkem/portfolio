@@ -13,6 +13,7 @@ const winningCombos = [
 ];
 
 const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
+  const [boxFilled, setBoxFilled] = useState(0);
   const [boxes, setBoxes] = useState([
     { id: 1, sign: "" },
     { id: 2, sign: "" },
@@ -70,7 +71,7 @@ const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
 
   return (
     <>
-      {/* <h3 className="font-bold text-xl text-center">Tic Tak Toe</h3> */}
+      {/* <h3 className="text-xl font-bold text-center">Tic Tak Toe</h3> */}
 
       <div className="mt-4">
         <div
@@ -88,6 +89,8 @@ const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
               changeTurns={changeTurns}
               updateBoxSign={updateBoxSign}
               someoneWon={someoneWon}
+              boxFilled={boxFilled}
+              setBoxFilled={setBoxFilled}
             />
           ))}
         </div>

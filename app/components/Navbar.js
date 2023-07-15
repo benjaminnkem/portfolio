@@ -37,13 +37,13 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
         <div className="md:max-w-[1024px] w-11/12 md:py-6 py-4 mx-auto">
-          <ul className="grid grid-cols-3 items-center">
+          <ul className="grid items-center grid-cols-3">
             <li>
               <Link href={"/"} className="text-3xl font-bold md:text-4xl">
                 B<span className="text-orange-500">.</span>{" "}
               </Link>
             </li>
-            <li className="hidden md:block mx-auto">
+            <li className="hidden mx-auto md:block">
               <div className="flex items-center space-x-4">
                 <div className="group">
                   <Link href={"/"}>
@@ -112,44 +112,39 @@ const Navbar = () => {
               </div>
             </li>
 
-            <li className="flex space-x-5 text-2xl font-light ml-auto">
+            <li className="flex ml-auto space-x-5 text-lg font-light">
               <Link
                 href={"https://web.facebook.com/etzbenjamin.nkem"}
                 target="_blank"
-                className="hover:text-blue-600 duration-200 hover:animate-pulse"
+                className="duration-200 hover:text-blue-600 hover:animate-pulse"
               >
                 <i className="cursor-pointer ri-facebook-circle-fill"></i>
               </Link>
               <Link
                 href={"https://www.instagram.com/iambenjaminnkem/"}
                 target="_blank"
-                className="hover:text-pink-600 duration-200 hover:animate-pulse"
+                className="duration-200 hover:text-pink-600 hover:animate-pulse"
               >
                 <i className="cursor-pointer ri-instagram-fill"></i>
               </Link>
               <Link
                 href={"https://twitter.com/MainNkem"}
                 target="_blank"
-                className="hover:text-cyan-600 duration-200 hover:animate-pulse"
+                className="duration-200 hover:text-cyan-600 hover:animate-pulse"
               >
                 <i className="cursor-pointer ri-twitter-fill"></i>
               </Link>
               <Link
                 href={"https://github.com/benjaminnkem"}
                 target="_blank"
-                className="hover:text-slate-600 duration-200 hover:animate-pulse"
+                className="duration-200 hover:text-slate-600 hover:animate-pulse"
               >
                 <i className="cursor-pointer ri-github-fill"></i>
               </Link>
             </li>
 
-            <li className="relative z-40 block w-10 md:hidden ml-auto">
+            <li className="relative z-40 block w-10 ml-auto md:hidden">
               <div className="flex items-center pr-4">
-                <div>
-                  <Link href="/games" className="hover:text-orange-600 duration-200" title="Games">
-                    <i className="cursor-pointer ri-game-line"></i>
-                  </Link>
-                </div>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

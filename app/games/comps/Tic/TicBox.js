@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const TikBox = ({ changeTurns, curTurn, updateBoxSign, setInfo, index, someoneWon }) => {
+const TikBox = ({ changeTurns, curTurn, updateBoxSign, setInfo, index, someoneWon, boxFilled, setBoxFilled }) => {
   const [numOfClick, setNumOfClick] = useState(0);
   const box = useRef(null);
 
@@ -10,13 +10,29 @@ const TikBox = ({ changeTurns, curTurn, updateBoxSign, setInfo, index, someoneWo
     if (numOfClick >= 1) return;
 
     if (curTurn === "X") {
-      setInfo("O turn")
-      box.current.innerHTML = `<div class="cross">
-      <i class="ri-close-line text-8xl font-extrabold" style="font-size: 6rem; line-height: 1;font-weight: 800;"></i>
-      </div>`;
+      if (boxFilled === 8 && !someoneWon) {
+        setInfo("Draw");
+        box.current.innerHTML = `<div class="cross">
+        <i class="ri-close-line text-8xl font-extrabold" style="font-size: 6rem; line-height: 1;font-weight: 800;"></i>
+        </div>`;
+      }
+      else {
+        setInfo("O turn");
+        setBoxFilled(boxFilled + 1);
+        box.current.innerHTML = `<div class="cross">
+        <i class="ri-close-line text-8xl font-extrabold" style="font-size: 6rem; line-height: 1;font-weight: 800;"></i>
+        </div>`;
+      }
     } else {
-      setInfo("X turn")
-      box.current.innerHTML = `<div class="w-[72px] h-[72px] rounded-full border-8 circle" style="width: 72px; height: 72px; border-radius: 50%"></div>`;
+      if (boxFilled === 8 && !someoneWon) {
+        setInfo("Draw");
+        box.current.innerHTML = `<div class="w-[72px] h-[72px] rounded-full border-8 circle" style="width: 72px; height: 72px; border-radius: 50%"></div>`;
+      }
+      else {
+        setInfo("X turn");
+        setBoxFilled(boxFilled + 1);
+        box.current.innerHTML = `<div class="w-[72px] h-[72px] rounded-full border-8 circle" style="width: 72px; height: 72px; border-radius: 50%"></div>`;
+      }
     }
     changeTurns();
   }
