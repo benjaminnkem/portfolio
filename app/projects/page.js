@@ -11,9 +11,9 @@ const ProjectsPage = () => {
   const projects = [
     {
       name: "Ceelyrics",
-      description: `Ceelyrics is my person.
-
-      It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
+      description: `Ceelyrics is a fast-growing lyrics website, It's personally managed be me and is constantly being updated.
+      
+      Ceelyrics was inspired by Azlyrics.com, because of it's simplicity and speed, Ceelyrics was then built to be better, faster and have a better User Interface and User Experience (UI/UX).
       `,
       images: [
         "/images/projects/ceelyrics/cee1.png",
@@ -23,6 +23,11 @@ const ProjectsPage = () => {
       ],
       alt_attr: "Typimon Illustration",
       techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
+      github_repo: "https://github.com/ceelyrics",
+      live_: {
+        url: "https://ceelyrics.com",
+        name: "Ceelyrics",
+      },
     },
     {
       name: "BStore",
@@ -38,11 +43,14 @@ const ProjectsPage = () => {
       ],
       alt_attr: "BStore Illustration",
       techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
+      github_repo: "",
+      live_: {},
     },
     {
       name: "KaygreyKennel",
       description: `KaygreyKennel is a pet store (mostly dogs), KaygreyKennel was inspired by my love for dogs and pets in general. It also comes with an admin interface for admins to perform CRUD operations on posts data.
-        It also has search & sort functionality, which makes users to search for things easily, improving User Experience. 
+        
+      It also has search & sort functionality, which makes users to search for things easily, improving User Experience. 
         `,
       images: [
         "/images/projects/kaygrey/kaygrey.png",
@@ -55,12 +63,14 @@ const ProjectsPage = () => {
       ],
       alt_attr: "Kaygrey Illustration",
       techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
+      github_repo: "",
+      live_: {},
     },
     {
       name: "Typimon",
       description: `Typimon is a basic AI implementation for typing, How it works is a random sentence or phrase gets generated on starting, the user gets a typing field where his/her typing goes. While typimon starts typing at a speed which is easily adjustable by the users.
       
-      It also comes with a 'correct word' indicator that tells the user if they've made a mistake while typing`,
+      It also comes with a 'correct word' indicator that tells the user if they've made a mistake while typing.`,
       images: [
         "/images/projects/typimon/typimonreal.png",
         "/images/projects/typimon/typimon2.png",
@@ -68,6 +78,8 @@ const ProjectsPage = () => {
       ],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS", "Vanilla Javascript", "Fetch API"],
+      github_repo: "",
+      live_: {},
     },
     {
       name: "YouNote",
@@ -75,7 +87,9 @@ const ProjectsPage = () => {
         "YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.",
       images: ["/images/projects/younote/younote.png", "/images/projects/younote/younote2.png"],
       alt_attr: "YouNote Illustration",
-      techs: ["ReactJs", "CSS"],
+      techs: ["ReactJs", "Vanilla CSS"],
+      github_repo: "",
+      live_: {},
     },
     {
       name: "BenCalc",
@@ -88,6 +102,8 @@ const ProjectsPage = () => {
       ],
       alt_attr: "BenCalc Illustration",
       techs: ["HTML", "CSS", "Typescript"],
+      github_repo: "",
+      live_: {},
     },
   ];
 
