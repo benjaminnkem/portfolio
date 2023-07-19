@@ -1,18 +1,16 @@
 .msg-success {
+  transform: scale(1.5);
+  opacity: 0;
   animation: msg-pop 3s ease-in-out;
 }
 
 @keyframes msg-pop {
-  0% {
-    transform: translateY(100%) scale(0.5);
-    opacity: 0;
-  }
-  30% {
+  10% {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
   90% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     opacity: 1;
   }
   100% {

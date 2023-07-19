@@ -42,7 +42,7 @@ const ContactContent = () => {
 
     if (Object.keys(gottenErrors).length >= 1) setStatus({ ...status, loading: false, success: false }); //
     if (Object.keys(gottenErrors).length === 0) {
-      await new Promise((resolve) => setTimeout(() => resolve(), 2000)); // To emulate a real-world scenario
+      await new Promise((resolve) => setTimeout(() => resolve(), 1000)); // To emulate a real-world scenario
       setStatus({ ...status, loading: false, success: true });
       setErrors({});
       setFormData({ name: "", email: "", content: "" });
