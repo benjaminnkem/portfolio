@@ -27,7 +27,7 @@ const HomeContent = () => {
               <h2 className="text-5xl font-extrabold sm:text-6xl">
                 Hey, I&apos;m Ben<span className="text-orange-500">.</span>
               </h2>
-              <p className="text-xl">
+              <p className="mt-1 text-xl">
                 I&apos;m A <StackWrite />
               </p>
             </motion.div>
@@ -505,7 +505,6 @@ const HomeContent = () => {
           <motion.div
             initial={{ opacity: 0, x: 0, y: 100 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
-            whileHover={{ scale: 1.4 }}
             transition={{ delay: 0.1, type: "linear" }}
             className="mt-5 text-center"
           >

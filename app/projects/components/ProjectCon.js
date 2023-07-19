@@ -42,21 +42,21 @@ const ProjectCon = ({ project, index }) => {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-md relative group overflow-hidden border-4 border-[#303030] min-h-[15rem] max-h-[18rem]">
+          <div className="rounded-md relative group overflow-hidden border-4 border-[#303030] max-h-[20rem] md:min-h-[15rem]">
             <Image
               src={project.images[currentImgIndex]}
               alt={project.alt_attr}
-              width={1000}
-              height={1000}
-              className="object-cover w-full h-full"
+              width={800}
+              height={800}
+              className="object-cover w-full h-full aspect-video"
               draggable="false"
             />
 
             <div className="absolute top-0 left-0 z-10 w-full h-full duration-200 bg-black opacity-0 group-hover:opacity-50"></div>
-            <Link href={`${process.env.SITE_URL}${project.images[currentImgIndex]}`} target="_blank">
+            <Link href={`${project.images[currentImgIndex]}`} target="_blank">
               <i
                 className="absolute z-20 text-lg font-semibold text-white duration-200 opacity-0 ri-external-link-line bottom-2 right-4 group-hover:opacity-100"
-                title="Open In a new tab"
+                title="Open Image"
               ></i>
             </Link>
           </div>
