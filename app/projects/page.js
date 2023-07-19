@@ -10,14 +10,33 @@ export const metadata = {
 const ProjectsPage = () => {
   const projects = [
     {
+      name: "Ceelyrics",
+      description: `Ceelyrics is my person.
+
+      It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
+      `,
+      images: [
+        "/images/projects/ceelyrics/cee1.png",
+        "/images/projects/ceelyrics/cee2.png",
+        "/images/projects/ceelyrics/cee3.png",
+        "/images/projects/ceelyrics/cee4.png",
+      ],
+      alt_attr: "Typimon Illustration",
+      techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
+    },
+    {
       name: "BStore",
       description: `BStore is an online store, where users find products and services, It comes with an administrator's dashboard for creating, deleting, updating posts basically it can perform CRUD operations.
       Regular users can also sign up as a seller and sell products to customers.
 
       It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
       `,
-      images: ["/images/projects/bstore.png", "/images/projects/bstore1.png", "/images/projects/bstore2.png"],
-      alt_attr: "Typimon Illustration",
+      images: [
+        "/images/projects/bstore/bstore.png",
+        "/images/projects/bstore/bstore1.png",
+        "/images/projects/bstore/bstore2.png",
+      ],
+      alt_attr: "BStore Illustration",
       techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
     },
     {
@@ -26,14 +45,15 @@ const ProjectsPage = () => {
         It also has search & sort functionality, which makes users to search for things easily, improving User Experience. 
         `,
       images: [
-        "/images/projects/kaygrey.png",
-        "/images/projects/thedogspark_.png",
-        "/images/projects/thedogspark__.png",
-        "/images/projects/thedogspark___.png",
-        "/images/projects/thedogspark_____.png",
-        "/images/projects/thedogspark______.png",
+        "/images/projects/kaygrey/kaygrey.png",
+        "/images/projects/kaygrey/kaygrey1.png",
+        "/images/projects/kaygrey/kaygrey2.png",
+        "/images/projects/kaygrey/kaygrey3.png",
+        "/images/projects/kaygrey/kaygrey4.png",
+        "/images/projects/kaygrey/kaygrey5.png",
+        "/images/projects/kaygrey/kaygrey6.png",
       ],
-      alt_attr: "Typimon Illustration",
+      alt_attr: "Kaygrey Illustration",
       techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
     },
     {
@@ -41,7 +61,11 @@ const ProjectsPage = () => {
       description: `Typimon is a basic AI implementation for typing, How it works is a random sentence or phrase gets generated on starting, the user gets a typing field where his/her typing goes. While typimon starts typing at a speed which is easily adjustable by the users.
       
       It also comes with a 'correct word' indicator that tells the user if they've made a mistake while typing`,
-      images: ["/images/projects/typimonreal.png", "/images/projects/typimon2.png", "/images/projects/typimon3.png"],
+      images: [
+        "/images/projects/typimon/typimonreal.png",
+        "/images/projects/typimon/typimon2.png",
+        "/images/projects/typimon/typimon3.png",
+      ],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS", "Vanilla Javascript", "Fetch API"],
     },
@@ -49,20 +73,20 @@ const ProjectsPage = () => {
       name: "YouNote",
       description:
         "YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.",
-      images: ["/images/projects/younote.png", "/images/projects/younote2.png"],
-      alt_attr: "Typimon Illustration",
+      images: ["/images/projects/younote/younote.png", "/images/projects/younote/younote2.png"],
+      alt_attr: "YouNote Illustration",
       techs: ["ReactJs", "CSS"],
     },
     {
       name: "BenCalc",
       description: `BenCalc is a well functioning calculator built in TypeScript, HTML and CSS`,
       images: [
-        "/images/projects/bjncalc.png",
-        "/images/projects/ben_calc1.png",
-        "/images/projects/ben_calc3.png",
-        "/images/projects/ben_calc4.png",
+        "/images/projects/bjncalc/bjncalc.png",
+        "/images/projects/bjncalc/ben_calc1.png",
+        "/images/projects/bjncalc/ben_calc3.png",
+        "/images/projects/bjncalc/ben_calc4.png",
       ],
-      alt_attr: "Typimon Illustration",
+      alt_attr: "BenCalc Illustration",
       techs: ["HTML", "CSS", "Typescript"],
     },
   ];
