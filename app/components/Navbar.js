@@ -10,11 +10,6 @@ const parentMobileMenuVariant = {
   exit: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
 };
 
-const mobileLinksVariant = {
-  hidden: { opacity: 0, x: 30, transition: { scale: 0.9 } },
-  show: { opacity: 1, x: 0, transition: { scale: 1 } },
-};
-
 const Navbar = () => {
   const pathName = usePathname();
   const hamburger = useRef(null);
@@ -36,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
-        <div className="md:max-w-[1024px] w-11/12 md:py-6 py-4 mx-auto">
+        <div className="md:max-w-[1024px] w-11/12 md:py-4 py-3 mx-auto">
           <ul className="grid items-center grid-cols-3">
             <li>
               <Link href={"/"} className="text-3xl font-bold md:text-4xl">
@@ -178,7 +173,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <motion.div
+      <div
         className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-200 place-content-center overflow-hidden ${
           isMenuOpen
             ? "text-orange-50 bg-black z-20 bg-opacity-75 w-full"
@@ -189,52 +184,37 @@ const Navbar = () => {
         animate="show"
         exit="exit"
       >
-        <motion.div
-          variants={mobileLinksVariant}
-          initial="hidden"
-          animate="show"
-          onClick={toggleMenu}
-          className={`duration-200  ${pathName === "/" ? "text-orange-500" : "text-white"}`}
-        >
+        <div onClick={toggleMenu} className={`duration-200  ${pathName === "/" ? "text-orange-500" : "text-white"}`}>
           <Link href={"/"}>
             <p>Home</p>
           </Link>
-        </motion.div>
-        <motion.div
-          variants={mobileLinksVariant}
-          initial="hidden"
-          animate="show"
+        </div>
+        <div
           onClick={toggleMenu}
           className={`duration-200 ${pathName === "/projects" ? "text-orange-500" : "text-white"}`}
         >
           <Link href={"/projects"}>
             <p>Projects</p>
           </Link>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={mobileLinksVariant}
-          initial="hidden"
-          animate="show"
+        <div
           onClick={toggleMenu}
           className={`duration-200 ${pathName === "/contact" ? "text-orange-500" : "text-white"}`}
         >
           <Link href={"/contact"}>
             <p>Contact</p>
           </Link>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={mobileLinksVariant}
-          initial="hidden"
-          animate="show"
+        <div
           onClick={toggleMenu}
           className={`duration-200 ${pathName === "/games" ? "text-orange-500" : "text-white"}`}
         >
           <Link href={"/games"}>
             <p>Games</p>
           </Link>
-        </motion.div>
+        </div>
 
         <div className="mt-4 space-x-5 text-2xl">
           <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank">
@@ -250,7 +230,7 @@ const Navbar = () => {
             <i className="cursor-pointer ri-github-fill"></i>
           </Link>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

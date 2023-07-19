@@ -101,7 +101,7 @@ const ProjectCon = ({ project, index }) => {
               {project.images.map((image, i) => (
                 <div
                   key={i}
-                  className={`sm:w-16 w-12 md:w-20 sm:h-16 h-12 md:h-20 duration-200 rounded overflow-hidden inline-block m-2 ${
+                  className={`sm:w-16 w-12 md:w-20 sm:h-16 h-12 md:h-20 duration-100 rounded overflow-hidden inline-block m-2 ${
                     i === currentImgIndex ? "border-2 border-orange-500" : ""
                   }`}
                   onClick={() => changeImg(i)}

@@ -23,7 +23,7 @@ const ProjectsPage = () => {
       ],
       alt_attr: "Typimon Illustration",
       techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
-      github_repo: "https://github.com/ceelyrics",
+      github_repo: "https://github.com/benjaminnkem/ceelyrics",
       live_: {
         url: "https://ceelyrics.com",
         name: "Ceelyrics",
@@ -78,13 +78,18 @@ const ProjectsPage = () => {
       ],
       alt_attr: "Typimon Illustration",
       techs: ["HTML", "CSS", "Vanilla Javascript", "Fetch API"],
-      github_repo: "",
-      live_: {},
+      github_repo: "https://github.com/benjaminnkem/typimon",
+      live_: {
+        url: "https://tranquil-bombolone-c95188.netlify.app/",
+        name: "Typmimon",
+      },
     },
     {
       name: "YouNote",
       description:
-        "YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.",
+        `YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. 
+        
+        With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.`,
       images: ["/images/projects/younote/younote.png", "/images/projects/younote/younote2.png"],
       alt_attr: "YouNote Illustration",
       techs: ["ReactJs", "Vanilla CSS"],
@@ -102,8 +107,11 @@ const ProjectsPage = () => {
       ],
       alt_attr: "BenCalc Illustration",
       techs: ["HTML", "CSS", "Typescript"],
-      github_repo: "",
-      live_: {},
+      github_repo: "https://github.com/benjaminnkem/bencalc",
+      live_: {
+        url: "https://adorable-biscuit-b109dd.netlify.app/",
+        name: "BenCalc",
+      },
     },
   ];
 
