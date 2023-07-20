@@ -56,11 +56,11 @@ const ContactContent = () => {
     <>
       <div className="md:max-w-[1024px] w-11/12 mx-auto my-10 section mt-28 md:mt-32">
         <h1 className="mb-8 text-4xl font-bold text-center md:text-start">
-          Contact Me 📌<span className="text-orange-500">.</span>
+          Contact Me 📞🤙<span className="text-orange-500">.</span>
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-10">
-          <div className="space-y-6">
+          <div className="space-y-6 mt-6">
             <div className="border rounded-md p-4 border-orange-700">
               <h2 className="font-semibold text-2xl">Social Handle</h2>
               <ul className="mt-1 space-y-2">
@@ -159,8 +159,7 @@ const ContactContent = () => {
                   <textarea
                     name="content"
                     id="content"
-                    cols="30"
-                    rows="10"
+                    rows="5"
                     className={`block w-full bg-transparent focus:outline-none border-2 border-orange-700 focus:border-purple-700 active:border-purple-700 duration-200 rounded-md p-2 border-b resize-none ${
                       errors.content
                         ? "border-red-700 focus:border-red-700 active:border-red-700"

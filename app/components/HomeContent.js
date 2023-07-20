@@ -39,9 +39,9 @@ const HomeContent = () => {
               transition={{ delay: 0.75, type: "linear" }}
             >
               <p className="font-light opacity-80">
-                I&apos;m A 100LVL Student in the Federal University of Agriculture, Abeokuta{" "}
+                I&apos;m A 100LVL Computer Science Student in the Federal University of Agriculture, Abeokuta{" "}
                 <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to develop
-                games, websites and softwares, I fell for Web Development and decided to expand on it.
+                games, websites and softwares. I&apos;m currently into Fullstack Web Development.
               </p>
             </motion.div>
 
@@ -52,9 +52,11 @@ const HomeContent = () => {
               viewport={{ once: true }}
               transition={{ delay: 1.5 }}
             >
-              <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
-                Get In Touch <i className="ri-rocket-line"></i>
-              </button>
+              <Link href={"/contact"}>
+                <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                  Get In Touch <i className="ri-rocket-line"></i>
+                </button>
+              </Link>
             </motion.div>
           </div>
 
@@ -63,7 +65,7 @@ const HomeContent = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 1 }}
-            className="grid bg-transparent border border-orange-500 rounded-3xl h-[24rem] place-content-center -z-20 grid-start-base"
+            className="grid bg-transparent border border-orange-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 grid-start-base"
             id="me1"
           ></motion.div>
         </div>

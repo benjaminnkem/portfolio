@@ -21,13 +21,27 @@ const ProjectsPage = () => {
         "/images/projects/ceelyrics/cee3.png",
         "/images/projects/ceelyrics/cee4.png",
       ],
-      alt_attr: "Typimon Illustration",
+      alt_attr: "Ceelyrics Illustration",
       techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
-      github_repo: "https://github.com/benjaminnkem/ceelyrics",
-      live_: {
-        url: "https://ceelyrics.com",
-        name: "Ceelyrics",
-      },
+      github_repo: "",
+      live_: {},
+    },
+    {
+      name: "Bjn Sitemap Generator",
+      description: `Bjn Sitemap Generator is a basic web scrapping tool.
+      
+      In this scenario I configured it for sitemap generation for a webpage, but it can expanded for more complex web crawling processes.
+      It works by letting a user paste or type valid URL into the 'url input' field, and then it crawls all links on the page and makes a sitemap out of it. Other external links on the page gets filtered out.
+      `,
+      images: [
+        "/images/projects/bjnapi/bjncrawl1.png",
+        "/images/projects/bjnapi/bjncrawl2.png",
+        "/images/projects/bjnapi/bjncrawl3.png",
+      ],
+      alt_attr: "Bjn Sitemap Generator Illustration",
+      techs: ["Nodejs", "ExpressJs", "Cheerio", "TailwindCSS"],
+      github_repo: "",
+      live_: {},
     },
     {
       name: "BStore",
@@ -86,8 +100,7 @@ const ProjectsPage = () => {
     },
     {
       name: "YouNote",
-      description:
-        `YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. 
+      description: `YouNote is a robust and user-friendly todo tracking web application developed using ReactJs, a popular JavaScript library for building user interfaces. 
         
         With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.`,
       images: ["/images/projects/younote/younote.png", "/images/projects/younote/younote2.png"],

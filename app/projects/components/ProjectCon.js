@@ -26,7 +26,7 @@ const ProjectCon = ({ project, index }) => {
                   <div
                     key={i}
                     className={`w-20 h-20 rounded overflow-hidden inline-block m-2 ${
-                      i === currentImgIndex ? "border-2 border-orange-500" : ""
+                      i === currentImgIndex && "border-2 border-orange-500"
                     }`}
                     onClick={() => changeImg(i)}
                   >
@@ -35,7 +35,7 @@ const ProjectCon = ({ project, index }) => {
                       alt={project.alt_attr}
                       width={200}
                       height={200}
-                      className="object-cover w-full h-full"
+                      className="object-cover w-full h-full static"
                       draggable="false"
                     />
                   </div>
@@ -76,7 +76,7 @@ const ProjectCon = ({ project, index }) => {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-md relative group overflow-hidden border-4 border-[#303030] max-h-[20rem] md:min-h-[15rem]">
+          <div className={`rounded-md relative group overflow-hidden border-4 border-[#303030] max-h-[20rem] md:min-h-[15rem]`}>
             <Image
               src={project.images[currentImgIndex]}
               alt={project.alt_attr}
