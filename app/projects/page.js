@@ -24,7 +24,10 @@ const ProjectsPage = () => {
       alt_attr: "Ceelyrics Illustration",
       techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
       github_repo: "",
-      live_: {},
+      live_: {
+        url: "https://ceelyrics.com/",
+        name: "Ceelyrics",
+      },
     },
     {
       name: "Bjn Sitemap Generator",
@@ -40,8 +43,11 @@ const ProjectsPage = () => {
       ],
       alt_attr: "Bjn Sitemap Generator Illustration",
       techs: ["Nodejs", "ExpressJs", "Cheerio", "TailwindCSS"],
-      github_repo: "",
-      live_: {},
+      github_repo: "https://github.com/benjaminnkem/bjn-web-scrapper",
+      live_: {
+        url: "https://cee-web-scrapper.onrender.com/",
+        name: "Bjn Web Scrapper",
+      },
     },
     {
       name: "BStore",

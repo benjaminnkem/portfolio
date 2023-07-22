@@ -25,9 +25,10 @@ const HomeContent = () => {
               transition={{ delay: 0.25, type: "linear" }}
             >
               <h2 className="text-5xl font-extrabold sm:text-6xl">
-                Hey, I&apos;m Ben<span className="text-orange-500">.</span>
+                Hey, I&apos;m <span id="ben">Ben</span>
+                <span className="text-orange-500">.</span>
               </h2>
-              <p className="mt-1 text-xl">
+              <p className="mt-1 text-xl select-none">
                 I&apos;m A <StackWrite />
               </p>
             </motion.div>
@@ -39,7 +40,7 @@ const HomeContent = () => {
               transition={{ delay: 0.75, type: "linear" }}
             >
               <p className="font-light opacity-80">
-                I&apos;m A 100LVL Computer Science Student in the Federal University of Agriculture, Abeokuta{" "}
+                I&apos;m A Computer Science Student at the Federal University of Agriculture, Abeokuta{" "}
                 <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to develop
                 games, websites and softwares. I&apos;m currently into Fullstack Web Development.
               </p>
@@ -121,7 +122,7 @@ const HomeContent = () => {
                     </motion.div>
 
                     <motion.div
-                      initial={{ opacity: 0, x: -100 }}
+                      initial={{ opacity: 0, x: 0 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ type: "linear" }}
                     >
@@ -131,7 +132,7 @@ const HomeContent = () => {
                       </p>
                     </motion.div>
                     <motion.div
-                      initial={{ opacity: 0, x: -100 }}
+                      initial={{ opacity: 0, x: 0 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ type: "linear" }}
                     >
@@ -143,7 +144,7 @@ const HomeContent = () => {
                     </motion.div>
 
                     <motion.div
-                      initial={{ opacity: 0, x: -100 }}
+                      initial={{ opacity: 0, x: 0 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ type: "linear" }}
                     >
@@ -153,18 +154,18 @@ const HomeContent = () => {
                       </p>
                     </motion.div>
 
-                    <motion.div
-                      className="mt-4"
-                      initial={{ opacity: 0, x: 100 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 }}
-                    >
+                    <div className="mt-4">
                       <Link href={"/contact"}>
-                        <button className="px-4 py-2 mt-4 duration-200 border border-orange-500 rounded-md hover:bg-orange-600 text-orange-50">
+                        <motion.button
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.5 }}
+                          className="px-4 py-2 mt-4 duration-200 border border-orange-500 rounded-md hover:bg-orange-600 text-orange-50"
+                        >
                           Contact Me <i className="ri-link-m"></i>
-                        </button>
+                        </motion.button>
                       </Link>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
                 <div className="p-4">
@@ -510,9 +511,11 @@ const HomeContent = () => {
             transition={{ delay: 0.1, type: "linear" }}
             className="mt-5 text-center"
           >
-            <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 rounded-sm hover:bg-orange-500 hover:text-black group">
-              View More Projects <i className="ri-arrow-right-circle-line"></i>
-            </button>
+            <Link href={"/projects"}>
+              <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 rounded-sm hover:bg-orange-500 hover:text-black group">
+                View More Projects <i className="ri-arrow-right-circle-line"></i>
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>

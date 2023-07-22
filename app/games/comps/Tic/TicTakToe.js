@@ -48,7 +48,7 @@ const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
         return;
       }
     });
-  }, [boxes]);
+  }, [boxes, setCurTurn, setInfo]);
 
   function changeTurns() {
     if (curTurn === "X") {

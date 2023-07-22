@@ -2,22 +2,27 @@
   text-shadow: 10px 10px 20px rgba(226, 123, 13, 0.183);
 }
 
-/* 
+#stack {
+  cursor: pointer;
+}
+
 #stack::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  right: 0;
+  bottom: -8px;
   z-index: 5;
-  width: 100%;
-  height: 100%;
-  background-color: red;
-} */
+  width: 0%;
+  height: 4px;
+  transition: .5s;
+  border-radius: 5px;
+  background: linear-gradient(to right, orange, purple);
+}
 
-/* #meSect, #overAllSect, #language, #projects {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-} */
+#stack:hover::after {
+  left: 0;
+  width: 100%;
+}
 
 .progress {
   animation: progress 1.5s linear;
@@ -32,46 +37,14 @@
   animation: progress3 1.5s linear;
 }
 
-@keyframes progress {
-  0% {
-    width: 0.1%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes progress1 {
-  0% {
-    width: 0.1%;
-  }
-  60% {
-    width: 60%;
-  }
-}
-@keyframes progress2 {
-  0% {
-    width: 0.1%;
-  }
-  80% {
-    width: 80%;
-  }
-}
-@keyframes progress3 {
-  0% {
-    width: 0.1%;
-  }
-  80% {
-    width: 33%;
-  }
-}
 
 #me1 {
-  background: url("/images/uploads/me.jpg") no-repeat top;
+  background: url("/images/uploads/me_.jpg") no-repeat center;
   background-size: cover;
 }
 
-#mes2 {
-  background: url("/images/uploads/me.jpg") no-repeat top;
+#me2 {
+  background: url("/images/uploads/me_.jpg") no-repeat top;
   background-size: cover;
 }
 
@@ -110,4 +83,38 @@
 
 .project-cover {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.951), rgba(0, 0, 0, 0.527), rgba(255, 255, 255, 0.103));
+}
+
+
+@keyframes progress {
+  0% {
+    width: 0.1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes progress1 {
+  0% {
+    width: 0.1%;
+  }
+  60% {
+    width: 60%;
+  }
+}
+@keyframes progress2 {
+  0% {
+    width: 0.1%;
+  }
+  80% {
+    width: 80%;
+  }
+}
+@keyframes progress3 {
+  0% {
+    width: 0.1%;
+  }
+  80% {
+    width: 33%;
+  }
 }
