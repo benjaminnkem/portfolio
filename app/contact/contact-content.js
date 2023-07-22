@@ -42,12 +42,23 @@ const ContactContent = () => {
 
     if (Object.keys(gottenErrors).length >= 1) setStatus({ ...status, loading: false, success: false }); //
     if (Object.keys(gottenErrors).length === 0) {
-      await new Promise((resolve) => setTimeout(() => resolve(), 1000)); // To emulate a real-world scenario
+      const body = { name: formData.name, email: formData.email, content: formData.content };
+
+      const res = await fetch("/api/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        setStatus({ ...status, loading: false, success: false });
+        console.log("There is a problem...");
+        return;
+      }
+
       setStatus({ ...status, loading: false, success: true });
       setErrors({});
       setFormData({ name: "", email: "", content: "" });
-
-      // The setTimeout duration is the same with the animation time
       setTimeout(() => setStatus({ ...status, loading: false, success: false }), 3000);
     }
   };
@@ -174,7 +185,8 @@ const ContactContent = () => {
                 <input
                   type="submit"
                   value={status.loading ? `Sending... 🕑` : "Send Message 🚀"}
-                  className="w-full py-2 border-2 border-orange-700 rounded-md duration-200 hover:bg-orange-700 focus:outline-none focus:border-purple-700 focus:hover:bg-purple-700"
+                  className={`w-full py-2 border-2 border-orange-700 rounded-md duration-200 hover:bg-orange-700 focus:outline-none focus:border-purple-700 focus:hover:bg-purple-700 disabled:bg-orange-900`}
+                  disabled={status.loading}
                 />
               </div>
             </form>

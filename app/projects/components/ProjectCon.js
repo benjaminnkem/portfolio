@@ -75,7 +75,7 @@ const ProjectCon = ({ project, index }) => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4" id={project.id}>
           <div className={`rounded-md relative group overflow-hidden border-4 border-[#303030] max-h-[20rem] md:min-h-[15rem]`}>
             <Image
               src={project.images[currentImgIndex]}

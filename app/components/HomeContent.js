@@ -412,7 +412,7 @@ const HomeContent = () => {
                   decimal values...
                 </p>
 
-                <Link href={"/projects"}>
+                <Link href={"/projects#bencalc"}>
                   <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
                     View
                   </button>
@@ -455,7 +455,7 @@ const HomeContent = () => {
                   words...
                 </p>
 
-                <Link href={"/projects"}>
+                <Link href={"/projects#typimon"}>
                   <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
                     View
                   </button>
@@ -497,7 +497,7 @@ const HomeContent = () => {
                   pets...
                 </p>
 
-                <Link href={"/projects"}>
+                <Link href={"/projects#kaygrey"}>
                   <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
                     View
                   </button>

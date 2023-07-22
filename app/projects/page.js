@@ -22,6 +22,7 @@ const ProjectsPage = () => {
         "/images/projects/ceelyrics/cee4.png",
       ],
       alt_attr: "Ceelyrics Illustration",
+      id: "ceelyrics",
       techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
       github_repo: "",
       live_: {
@@ -42,6 +43,7 @@ const ProjectsPage = () => {
         "/images/projects/bjnapi/bjncrawl3.png",
       ],
       alt_attr: "Bjn Sitemap Generator Illustration",
+      id: 'bjnsitemap',
       techs: ["Nodejs", "ExpressJs", "Cheerio", "TailwindCSS"],
       github_repo: "https://github.com/benjaminnkem/bjn-web-scrapper",
       live_: {
@@ -62,6 +64,7 @@ const ProjectsPage = () => {
         "/images/projects/bstore/bstore2.png",
       ],
       alt_attr: "BStore Illustration",
+      id: 'bstore',
       techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
       github_repo: "",
       live_: {},
@@ -82,6 +85,7 @@ const ProjectsPage = () => {
         "/images/projects/kaygrey/kaygrey6.png",
       ],
       alt_attr: "Kaygrey Illustration",
+      id: 'kaygrey',
       techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
       github_repo: "",
       live_: {},
@@ -97,6 +101,7 @@ const ProjectsPage = () => {
         "/images/projects/typimon/typimon3.png",
       ],
       alt_attr: "Typimon Illustration",
+      id: "typimon",
       techs: ["HTML", "CSS", "Vanilla Javascript", "Fetch API"],
       github_repo: "https://github.com/benjaminnkem/typimon",
       live_: {
@@ -111,6 +116,7 @@ const ProjectsPage = () => {
         With its intuitive interface and efficient design, YouNote allows users to effortlessly manage and organize their tasks, providing them with a seamless and enjoyable productivity experience.`,
       images: ["/images/projects/younote/younote.png", "/images/projects/younote/younote2.png"],
       alt_attr: "YouNote Illustration",
+      id: "younote",
       techs: ["ReactJs", "Vanilla CSS"],
       github_repo: "",
       live_: {},
@@ -125,6 +131,7 @@ const ProjectsPage = () => {
         "/images/projects/bjncalc/ben_calc4.png",
       ],
       alt_attr: "BenCalc Illustration",
+      id: "bencalc",
       techs: ["HTML", "CSS", "Typescript"],
       github_repo: "https://github.com/benjaminnkem/bencalc",
       live_: {
