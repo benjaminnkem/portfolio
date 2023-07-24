@@ -1,4 +1,5 @@
 "use client";
+import DateFormatter from "@/components/DateFormatter";
 import { useState } from "react";
 
 const MessageContent = () => {
@@ -68,7 +69,9 @@ const MessageContent = () => {
                     <div key={message.id} className="p-2 rounded-md duration-200 even:bg-orange-400 even:bg-opacity-10">
                       <h2 className="font-bold text-lg">{message.name}</h2>
                       <p className="font-light">{message.email}</p>
-                      <p className="font-bold text-sm">{message.date}</p>
+                      <p className="font-bold text-sm">
+                        {<DateFormatter dateAsString={message.date.split(", ")[0]} />} {message.date.split(", ")[1]}
+                      </p>
                     </div>
                   ))}
                 </div>
