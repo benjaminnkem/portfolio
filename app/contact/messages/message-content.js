@@ -8,6 +8,8 @@ const MessageContent = () => {
   const [messages, setMessages] = useState([]);
   const [showMessages, setShowMessages] = useState(false);
 
+  const [messageTip, setMessageTip] = useState(0);
+
   const validateKey = (e) => {
     const value = e.target.value;
     if (value.length <= 8) {
@@ -34,6 +36,25 @@ const MessageContent = () => {
     }
 
     const data = await res.json();
+
+    // Get previous message count
+    const localMsgCount = localStorage.getItem("messageCount");
+
+    // if previous message count is greater, update
+    if (!localMsgCount) {
+      localStorage.setItem("messageCount", data.length);
+    } else {
+      if (localMsgCount < data.length) {
+        setMessageTip(`${data.length - localMsgCount} message(s) came in since last visit 😉`);
+      } else if (localMsgCount > data.length) {
+        setMessageTip(`${localMsgCount - data.length} message(s) was deleted since last visit 😮`);
+      } else {
+        setMessageTip("No new message since last visit😥");
+      }
+
+      localStorage.setItem("messageCount", data.length);
+    }
+
     setStatus({ ...status, loading: false });
     setMessages(data);
     setShowMessages(true);
@@ -41,7 +62,7 @@ const MessageContent = () => {
 
   return (
     <>
-      <div className="my-20 grid place-content-center">
+      <div className="my-28 grid place-content-center">
         {!showMessages && (
           <div className="shadow-md rounded-md p-6 border border-orange-500 space-y-1 min-w-[md]">
             <input
@@ -66,26 +87,34 @@ const MessageContent = () => {
 
         {status.correct && showMessages && (
           <>
-            <div className="p-2 rounded-md border-2 border-orange-500 max-h-[40rem] bg-black overflow-x-hidden min-w-[24rem] max-w-3xl mx-2">
-              <h1 className="text-3xl text-center py-2">Your messages</h1>
+            <div className="p-2 rounded-md border-2 border-orange-500 bg-black overflow-x-hidden min-w-[24rem] max-w-3xl mx-2">
               {messages.length > 0 ? (
-                <div className="space-y-1">
-                  {messages.map((message) => (
-                    <div key={message.id} className="p-2 rounded-md duration-200 even:bg-orange-400 even:bg-opacity-10">
-                      <h2 className="font-bold text-lg">
-                        {message.name} <span className="text-sm font-light">{message.email}</span>
-                      </h2>
-                      <div>
-                        <p className="mt-1 font-semibold">
-                          Content: <span className="font-light">{message.content}</span>
-                        </p>
-                        <p className="font-bold text-sm mt-1">
-                          {<DateFormatter dateAsString={message.date.split(", ")[0]} />} {message.date.split(", ")[1]}
-                        </p>
+                <>
+                  <div className="text-center py-2">
+                    <h1 className="text-3xl ">Your messages ({messages.length})</h1>
+                    {messageTip && <p className="text-sm">Tip: {messageTip}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    {messages.map((message) => (
+                      <div
+                        key={message.id}
+                        className="p-3 rounded-md duration-200 even:bg-orange-400 even:bg-opacity-10"
+                      >
+                        <h2 className="font-bold text-lg">
+                          {message.name} <span className="text-sm font-light">{message.email}</span>
+                        </h2>
+                        <div className="text-gray-300">
+                          <p className="mt-1 font-semibold">
+                            Content: <span className="font-light">{message.content}</span>
+                          </p>
+                          <p className="font-bold text-sm mt-1">
+                            {<DateFormatter dateAsString={message.date.split(", ")[0]} />} {message.date.split(", ")[1]}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                </>
               ) : (
                 <div>
                   <p>No available messages</p>
@@ -93,8 +122,8 @@ const MessageContent = () => {
               )}
             </div>
 
-            <button onClick={fetchMessages} className="mt-2" title="Refresh Messages" disabled={status.loading}>
-              { !status.loading ? <i className="ri-refresh-line text-xl text-orange-500"></i> : "Fetching..." }
+            <button onClick={fetchMessages} className="my-2 py-2" title="Refresh Messages" disabled={status.loading}>
+              {!status.loading ? <i className="ri-refresh-line text-3xl text-orange-500"></i> : "Fetching..."}
             </button>
           </>
         )}
