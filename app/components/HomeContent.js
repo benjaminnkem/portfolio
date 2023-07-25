@@ -429,7 +429,7 @@ const HomeContent = () => {
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
-                  src={"/images/projects/typimon/typimon.png"}
+                  src={"/images/projects/typimon/typimonreal.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
