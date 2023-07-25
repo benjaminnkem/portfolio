@@ -386,7 +386,7 @@ const HomeContent = () => {
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
-                  src={"/images/projects/bjncalc.png"}
+                  src={"/images/projects/bjncalc/bjncalc.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
@@ -429,7 +429,7 @@ const HomeContent = () => {
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
-                  src={"/images/projects/typimon.png"}
+                  src={"/images/projects/typimon/typimon.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
@@ -472,7 +472,7 @@ const HomeContent = () => {
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
-                  src={"/images/projects/kaygrey.png"}
+                  src={"/images/projects/kaygrey/kaygrey.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
