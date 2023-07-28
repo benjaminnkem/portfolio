@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const TikBox = ({ changeTurns, curTurn, updateBoxSign, setInfo, index, someoneWon, boxFilled, setBoxFilled }) => {
   const [numOfClick, setNumOfClick] = useState(0);
@@ -15,8 +15,7 @@ const TikBox = ({ changeTurns, curTurn, updateBoxSign, setInfo, index, someoneWo
         box.current.innerHTML = `<div class="cross">
         <i class="ri-close-line text-8xl font-extrabold" style="font-size: 6rem; line-height: 1;font-weight: 800;"></i>
         </div>`;
-      }
-      else {
+      } else {
         setInfo("O turn");
         setBoxFilled(boxFilled + 1);
         box.current.innerHTML = `<div class="cross">
@@ -27,8 +26,7 @@ const TikBox = ({ changeTurns, curTurn, updateBoxSign, setInfo, index, someoneWo
       if (boxFilled === 8 && !someoneWon) {
         setInfo("Draw");
         box.current.innerHTML = `<div class="w-[72px] h-[72px] rounded-full border-8 circle" style="width: 72px; height: 72px; border-radius: 50%"></div>`;
-      }
-      else {
+      } else {
         setInfo("X turn");
         setBoxFilled(boxFilled + 1);
         box.current.innerHTML = `<div class="w-[72px] h-[72px] rounded-full border-8 circle" style="width: 72px; height: 72px; border-radius: 50%"></div>`;

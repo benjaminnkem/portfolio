@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import TikBox from "./TicBox";
+import { GameContainerContext } from "../../game-container";
 
 const winningCombos = [
   [0, 1, 2],
@@ -12,7 +13,8 @@ const winningCombos = [
   [0, 4, 8],
 ];
 
-const TicTokToe = ({ curTurn, setCurTurn, setInfo }) => {
+const TicTokToe = () => {
+  const { curTurn, setCurTurn, setInfo } = useContext(GameContainerContext);
   const [boxFilled, setBoxFilled] = useState(0);
   const [boxes, setBoxes] = useState([
     { id: 1, sign: "" },
