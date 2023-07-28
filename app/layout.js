@@ -3,6 +3,7 @@ import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {children}
+        <Analytics />
         <Footer></Footer>
       </body>
     </html>
