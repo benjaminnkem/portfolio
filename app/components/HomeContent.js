@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import StackWrite from "./StackWrite";
+import { TypeAnimation } from "react-type-animation";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -29,7 +30,26 @@ const HomeContent = () => {
                 <span className="text-orange-500">.</span>
               </h2>
               <p className="mt-1 text-xl select-none">
-                I&apos;m A <StackWrite />
+                I&apos;m a{" "}
+                <span className="relative font-extrabold text-orange-400" id="stack">
+                  <TypeAnimation
+                    sequence={[
+                      "Frontend Developer 🌎📺",
+                      1000,
+                      "Backend Developer ⚒👷",
+                      1000,
+                      "2D Unity Game Developer 🕹🎮",
+                      1000,
+                      "C# Developer 💙",
+                      1000,
+                      "Graphics Designer 🎨🖌",
+                      1000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                  />
+                </span>
               </p>
             </motion.div>
 

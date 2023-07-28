@@ -9,7 +9,7 @@
 #stack::after {
   content: "";
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: -8px;
   z-index: 5;
   width: 0%;
@@ -20,7 +20,6 @@
 }
 
 #stack:hover::after {
-  left: 0;
   width: 100%;
 }
 
