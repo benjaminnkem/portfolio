@@ -43,7 +43,7 @@ const ProjectsPage = () => {
         "/images/projects/bjnapi/bjncrawl3.png",
       ],
       alt_attr: "Bjn Sitemap Generator Illustration",
-      id: 'bjnsitemap',
+      id: "bjnsitemap",
       techs: ["Nodejs", "ExpressJs", "Cheerio", "TailwindCSS"],
       github_repo: "https://github.com/benjaminnkem/bjn-web-scrapper",
       live_: {
@@ -58,13 +58,9 @@ const ProjectsPage = () => {
 
       It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
       `,
-      images: [
-        "/images/projects/bstore/bstore.png",
-        "/images/projects/bstore/bstore1.png",
-        "/images/projects/bstore/bstore2.png",
-      ],
+      images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((img) => `/images/projects/bstore/${img}.png`),
       alt_attr: "BStore Illustration",
-      id: 'bstore',
+      id: "bstore",
       techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
       github_repo: "",
       live_: {},
@@ -85,7 +81,7 @@ const ProjectsPage = () => {
         "/images/projects/kaygrey/kaygrey6.png",
       ],
       alt_attr: "Kaygrey Illustration",
-      id: 'kaygrey',
+      id: "kaygrey",
       techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
       github_repo: "",
       live_: {},

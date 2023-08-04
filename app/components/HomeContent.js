@@ -289,6 +289,7 @@ const HomeContent = () => {
         </svg>
       </section>
 
+      {/* Statistics */}
       <section className="my-10 section">
         <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
           <div>
@@ -384,6 +385,7 @@ const HomeContent = () => {
         </div>
       </section>
 
+      {/* Projects */}
       <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20 section" id="projects">
         <div>
           <motion.div
@@ -401,12 +403,12 @@ const HomeContent = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ delay: 0.25, type: "linear" }}
+              transition={{ type: "ease-in-out", duration: 0.2 }}
               className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
-                  src={"/images/projects/bjncalc/bjncalc.png"}
+                  src={"/images/projects/bstore/4.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
@@ -415,24 +417,23 @@ const HomeContent = () => {
               </div>
               <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-orange-500">BenCalc</h4>
+                  <h4 className="text-lg font-bold text-orange-500">BStore</h4>
                   <div className="flex items-center space-x-1 text-xl">
-                    <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
+                    <Link href={"https://github.com/benjaminnkem/bstore"} target="_blank" title="View On Github">
                       <i className="ri-github-fill" title="View On Github"></i>
-                    </Link>
-                    <Link href={"https://adorable-biscuit-b109dd.netlify.app/"} target="_blank">
-                      <i className="ri-link-m" title="View Live"></i>
                     </Link>
                   </div>
                 </div>
-                <p className="font-light">
-                  BenCalc is a web calculator built using HTML, CSS & Typescript. <br />
+                <p className="font-light text-sm">
+                  BStore is an online store, where users find products and services, It comes with an
+                  administrator&apos;s dashboard for creating, deleting, updating posts basically it performs CRUD
+                  operations. Users can also sign up as a seller and sell products to other users. <br />
                   <br />
-                  It performs basic calculations like addition, subtraction, division, multiplication and support
-                  decimal values...
+                  It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase
+                  online.
                 </p>
 
-                <Link href={"/projects#bencalc"}>
+                <Link href={"/projects#bstore"}>
                   <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
                     View
                   </button>
@@ -444,7 +445,7 @@ const HomeContent = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ delay: 0.5, type: "linear" }}
+              transition={{ type: "linear" }}
               className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
             >
               <div className="w-full h-32 overflow-hidden">
@@ -487,7 +488,7 @@ const HomeContent = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ delay: 0.6, type: "linear" }}
+              transition={{ type: "linear" }}
               className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
             >
               <div className="w-full h-32 overflow-hidden">
