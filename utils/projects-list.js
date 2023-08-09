@@ -1,16 +1,42 @@
 export const projects = [
   {
+    name: "BStore",
+    description: `BStore is an online store, where users find products and services, It comes with an administrator's dashboard for creating, deleting, updating posts basically it can perform CRUD operations.
+    Regular users can also sign up as a seller and sell products to customers.
+
+    It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
+    `,
+    images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((img) => `/images/projects/bstore/${img}.png`),
+    alt_attr: "BStore Illustration",
+    id: "bstore",
+    techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
+    github_repo: "",
+    live_: {},
+  },
+  {
+    name: "BQuiz",
+    description: `BQuiz is an online store, where users find products and services, It comes with an administrator's dashboard for creating, deleting, updating posts basically it can perform CRUD operations.
+    Regular users can also sign up as a seller and sell products to customers.
+
+    It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
+    `,
+    images: [1, 2, 3, 4, 5].map((img) => `/images/projects/bquiz/bquiz${img}.png`),
+    alt_attr: "BStore Illustration",
+    id: "bstore",
+    techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
+    github_repo: "https://github.com/benjaminnkem/bquiz",
+    live_:  {
+      url: "https://bquiz.vercel.app/",
+      name: "BQuiz",
+    },
+  },
+  {
     name: "Ceelyrics",
     description: `Ceelyrics is a fast-growing lyrics website, It's personally managed be me and is constantly being updated.
     
     Ceelyrics was inspired by Azlyrics.com, because of it's simplicity and speed, Ceelyrics was then built to be better, faster and have a better User Interface and User Experience (UI/UX).
     `,
-    images: [
-      "/images/projects/ceelyrics/cee1.png",
-      "/images/projects/ceelyrics/cee2.png",
-      "/images/projects/ceelyrics/cee3.png",
-      "/images/projects/ceelyrics/cee4.png",
-    ],
+    images: [1, 2, 3, 4].map((num) => `/images/projects/ceelyrics/cee${num}.png`),
     alt_attr: "Ceelyrics Illustration",
     id: "ceelyrics",
     techs: ["Nodejs", "ExpressJs", "MySQL", "TailwindCSS"],
@@ -27,11 +53,7 @@ export const projects = [
     In this scenario I configured it for sitemap generation for a webpage, but it can expanded for more complex web crawling processes.
     It works by letting a user paste or type valid URL into the 'url input' field, and then it crawls all links on the page and makes a sitemap out of it. Other external links on the page gets filtered out.
     `,
-    images: [
-      "/images/projects/bjnapi/bjncrawl1.png",
-      "/images/projects/bjnapi/bjncrawl2.png",
-      "/images/projects/bjnapi/bjncrawl3.png",
-    ],
+    images: [1, 2, 3].map((num) => `/images/projects/bjnapi/bjncrawl${num}.png`),
     alt_attr: "Bjn Sitemap Generator Illustration",
     id: "bjnsitemap",
     techs: ["Nodejs", "ExpressJs", "Cheerio", "TailwindCSS"],
@@ -41,56 +63,16 @@ export const projects = [
       name: "Bjn Web Scrapper",
     },
   },
-  {
-    name: "Bjn Sitemap Generator",
-    description: `Bjn Sitemap Generator is a basic web scrapping tool.
-    
-    In this scenario I configured it for sitemap generation for a webpage, but it can expanded for more complex web crawling processes.
-    It works by letting a user paste or type valid URL into the 'url input' field, and then it crawls all links on the page and makes a sitemap out of it. Other external links on the page gets filtered out.
-    `,
-    images: [
-      "/images/projects/bjnapi/bjncrawl1.png",
-      "/images/projects/bjnapi/bjncrawl2.png",
-      "/images/projects/bjnapi/bjncrawl3.png",
-    ],
-    alt_attr: "Bjn Sitemap Generator Illustration",
-    id: "bjnsitemap",
-    techs: ["Nodejs", "ExpressJs", "Cheerio", "TailwindCSS"],
-    github_repo: "https://github.com/benjaminnkem/bjn-web-scrapper",
-    live_: {
-      url: "https://cee-web-scrapper.onrender.com/",
-      name: "Bjn Web Scrapper",
-    },
-  },
-  {
-    name: "BStore",
-    description: `BStore is an online store, where users find products and services, It comes with an administrator's dashboard for creating, deleting, updating posts basically it can perform CRUD operations.
-    Regular users can also sign up as a seller and sell products to customers.
 
-    It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
-    `,
-    images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((img) => `/images/projects/bstore/${img}.png`),
-    alt_attr: "BStore Illustration",
-    id: "bstore",
-    techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
-    github_repo: "",
-    live_: {},
-  },
   {
     name: "KaygreyKennel",
     description: `KaygreyKennel is a pet store (mostly dogs), KaygreyKennel was inspired by my love for dogs and pets in general. It also comes with an admin interface for admins to perform CRUD operations on posts data.
       
     It also has search & sort functionality, which makes users to search for things easily, improving User Experience. 
       `,
-    images: [
-      "/images/projects/kaygrey/kaygrey.png",
-      "/images/projects/kaygrey/kaygrey1.png",
-      "/images/projects/kaygrey/kaygrey2.png",
-      "/images/projects/kaygrey/kaygrey3.png",
-      "/images/projects/kaygrey/kaygrey4.png",
-      "/images/projects/kaygrey/kaygrey5.png",
-      "/images/projects/kaygrey/kaygrey6.png",
-    ],
+    images: [1, 2, 3, 4, 5, 6]
+      .map((num) => `/images/projects/kaygrey/kaygrey${num}.png`)
+      .concat(["/images/projects/kaygrey/kaygrey.png"]),
     alt_attr: "Kaygrey Illustration",
     id: "kaygrey",
     techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],

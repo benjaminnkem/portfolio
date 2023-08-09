@@ -17,11 +17,11 @@ const ProjectCon = ({ project, index }) => {
         <span className="flex-1 bg-orange-500 h-[0.5px]"></span>
       </div>
       <div className="grid gap-1 md:gap-6" id="all-projects">
-        <div className="hidden md:block space-y-2">
+        <div className="hidden space-y-2 md:block">
           <div className="space-y-2">
             <div>
               <p className="mt-4 font-semibold text-center">Screenshot(s)</p>
-              <div className="flex flex-wrap items-center justify-center">
+              <div className="flex flex-wrap items-center">
                 {project.images.map((image, i) => (
                   <div
                     key={i}
@@ -35,7 +35,7 @@ const ProjectCon = ({ project, index }) => {
                       alt={project.alt_attr}
                       width={200}
                       height={200}
-                      className="object-cover w-full h-full static"
+                      className="static object-cover w-full h-full"
                       draggable="false"
                     />
                   </div>
@@ -47,7 +47,7 @@ const ProjectCon = ({ project, index }) => {
               <>
                 <hr className="text-orange-500 bg-orange-500 opacity-50" />
                 <div className="text-center">
-                  <p className="font-bold text-xl">
+                  <p className="text-xl font-bold">
                     Links <i className="ri-link"></i>
                   </p>
                   <div>
@@ -125,11 +125,11 @@ const ProjectCon = ({ project, index }) => {
           </div>
 
           {/* In - infos */}
-          <div className="md:hidden mt-1">
+          <div className="mt-1 md:hidden">
             {(project.github_repo.length > 0 || Object.keys(project.live_) > 0) && (
               <>
                 <div>
-                  <p className="font-bold text-xl">
+                  <p className="text-xl font-bold">
                     Links <i className="ri-link"></i>
                   </p>
                   <div>

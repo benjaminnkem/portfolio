@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import StackWrite from "./StackWrite";
 import { TypeAnimation } from "react-type-animation";
 
 const variants = {
@@ -424,7 +423,7 @@ const HomeContent = () => {
                     </Link>
                   </div>
                 </div>
-                <p className="font-light text-sm">
+                <p className="text-sm font-light">
                   BStore is an online store, where users find products and services, It comes with an
                   administrator&apos;s dashboard for creating, deleting, updating posts basically it performs CRUD
                   operations. Users can also sign up as a seller and sell products to other users. <br />
