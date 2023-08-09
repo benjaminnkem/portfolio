@@ -5,13 +5,31 @@ import { useState } from "react";
 
 const ProjectCon = ({ project, index }) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState("");
 
-  function changeImg(imgIndex) {
+  const setFullImg = (imgUrl) => setSelectedImage(imgUrl);
+  const closePrev = () => setSelectedImage("");
+
+  const changeImg = (imgIndex) => {
     setCurrentImgIndex(imgIndex);
-  }
+  };
 
   return (
     <>
+      {/* Global Image Prev */}
+      <div
+        className={`fixed left-0 w-full h-full -top-10 bg-black bg-opacity-70 grid place-content-center duration-300 overflow-hidden z-[100] ${
+          selectedImage ? "opacity-100 z-[100] img-prev-con" : "opacity-0 -z-[100]"
+        }`}
+        onClick={closePrev}
+      >
+        {selectedImage && (
+          <Image src={selectedImage ? selectedImage : null} alt="Image Preview" width={800} height={800} />
+        )}
+
+        <i className="absolute text-4xl cursor-pointer ri-close-line top-2 right-2" onClick={closePrev}></i>
+      </div>
+
       <div className="flex items-center">
         <span className="mx-4 text-xl font-bold">{index + 1}</span>
         <span className="flex-1 bg-orange-500 h-[0.5px]"></span>
@@ -76,21 +94,30 @@ const ProjectCon = ({ project, index }) => {
         </div>
 
         <div className="space-y-4" id={project.id}>
-          <div className={`rounded-md relative group overflow-hidden border-4 border-[#303030] max-h-[20rem] md:min-h-[15rem]`}>
+          <div
+            className={`rounded-md relative group overflow-hidden border-4 border-[#303030] max-h-[20rem] md:min-h-[15rem]`}
+          >
             <Image
               src={project.images[currentImgIndex]}
               alt={project.alt_attr}
               width={800}
               height={800}
-              className="object-cover w-full h-full aspect-video"
+              className="object-cover w-full h-full duration-300 aspect-video img-prev group-hover:blur-sm"
               draggable="false"
             />
 
-            <div className="absolute top-0 left-0 z-10 w-full h-full duration-200 bg-black opacity-0 group-hover:opacity-50"></div>
+            <div className="absolute top-0 left-0 z-10 grid w-full h-full duration-300 bg-black bg-opacity-0 group-hover:bg-opacity-40 place-content-center">
+              <p
+                className="text-base font-extrabold opacity-0 cursor-pointer md:text-lg group-hover:opacity-100"
+                onClick={() => setFullImg(project.images[currentImgIndex])}
+              >
+                View Image Preview <i className="ri-image-2-line"></i>
+              </p>
+            </div>
             <Link href={`${project.images[currentImgIndex]}`} target="_blank">
               <i
-                className="absolute z-20 text-lg font-semibold text-white duration-200 opacity-0 ri-external-link-line bottom-2 right-4 group-hover:opacity-100"
-                title="Open Image"
+                className="absolute z-20 text-lg font-semibold text-white duration-[400ms] opacity-0 ri-external-link-line bottom-2 right-4 group-hover:opacity-100"
+                title="Open In a new tab"
               ></i>
             </Link>
           </div>

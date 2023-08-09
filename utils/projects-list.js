@@ -20,7 +20,7 @@ export const projects = [
 
     It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase online.
     `,
-    images: [1, 2, 3, 4, 5].map((img) => `/images/projects/bquiz/bquiz${img}.png`),
+    images: [1, 2, 3, 4, 5, 6].map((img) => `/images/projects/bquiz/bquiz${img}.png`),
     alt_attr: "BStore Illustration",
     id: "bstore",
     techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],

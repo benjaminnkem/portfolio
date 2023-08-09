@@ -7,3 +7,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+.img-prev-con {
+  backdrop-filter: blur(4px);
+}
