@@ -17,9 +17,10 @@ const ProjectCon = ({ project, index }) => {
   return (
     <>
       {/* Global Image Prev */}
+      <div className="z-[100] -z-[100]"></div>
       <div
-        className={`fixed left-0 w-full h-full -top-10 bg-black bg-opacity-70 grid place-content-center duration-300 overflow-hidden z-[100] ${
-          selectedImage ? "opacity-100 z-[100] img-prev-con" : "opacity-0 -z-[100]"
+        className={`fixed left-0 h-full -top-10 bg-black bg-opacity-70 grid place-content-center duration-300 overflow-hidden z-[100] ${
+          selectedImage ? "opacity-100 z-[100] img-prev-con w-full" : "opacity-0 -z-[100] w-0"
         }`}
         onClick={closePrev}
       >
