@@ -103,11 +103,11 @@ const ProjectCon = ({ project, index }) => {
               alt={project.alt_attr}
               width={800}
               height={800}
-              className="object-cover w-full h-full duration-300 aspect-video img-prev group-hover:blur-sm"
+              className="object-cover w-full h-full duration-200 aspect-video img-prev group-hover:blur-sm"
               draggable="false"
             />
 
-            <div className="absolute top-0 left-0 z-10 grid w-full h-full duration-300 bg-black bg-opacity-0 group-hover:bg-opacity-40 place-content-center">
+            <div className="absolute top-0 left-0 z-10 grid w-full h-full duration-200 bg-black bg-opacity-0 group-hover:bg-opacity-40 place-content-center">
               <p
                 className="text-base font-extrabold opacity-0 cursor-pointer md:text-lg group-hover:opacity-100"
                 onClick={() => setFullImg(project.images[currentImgIndex])}
