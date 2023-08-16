@@ -18,41 +18,54 @@ const HomeContent = () => {
       const scene = new THREE.Scene();
 
       const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
-      const cameraHelper = new THREE.CameraHelper(camera);
+      // const cameraHelper = new THREE.CameraHelper(camera);
       camera.position.set(0, 10, 10);
-      scene.add(camera, cameraHelper);
+      scene.add(camera);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 5);
-      const light = new THREE.PointLight(0xffffff, 5);
+      const ambientLight = new THREE.AmbientLight(0x333333, 1);
+      const light = new THREE.PointLight(0xffffff, 50);
       const lightHelper = new THREE.PointLightHelper(light);
       // light.position.set(0, 3, 3);
       scene.add(ambientLight);
 
-      const gridHelper = new THREE.GridHelper(20);
-      scene.add(gridHelper);
+      // const gridHelper = new THREE.GridHelper(60);
+      // scene.add(gridHelper);
 
-      const createPlanet = (radius, roundness, color, distanceFromOrigin) => {
+      const createPlanet = (radius, roundness, color, distanceFromOrigin, ring) => {
         const holder = new THREE.Object3D();
 
         const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
-        const material = new THREE.MeshStandardMaterial({ color });
+        const material = new THREE.MeshBasicMaterial({ color, roughness: 10 });
         const planet = new THREE.Mesh(planetGeometry, material);
         planet.position.x = distanceFromOrigin;
 
+        if (ring) {
+          const ringGeo = new THREE.RingGeometry(1, 1.4);
+          const material = new THREE.MeshBasicMaterial({ color: 0x0e7490,  });
+          const ring = new THREE.Mesh(ringGeo, material);
+          ring.rotation.x = Math.PI * -0.5;
+
+          planet.add(ring);
+        }
+
         holder.add(planet);
         scene.add(holder);
-        return holder;
+        return { holder, planet };
       };
 
       const refSize = 0.4;
       const refFDistance = 2;
       const sun = createPlanet(refSize + 0.7, 64, 0xf97316, 0);
-      sun.add(light, lightHelper);
+      sun.holder.add(light, lightHelper);
 
-      const mercury = createPlanet(refSize, 64, 0xda4000, refFDistance);
+      // Planets
+      const mars = createPlanet(refSize, 64, 0xda4000, refFDistance);
       const earth = createPlanet(refSize + 0.2, 64, 0x029340, refFDistance + 1.5);
-      const jupiter = createPlanet(refSize + 0.4, 64, 0x0000ff, refFDistance + 3);
-      const neptune = createPlanet(refSize + 0.6, 64, 0xbe123c, refFDistance + 4.5);
+      const neptune = createPlanet(refSize + 0.35, 64, 0x0000ff, refFDistance + 3);
+      const venus = createPlanet(refSize + 0.45, 64, 0xfce2dc, refFDistance + 5);
+      const jupiter = createPlanet(refSize + 0.6, 64, 0xbe123c, refFDistance + 8, true);
+      const uranus = createPlanet(refSize + 0.8, 64, 0xffe103, refFDistance + 11.5);
+      const pluto = createPlanet(refSize, 64, 0xa855f7, refFDistance + 13);
 
       const canvas = document.querySelector(".canva");
       const renderer = new THREE.WebGLRenderer({ canvas });
@@ -60,11 +73,10 @@ const HomeContent = () => {
       renderer.setSize(sizes.width, sizes.height);
 
       const controls = new OrbitControls(camera, canvas);
-      // controls.enableZoom = false;
+      // controls.enableZoom = false; 
       controls.enableDamping = true;
       // controls.enablePan = false;
       // controls.autoRotateSpeed = 10;
-      // controls.autoRotate = true
 
       window.addEventListener("resize", () => {
         sizes.width = window.innerWidth;
@@ -78,12 +90,25 @@ const HomeContent = () => {
       const animate = () => {
         requestAnimationFrame(animate);
 
-        sun.rotation.y += 0.09;
-        mercury.rotation.y += 0.05;
-        earth.rotation.y += 0.01;
-        jupiter.rotation.y += 0.009;
-        neptune.rotation.y += 0.009;
-        // boxPoint.rotation.x += 0.005;
+        sun.holder.rotation.y += 0.09;
+
+        mars.holder.rotation.y += 0.08;
+        mars.planet.rotation.y += 0.08;
+
+        earth.holder.rotation.y += 0.05;
+        
+        neptune.holder.rotation.y += 0.03;
+        neptune.planet.rotation.y += 0.01;
+       
+        venus.holder.rotation.y += 0.02;
+        venus.planet.rotation.y += 0.01;
+
+        jupiter.holder.rotation.y += 0.009;
+        jupiter.planet.rotation.y += 0.005;
+
+        uranus.holder.rotation.y += 0.008;
+        
+        pluto.holder.rotation.y += 0.02;
 
         controls.update();
         renderer.render(scene, camera);
