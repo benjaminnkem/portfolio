@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const CursorControl = () => {
   const cursorEffect = (e) => {
+    if (window.innerWidth <= 768) return;
     const cursor1 = document.querySelector(".cursor1");
     const cursor2 = document.querySelector(".cursor2");
 

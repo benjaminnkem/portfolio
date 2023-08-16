@@ -295,6 +295,7 @@ const HomeContent = () => {
             <motion.div
               initial={{ opacity: 0, x: 0, scale: 1.2 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ delay: 0.25, type: "linear" }}
             >
               <h3 className="mb-5 text-3xl font-bold text-center uppercase md:text-4xl md:text-start">
