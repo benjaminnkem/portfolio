@@ -2,14 +2,72 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
-
-const variants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.3 } },
-};
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const HomeContent = () => {
+  useEffect(() => {
+    try {
+      const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+
+      const scene = new THREE.Scene();
+
+      const geometry = new THREE.SphereGeometry(1.5, 64, 64);
+      const material = new THREE.MeshStandardMaterial({ color: 0xf97316, roughness: 20 });
+      const sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
+
+      const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 1000);
+      const cameraHelper = new THREE.CameraHelper(camera);
+      camera.position.z = 5;
+      scene.add(camera, cameraHelper);
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+
+      const light = new THREE.PointLight(0xffffff, 10);
+      const lightHelper = new THREE.PointLightHelper(light);
+      light.position.set(0, 3, 3);
+      sphere.add(ambientLight, light, lightHelper);
+
+      const canvas = document.querySelector(".canva");
+      const renderer = new THREE.WebGLRenderer({ canvas });
+      renderer.pixelRatio = 2;
+      renderer.setSize(sizes.width, sizes.height);
+
+      const controls = new OrbitControls(camera, canvas);
+      controls.enableZoom = false;
+      controls.enableDamping = true;
+      controls.enablePan = false;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 10;
+
+      window.addEventListener("resize", () => {
+        sizes.width = window.innerWidth;
+        sizes.height = window.innerHeight;
+
+        camera.aspect = sizes.width / sizes.height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(sizes.width, sizes.height);
+      });
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+
+        controls.update();
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   return (
     <>
       <section
@@ -384,6 +442,11 @@ const HomeContent = () => {
           </div>
         </div>
       </section>
+
+      {/* Three */}
+      <div className="relative min-h-[10rem] grid place-content-center">
+        <canvas className="canva"></canvas>
+      </div>
 
       {/* Projects */}
       <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20 section" id="projects">

@@ -14,7 +14,7 @@
   z-index: 5;
   width: 0%;
   height: 4px;
-  transition: .5s;
+  transition: 0.5s;
   border-radius: 5px;
   background: linear-gradient(to right, orange, purple);
 }
@@ -35,7 +35,6 @@
 .progress3 {
   animation: progress3 1.5s linear;
 }
-
 
 #me1 {
   background: url("/images/uploads/me_.jpg") no-repeat center;
@@ -84,7 +83,6 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.951), rgba(0, 0, 0, 0.527), rgba(255, 255, 255, 0.103));
 }
 
-
 @keyframes progress {
   0% {
     width: 0.1%;
@@ -116,4 +114,12 @@
   80% {
     width: 33%;
   }
+}
+
+/* Canvas */
+.canva {
+  position: absolute;
+  background-color: transparent;
+  transition: transform .5s;
+  z-index: -100;
 }
