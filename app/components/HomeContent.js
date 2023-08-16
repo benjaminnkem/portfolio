@@ -17,22 +17,42 @@ const HomeContent = () => {
 
       const scene = new THREE.Scene();
 
-      const geometry = new THREE.SphereGeometry(1.5, 64, 64);
-      const material = new THREE.MeshStandardMaterial({ color: 0xf97316, roughness: 20 });
-      const sphere = new THREE.Mesh(geometry, material);
-      scene.add(sphere);
-
-      const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 1000);
+      const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
       const cameraHelper = new THREE.CameraHelper(camera);
-      camera.position.z = 5;
+      camera.position.set(0, 10, 10);
       scene.add(camera, cameraHelper);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
-
-      const light = new THREE.PointLight(0xffffff, 10);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 5);
+      const light = new THREE.PointLight(0xffffff, 5);
       const lightHelper = new THREE.PointLightHelper(light);
-      light.position.set(0, 3, 3);
-      sphere.add(ambientLight, light, lightHelper);
+      // light.position.set(0, 3, 3);
+      scene.add(ambientLight);
+
+      const gridHelper = new THREE.GridHelper(20);
+      scene.add(gridHelper);
+
+      const createPlanet = (radius, roundness, color, distanceFromOrigin) => {
+        const holder = new THREE.Object3D();
+
+        const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
+        const material = new THREE.MeshStandardMaterial({ color });
+        const planet = new THREE.Mesh(planetGeometry, material);
+        planet.position.x = distanceFromOrigin;
+
+        holder.add(planet);
+        scene.add(holder);
+        return holder;
+      };
+
+      const refSize = 0.4;
+      const refFDistance = 2;
+      const sun = createPlanet(refSize + 0.7, 64, 0xf97316, 0);
+      sun.add(light, lightHelper);
+
+      const mercury = createPlanet(refSize, 64, 0xda4000, refFDistance);
+      const earth = createPlanet(refSize + 0.2, 64, 0x029340, refFDistance + 1.5);
+      const jupiter = createPlanet(refSize + 0.4, 64, 0x0000ff, refFDistance + 3);
+      const neptune = createPlanet(refSize + 0.6, 64, 0xbe123c, refFDistance + 4.5);
 
       const canvas = document.querySelector(".canva");
       const renderer = new THREE.WebGLRenderer({ canvas });
@@ -40,11 +60,11 @@ const HomeContent = () => {
       renderer.setSize(sizes.width, sizes.height);
 
       const controls = new OrbitControls(camera, canvas);
-      controls.enableZoom = false;
+      // controls.enableZoom = false;
       controls.enableDamping = true;
-      controls.enablePan = false;
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 10;
+      // controls.enablePan = false;
+      // controls.autoRotateSpeed = 10;
+      // controls.autoRotate = true
 
       window.addEventListener("resize", () => {
         sizes.width = window.innerWidth;
@@ -57,6 +77,13 @@ const HomeContent = () => {
 
       const animate = () => {
         requestAnimationFrame(animate);
+
+        sun.rotation.y += 0.09;
+        mercury.rotation.y += 0.05;
+        earth.rotation.y += 0.01;
+        jupiter.rotation.y += 0.009;
+        neptune.rotation.y += 0.009;
+        // boxPoint.rotation.x += 0.005;
 
         controls.update();
         renderer.render(scene, camera);
@@ -445,7 +472,7 @@ const HomeContent = () => {
 
       {/* Three */}
       <div className="relative min-h-[10rem] grid place-content-center">
-        <canvas className="canva"></canvas>
+        <canvas className="bg-transparent border-none canva"></canvas>
       </div>
 
       {/* Projects */}

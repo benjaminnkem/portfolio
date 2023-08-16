@@ -118,8 +118,8 @@
 
 /* Canvas */
 .canva {
-  position: absolute;
+  /* position: absolute; */
   background-color: transparent;
   transition: transform .5s;
-  z-index: -100;
+  /* z-index: -100; */
 }
