@@ -16,29 +16,31 @@ const HomeContent = () => {
       };
 
       const scene = new THREE.Scene();
-      // const sceneBg = new THREE.TextureLoader().load()
+      const cubeTextureLoader = new THREE.CubeTextureLoader();
+      // scene.background = new THREE.TextureLoader().load("/textures/2k_stars_milky_way.jpg");
+      scene.background = cubeTextureLoader
+        .setPath("/textures/")
+        .load(["stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg"]);
 
       const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
-      camera.position.set(0, 30, 30);
+      camera.position.set(0, 30, 1.5);
       scene.add(camera);
 
-      const ambientLight = new THREE.AmbientLight(0x333333);
+      const ambientLight = new THREE.AmbientLight(0x555555);
       const light = new THREE.PointLight(0xffffff, 200);
-      // const lightHelper = new THREE.PointLightHelper(light);
-      // light.position.set(0, 3, 3);
       scene.add(light, ambientLight);
-
-      // const gridHelper = new THREE.GridHelper(100, 20);
-      // scene.add(gridHelper);
 
       const textureLoader = new THREE.TextureLoader();
 
-      const createPlanet = (radius, roundness, color, distanceFromOrigin, textureFileName, ring) => {
+      // const gridHelper = new THREE.GridHelper(200, 50);
+      // scene.add(gridHelper);
+
+      const createPlanet = (radius, roundness, color, distanceFromOrigin, textureFileName, ring, moon) => {
         const holder = new THREE.Object3D();
 
         const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
         const material = new THREE.MeshStandardMaterial({
-          color: textureFileName ? undefined : color,
+          color: textureFileName ? 0xffffff : color,
           roughness: 20,
           map: textureLoader.load(textureFileName ? `/textures/${textureFileName}.jpg` : "/textures/2k_mercury.jpg"),
         });
@@ -58,6 +60,31 @@ const HomeContent = () => {
           planet.add(ring);
         }
 
+        // let moonBase;
+        // if (moon) {
+        //   // const moonMesh = new THREE.Mesh(
+        //   //   new THREE.Sphere(1, 20, 20),
+        //   //   new THREE.MeshStandardMaterial({
+        //   //     color: 0xffffff,
+        //   //   })
+        //   // );
+        //   // moonMesh.position.set(10, 0, 0);
+        //   // planet.add(moonMesh);
+
+        //   moonBase = new THREE.Object3D();
+
+        //   const moonGeo = new THREE.SphereGeometry(0.3, 20, 20);
+        //   const moonMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+        //   const moonMesh = new THREE.Mesh(moonGeo, moonMat);
+        //   moonMesh.position.x = 2;
+
+        //   moonBase.add(moonMesh);
+        // }
+
+        // if (moon) {
+        //   console.log(moonBase);
+        //   holder.add(planet, moonBase);
+        // }
         holder.add(planet);
         scene.add(holder);
         return { holder, planet };
@@ -65,7 +92,7 @@ const HomeContent = () => {
 
       const sunGeo = new THREE.SphereGeometry(5, 30, 30);
       const sunMaterial = new THREE.MeshBasicMaterial({
-        map: textureLoader.load("/textures/2k_venus_surface.jpg"),
+        map: textureLoader.load("/textures/2k_sun.jpg"),
       });
 
       const sun = new THREE.Mesh(sunGeo, sunMaterial);
@@ -74,7 +101,7 @@ const HomeContent = () => {
       // Planets
       const mercury = createPlanet(0.8, 30, 0xda4000, 8, "2k_mercury");
       const venus = createPlanet(0.9, 30, 0xda4000, 11, "2k_venus_surface");
-      const earth = createPlanet(1.2, 30, 0x029340, 14, "2k_earth_daymap");
+      const earth = createPlanet(1.2, 30, 0x029340, 14, "2k_earth_daymap", false, true);
       const mars = createPlanet(0.9, 30, 0xfce2dc, 17, "2k_mars");
       const jupiter = createPlanet(1.8, 30, 0xbe123c, 20, "2k_jupiter");
       const saturn = createPlanet(1.8, 30, 0xffe103, 26, "2k_saturn", true);
@@ -93,7 +120,6 @@ const HomeContent = () => {
       // controls.enableZoom = false;
       controls.enableDamping = true;
       // controls.enablePan = false;
-      // controls.autoRotateSpeed = 10;
 
       window.addEventListener("resize", () => {
         sizes.width = window.innerWidth;
@@ -106,8 +132,10 @@ const HomeContent = () => {
 
       function moveCamera() {
         const top = document.body.getBoundingClientRect().top;
-        
-        camera.position.z = top * -0.05;
+
+        if (top <= -30) {
+          camera.position.z = top * -0.05;
+        }
       }
 
       document.body.onscroll = moveCamera;
@@ -155,23 +183,20 @@ const HomeContent = () => {
 
   return (
     <>
-      <section
-        className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section mt-32"
-        id="me"
-      >
-        <div className="grid items-center grid-cols-2 gap-4">
-          <div className="py-10 space-y-3 text-center md:text-start md:py-0">
+      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section" id="me">
+        <div className="grid items-center w-full gap-4">
+          <div className="max-w-3xl py-10 space-y-3 text-center md:text-start md:py-0">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25, type: "linear" }}
             >
-              <h2 className="text-5xl font-extrabold sm:text-6xl">
+              <h2 className="text-5xl font-extrabold sm:text-6xl lg:text-8xl text-shadow">
                 Hey, I&apos;m <span id="ben">Ben</span>
                 <span className="text-orange-500">.</span>
               </h2>
-              <p className="mt-1 text-xl select-none">
+              <p className="mt-1 text-xl select-none text-shadow md:text-3xl">
                 I&apos;m a{" "}
                 <span className="relative font-extrabold text-orange-400" id="stack">
                   <TypeAnimation
@@ -201,10 +226,10 @@ const HomeContent = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.75, type: "linear" }}
             >
-              <p className="text-shadow">
+              <p className="text-lg text-shadow">
                 I&apos;m A Computer Science Student at the Federal University of Agriculture, Abeokuta, Nigeria{" "}
-                <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to develop
-                games, websites and softwares. I&apos;m currently into Fullstack Web Development.
+                <span className="font-semibold">(FUNAAB)</span>. And I&apos;ve been into Fullstack Web development for
+                about 3+ years.
               </p>
             </motion.div>
 
@@ -223,18 +248,18 @@ const HomeContent = () => {
             </motion.div>
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 1 }}
             className="bg-transparent border border-orange-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 w-full"
             id="me1"
-          ></motion.div>
+          ></motion.div> */}
         </div>
       </section>
 
-      <section className="my-10 section" id="about">
+      {/* <section className="my-10 section" id="about">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#3D3D3D"
@@ -399,11 +424,7 @@ const HomeContent = () => {
                             <i className="ri-database-2-line"></i> <span>MySQL</span>
                           </div>
                         </li>
-                        {/* <li>
-                        <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                          <span>Python</span>
-                        </div>
-                      </li> */}
+
                         <li>
                           <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
                             <i className="ri-gamepad-line"></i> <span>Unity 2D</span>
@@ -429,15 +450,15 @@ const HomeContent = () => {
             d="M0,288L120,256C240,224,480,160,720,128C960,96,1200,96,1320,96L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
           ></path>
         </svg>
-      </section>
+      </section> */}
 
       {/* Statistics */}
-      <section className="my-10 section">
+      <section className="my-10 section" id="stats__">
         <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
           <div>
             <motion.div
               initial={{ opacity: 0, x: 0, scale: 1.2 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25, type: "linear" }}
             >
@@ -448,7 +469,7 @@ const HomeContent = () => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, x: 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, type: "linear" }}
               >
                 <div className="p-4 border border-orange-500 rounded-md">
@@ -494,7 +515,7 @@ const HomeContent = () => {
 
               <motion.div
                 initial={{ opacity: 0, x: 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, type: "linear" }}
               >
                 <div className="p-4 border border-orange-500 rounded-md">
@@ -538,7 +559,7 @@ const HomeContent = () => {
         <div>
           <motion.div
             initial={{ opacity: 0, x: 0, scale: 1.2 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ delay: 0.25, type: "linear" }}
           >
             <h3 className="mb-5 text-4xl font-bold uppercase">
@@ -549,7 +570,7 @@ const HomeContent = () => {
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "ease-in-out", duration: 0.2 }}
               className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
@@ -591,7 +612,7 @@ const HomeContent = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "linear" }}
               className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
@@ -634,7 +655,7 @@ const HomeContent = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "linear" }}
               className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
@@ -676,7 +697,7 @@ const HomeContent = () => {
           </div>
           <motion.div
             initial={{ opacity: 0, x: 0, y: 100 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ delay: 0.1, type: "linear" }}
             className="mt-5 text-center"
           >

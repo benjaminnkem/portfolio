@@ -83,10 +83,6 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.951), rgba(0, 0, 0, 0.527), rgba(255, 255, 255, 0.103));
 }
 
-.text-shadow {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.618);
-}
-
 @keyframes progress {
   0% {
     width: 0.1%;
@@ -120,24 +116,26 @@
   }
 }
 
-main {
+/* main {
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
+} */
 
-#me {
-  display: grid;
+#me,
+#stats__,
+#projects {
   align-items: center;
   grid-column: 1 / 13;
 }
 
-#me div:first-child {
+/* #me div:first-child {
   grid-column: 1 / 6;
 }
 
 #me div:last-child {
   grid-column: 6 / 13;
-}
+} */
 
 #about {
   grid-column: 1 / 13;
