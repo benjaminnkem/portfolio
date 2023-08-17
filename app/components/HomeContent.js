@@ -16,32 +16,41 @@ const HomeContent = () => {
       };
 
       const scene = new THREE.Scene();
+      // const sceneBg = new THREE.TextureLoader().load()
 
       const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
-      // const cameraHelper = new THREE.CameraHelper(camera);
-      camera.position.set(0, 10, 10);
+      camera.position.set(0, 30, 30);
       scene.add(camera);
 
-      const ambientLight = new THREE.AmbientLight(0x333333, 1);
-      const light = new THREE.PointLight(0xffffff, 50);
+      const ambientLight = new THREE.AmbientLight(0x333333);
+      const light = new THREE.PointLight(0xffffff, 200);
       const lightHelper = new THREE.PointLightHelper(light);
       // light.position.set(0, 3, 3);
-      scene.add(ambientLight);
+      scene.add(light, ambientLight, lightHelper);
 
-      // const gridHelper = new THREE.GridHelper(60);
-      // scene.add(gridHelper);
+      const gridHelper = new THREE.GridHelper(60);
+      scene.add(gridHelper);
 
-      const createPlanet = (radius, roundness, color, distanceFromOrigin, ring) => {
+      const textureLoader = new THREE.TextureLoader();
+
+      const createPlanet = (radius, roundness, color, distanceFromOrigin, textureFileName, ring) => {
         const holder = new THREE.Object3D();
 
         const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
-        const material = new THREE.MeshBasicMaterial({ color, roughness: 10 });
+        const material = new THREE.MeshStandardMaterial({
+          color: textureFileName ? undefined : color,
+          roughness: 20,
+          map: textureLoader.load(textureFileName ? `/textures/${textureFileName}.jpg` : "/textures/2k_mercury.jpg"),
+        });
         const planet = new THREE.Mesh(planetGeometry, material);
         planet.position.x = distanceFromOrigin;
 
         if (ring) {
-          const ringGeo = new THREE.RingGeometry(1, 1.4);
-          const material = new THREE.MeshBasicMaterial({ color: 0x0e7490,  });
+          const ringGeo = new THREE.RingGeometry(1.8, 2.5);
+          const material = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            map: textureLoader.load("/textures/2k_saturn_ring_alpha.png"),
+          });
           const ring = new THREE.Mesh(ringGeo, material);
           ring.rotation.x = Math.PI * -0.5;
 
@@ -53,27 +62,34 @@ const HomeContent = () => {
         return { holder, planet };
       };
 
-      const refSize = 0.4;
-      const refFDistance = 2;
-      const sun = createPlanet(refSize + 0.7, 64, 0xf97316, 0);
-      sun.holder.add(light, lightHelper);
+      const sunGeo = new THREE.SphereGeometry(5, 30, 30);
+      const sunMaterial = new THREE.MeshBasicMaterial({
+        map: textureLoader.load("/textures/2k_venus_surface.jpg"),
+        side: 1,
+      });
+
+      const sun = new THREE.Mesh(sunGeo, sunMaterial);
+      scene.add(sun);
 
       // Planets
-      const mars = createPlanet(refSize, 64, 0xda4000, refFDistance);
-      const earth = createPlanet(refSize + 0.2, 64, 0x029340, refFDistance + 1.5);
-      const neptune = createPlanet(refSize + 0.35, 64, 0x0000ff, refFDistance + 3);
-      const venus = createPlanet(refSize + 0.45, 64, 0xfce2dc, refFDistance + 5);
-      const jupiter = createPlanet(refSize + 0.6, 64, 0xbe123c, refFDistance + 8, true);
-      const uranus = createPlanet(refSize + 0.8, 64, 0xffe103, refFDistance + 11.5);
-      const pluto = createPlanet(refSize, 64, 0xa855f7, refFDistance + 13);
+      const mercury = createPlanet(0.8, 64, 0xda4000, 8, "2k_mercury");
+      const venus = createPlanet(0.9, 64, 0xda4000, 11, "2k_venus_surface");
+      const earth = createPlanet(1.2, 64, 0x029340, 14, "2k_earth_daymap");
+      const mars = createPlanet(0.9, 64, 0xfce2dc, 17, "2k_mars");
+      const jupiter = createPlanet(1.8, 64, 0xbe123c, 20, "2k_jupiter");
+      const saturn = createPlanet(1.8, 64, 0xffe103, 25, "2k_uranus", true);
+      const pluto = createPlanet(1, 64, 0xa855f7, 1 + 26);
+
+      // Other Planet atrr
+      saturn.planet.rotation.set(0, 0, -10);
 
       const canvas = document.querySelector(".canva");
       const renderer = new THREE.WebGLRenderer({ canvas });
-      renderer.pixelRatio = 2;
+      renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(sizes.width, sizes.height);
 
-      const controls = new OrbitControls(camera, canvas);
-      // controls.enableZoom = false; 
+      const controls = new OrbitControls(camera, renderer.domElement);
+      // controls.enableZoom = false;
       controls.enableDamping = true;
       // controls.enablePan = false;
       // controls.autoRotateSpeed = 10;
@@ -90,24 +106,29 @@ const HomeContent = () => {
       const animate = () => {
         requestAnimationFrame(animate);
 
-        sun.holder.rotation.y += 0.09;
+        sun.rotation.y += 0.009;
 
-        mars.holder.rotation.y += 0.08;
-        mars.planet.rotation.y += 0.08;
+        mercury.holder.rotation.y += 0.05;
+        mercury.planet.rotation.y += 0.08;
 
-        earth.holder.rotation.y += 0.05;
-        
-        neptune.holder.rotation.y += 0.03;
-        neptune.planet.rotation.y += 0.01;
-       
-        venus.holder.rotation.y += 0.02;
-        venus.planet.rotation.y += 0.01;
+        venus.holder.rotation.y += 0.035;
+        venus.planet.rotation.y += 0.08;
+
+        earth.holder.rotation.y += 0.02;
+        earth.planet.rotation.y += 0.1;
+
+        mars.holder.rotation.y += 0.011;
+        mars.planet.rotation.y += 0.01;
+
+        jupiter.holder.rotation.y += 0.001;
+        jupiter.planet.rotation.y += 0.009;
 
         jupiter.holder.rotation.y += 0.009;
         jupiter.planet.rotation.y += 0.005;
 
-        uranus.holder.rotation.y += 0.008;
-        
+        saturn.holder.rotation.y += 0.008;
+        saturn.planet.rotation.y += 0.008;
+
         pluto.holder.rotation.y += 0.02;
 
         controls.update();

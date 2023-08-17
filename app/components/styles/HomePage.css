@@ -120,6 +120,16 @@
 .canva {
   /* position: absolute; */
   background-color: transparent;
-  transition: transform .5s;
+  transition: transform 0.5s;
   /* z-index: -100; */
 }
+
+/* 
+.canva {
+  position: fixed;
+  background-color: transparent;
+  transition: transform .5s;
+  z-index: -100;
+  top: 0;
+  left: 0;
+} */
