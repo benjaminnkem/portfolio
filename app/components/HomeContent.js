@@ -24,12 +24,12 @@ const HomeContent = () => {
 
       const ambientLight = new THREE.AmbientLight(0x333333);
       const light = new THREE.PointLight(0xffffff, 200);
-      const lightHelper = new THREE.PointLightHelper(light);
+      // const lightHelper = new THREE.PointLightHelper(light);
       // light.position.set(0, 3, 3);
-      scene.add(light, ambientLight, lightHelper);
+      scene.add(light, ambientLight);
 
-      const gridHelper = new THREE.GridHelper(60);
-      scene.add(gridHelper);
+      // const gridHelper = new THREE.GridHelper(100, 20);
+      // scene.add(gridHelper);
 
       const textureLoader = new THREE.TextureLoader();
 
@@ -47,9 +47,10 @@ const HomeContent = () => {
 
         if (ring) {
           const ringGeo = new THREE.RingGeometry(1.8, 2.5);
-          const material = new THREE.MeshBasicMaterial({
+          const material = new THREE.MeshStandardMaterial({
             color: 0xffffff,
             map: textureLoader.load("/textures/2k_saturn_ring_alpha.png"),
+            side: THREE.DoubleSide,
           });
           const ring = new THREE.Mesh(ringGeo, material);
           ring.rotation.x = Math.PI * -0.5;
@@ -65,23 +66,23 @@ const HomeContent = () => {
       const sunGeo = new THREE.SphereGeometry(5, 30, 30);
       const sunMaterial = new THREE.MeshBasicMaterial({
         map: textureLoader.load("/textures/2k_venus_surface.jpg"),
-        side: 1,
       });
 
       const sun = new THREE.Mesh(sunGeo, sunMaterial);
       scene.add(sun);
 
       // Planets
-      const mercury = createPlanet(0.8, 64, 0xda4000, 8, "2k_mercury");
-      const venus = createPlanet(0.9, 64, 0xda4000, 11, "2k_venus_surface");
-      const earth = createPlanet(1.2, 64, 0x029340, 14, "2k_earth_daymap");
-      const mars = createPlanet(0.9, 64, 0xfce2dc, 17, "2k_mars");
-      const jupiter = createPlanet(1.8, 64, 0xbe123c, 20, "2k_jupiter");
-      const saturn = createPlanet(1.8, 64, 0xffe103, 25, "2k_uranus", true);
-      const pluto = createPlanet(1, 64, 0xa855f7, 1 + 26);
+      const mercury = createPlanet(0.8, 30, 0xda4000, 8, "2k_mercury");
+      const venus = createPlanet(0.9, 30, 0xda4000, 11, "2k_venus_surface");
+      const earth = createPlanet(1.2, 30, 0x029340, 14, "2k_earth_daymap");
+      const mars = createPlanet(0.9, 30, 0xfce2dc, 17, "2k_mars");
+      const jupiter = createPlanet(1.8, 30, 0xbe123c, 20, "2k_jupiter");
+      const saturn = createPlanet(1.8, 30, 0xffe103, 26, "2k_saturn", true);
+      const uranus = createPlanet(1, 30, 0xa855f7, 30, "2k_uranus");
+      const neptune = createPlanet(1.2, 30, 0xa855f7, 33, "2k_neptune");
 
       // Other Planet atrr
-      saturn.planet.rotation.set(0, 0, -10);
+      saturn.planet.rotation.set(0, 0, 10);
 
       const canvas = document.querySelector(".canva");
       const renderer = new THREE.WebGLRenderer({ canvas });
@@ -108,10 +109,10 @@ const HomeContent = () => {
 
         sun.rotation.y += 0.009;
 
-        mercury.holder.rotation.y += 0.05;
+        mercury.holder.rotation.y += 0.01;
         mercury.planet.rotation.y += 0.08;
 
-        venus.holder.rotation.y += 0.035;
+        venus.holder.rotation.y += 0.005;
         venus.planet.rotation.y += 0.08;
 
         earth.holder.rotation.y += 0.02;
@@ -129,7 +130,10 @@ const HomeContent = () => {
         saturn.holder.rotation.y += 0.008;
         saturn.planet.rotation.y += 0.008;
 
-        pluto.holder.rotation.y += 0.02;
+        uranus.holder.rotation.y += 0.02;
+
+        neptune.holder.rotation.y += 0.007;
+        neptune.planet.rotation.y += 0.005; 
 
         controls.update();
         renderer.render(scene, camera);

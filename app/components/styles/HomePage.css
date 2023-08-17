@@ -117,14 +117,14 @@
 }
 
 /* Canvas */
-.canva {
-  /* position: absolute; */
+/* .canva {
+  position: absolute;
   background-color: transparent;
   transition: transform 0.5s;
-  /* z-index: -100; */
-}
+  z-index: -100;
+} */
 
-/* 
+
 .canva {
   position: fixed;
   background-color: transparent;
@@ -132,4 +132,4 @@
   z-index: -100;
   top: 0;
   left: 0;
-} */
+}
