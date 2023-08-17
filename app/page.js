@@ -1,3 +1,4 @@
+import HomeContent from "./components/HomeContent";
 import HomePage from "./components/HomePage";
 
 export const metadata = {
@@ -7,8 +8,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
-      <HomePage />
-    </>
+    <main>
+      <HomeContent />
+    </main>
   );
 }

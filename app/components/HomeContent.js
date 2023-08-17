@@ -104,6 +104,14 @@ const HomeContent = () => {
         renderer.setSize(sizes.width, sizes.height);
       });
 
+      function moveCamera() {
+        const top = document.body.getBoundingClientRect().top;
+        
+        camera.position.z = top * -0.05;
+      }
+
+      document.body.onscroll = moveCamera;
+
       const animate = () => {
         requestAnimationFrame(animate);
 
@@ -133,7 +141,7 @@ const HomeContent = () => {
         uranus.holder.rotation.y += 0.02;
 
         neptune.holder.rotation.y += 0.007;
-        neptune.planet.rotation.y += 0.005; 
+        neptune.planet.rotation.y += 0.005;
 
         controls.update();
         renderer.render(scene, camera);
@@ -151,7 +159,7 @@ const HomeContent = () => {
         className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[30rem] my-10 section mt-32"
         id="me"
       >
-        <div className="grid items-center gap-4 megrid">
+        <div className="grid items-center grid-cols-2 gap-4">
           <div className="py-10 space-y-3 text-center md:text-start md:py-0">
             <motion.div
               initial={{ opacity: 0 }}
@@ -193,8 +201,8 @@ const HomeContent = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.75, type: "linear" }}
             >
-              <p className="font-light opacity-80">
-                I&apos;m A Computer Science Student at the Federal University of Agriculture, Abeokuta{" "}
+              <p className="text-shadow">
+                I&apos;m A Computer Science Student at the Federal University of Agriculture, Abeokuta, Nigeria{" "}
                 <span className="font-semibold">(FUNAAB)</span>. Ever since I was 13 I&apos;ve always wanted to develop
                 games, websites and softwares. I&apos;m currently into Fullstack Web Development.
               </p>
@@ -220,7 +228,7 @@ const HomeContent = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 1 }}
-            className="grid bg-transparent border border-orange-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 grid-start-base"
+            className="bg-transparent border border-orange-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 w-full"
             id="me1"
           ></motion.div>
         </div>

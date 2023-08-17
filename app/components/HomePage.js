@@ -7,9 +7,9 @@ const HomePage = () => {
   return (
     <>
       <main>
-        <PageContainer>
+        {/* <PageContainer> */}
           <HomeContent />
-        </PageContainer>
+        {/* </PageContainer> */}
       </main>
     </>
   );
