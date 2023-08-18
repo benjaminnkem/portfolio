@@ -24,7 +24,6 @@ const item = {
   show: { opacity: 1 },
 };
 
-
 const logosVariants = {
   hidden: {
     opacity: 0,
@@ -37,153 +36,153 @@ const logosVariants = {
 };
 
 const HomeContent = () => {
-  useEffect(() => {
-    try {
-      const sizes = {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
+  // useEffect(() => {
+  //   try {
+  //     const sizes = {
+  //       width: window.innerWidth,
+  //       height: window.innerHeight,
+  //     };
 
-      const scene = new THREE.Scene();
-      const cubeTextureLoader = new THREE.CubeTextureLoader();
-      // scene.background = new THREE.TextureLoader().load("/textures/2k_stars_milky_way.jpg");
-      scene.background = cubeTextureLoader
-        .setPath("/textures/")
-        .load(["stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg"]);
+  //     const scene = new THREE.Scene();
+  //     const cubeTextureLoader = new THREE.CubeTextureLoader();
+  //     // scene.background = new THREE.TextureLoader().load("/textures/2k_stars_milky_way.jpg");
+  //     scene.background = cubeTextureLoader
+  //       .setPath("/textures/")
+  //       .load(["stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg"]);
 
-      const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
-      camera.position.set(0, 30, 1.5);
-      scene.add(camera);
+  //     const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
+  //     camera.position.set(0, 30, 1.5);
+  //     scene.add(camera);
 
-      const ambientLight = new THREE.AmbientLight(0x555555);
-      const light = new THREE.PointLight(0xffffff, 200);
-      scene.add(light, ambientLight);
+  //     const ambientLight = new THREE.AmbientLight(0x555555);
+  //     const light = new THREE.PointLight(0xffffff, 200);
+  //     scene.add(light, ambientLight);
 
-      const textureLoader = new THREE.TextureLoader();
+  //     const textureLoader = new THREE.TextureLoader();
 
-      // const gridHelper = new THREE.GridHelper(200, 50);
-      // scene.add(gridHelper);
+  //     // const gridHelper = new THREE.GridHelper(200, 50);
+  //     // scene.add(gridHelper);
 
-      const createPlanet = (radius, roundness, color, distanceFromOrigin, textureFileName, ring, moon) => {
-        const holder = new THREE.Object3D();
+  //     const createPlanet = (radius, roundness, color, distanceFromOrigin, textureFileName, ring, moon) => {
+  //       const holder = new THREE.Object3D();
 
-        const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
-        const material = new THREE.MeshStandardMaterial({
-          color: textureFileName ? 0xffffff : color,
-          roughness: 20,
-          map: textureLoader.load(textureFileName ? `/textures/${textureFileName}.jpg` : "/textures/2k_mercury.jpg"),
-        });
-        const planet = new THREE.Mesh(planetGeometry, material);
-        planet.position.x = distanceFromOrigin;
+  //       const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
+  //       const material = new THREE.MeshStandardMaterial({
+  //         color: textureFileName ? 0xffffff : color,
+  //         roughness: 20,
+  //         map: textureLoader.load(textureFileName ? `/textures/${textureFileName}.jpg` : "/textures/2k_mercury.jpg"),
+  //       });
+  //       const planet = new THREE.Mesh(planetGeometry, material);
+  //       planet.position.x = distanceFromOrigin;
 
-        if (ring) {
-          const ringGeo = new THREE.RingGeometry(1.8, 2.5);
-          const material = new THREE.MeshStandardMaterial({
-            color: 0xffffff,
-            map: textureLoader.load("/textures/2k_saturn_ring_alpha.png"),
-            side: THREE.DoubleSide,
-          });
-          const ring = new THREE.Mesh(ringGeo, material);
-          ring.rotation.x = Math.PI * -0.5;
+  //       if (ring) {
+  //         const ringGeo = new THREE.RingGeometry(1.8, 2.5);
+  //         const material = new THREE.MeshStandardMaterial({
+  //           color: 0xffffff,
+  //           map: textureLoader.load("/textures/2k_saturn_ring_alpha.png"),
+  //           side: THREE.DoubleSide,
+  //         });
+  //         const ring = new THREE.Mesh(ringGeo, material);
+  //         ring.rotation.x = Math.PI * -0.5;
 
-          planet.add(ring);
-        }
+  //         planet.add(ring);
+  //       }
 
-        holder.add(planet);
-        scene.add(holder);
-        return { holder, planet };
-      };
+  //       holder.add(planet);
+  //       scene.add(holder);
+  //       return { holder, planet };
+  //     };
 
-      const sunGeo = new THREE.SphereGeometry(5, 30, 30);
-      const sunMaterial = new THREE.MeshBasicMaterial({
-        map: textureLoader.load("/textures/2k_sun.jpg"),
-      });
+  //     const sunGeo = new THREE.SphereGeometry(5, 30, 30);
+  //     const sunMaterial = new THREE.MeshBasicMaterial({
+  //       map: textureLoader.load("/textures/2k_sun.jpg"),
+  //     });
 
-      const sun = new THREE.Mesh(sunGeo, sunMaterial);
-      scene.add(sun);
+  //     const sun = new THREE.Mesh(sunGeo, sunMaterial);
+  //     scene.add(sun);
 
-      // Planets
-      const mercury = createPlanet(0.8, 30, 0xda4000, 8, "2k_mercury");
-      const venus = createPlanet(0.9, 30, 0xda4000, 11, "2k_venus_surface");
-      const earth = createPlanet(1.2, 30, 0x029340, 14, "2k_earth_daymap", false, true);
-      const mars = createPlanet(0.9, 30, 0xfce2dc, 17, "2k_mars");
-      const jupiter = createPlanet(1.8, 30, 0xbe123c, 20, "2k_jupiter");
-      const saturn = createPlanet(1.8, 30, 0xffe103, 26, "2k_saturn", true);
-      const uranus = createPlanet(1, 30, 0xa855f7, 30, "2k_uranus");
-      const neptune = createPlanet(1.2, 30, 0xa855f7, 33, "2k_neptune");
+  //     // Planets
+  //     const mercury = createPlanet(0.8, 30, 0xda4000, 8, "2k_mercury");
+  //     const venus = createPlanet(0.9, 30, 0xda4000, 11, "2k_venus_surface");
+  //     const earth = createPlanet(1.2, 30, 0x029340, 14, "2k_earth_daymap", false, true);
+  //     const mars = createPlanet(0.9, 30, 0xfce2dc, 17, "2k_mars");
+  //     const jupiter = createPlanet(1.8, 30, 0xbe123c, 20, "2k_jupiter");
+  //     const saturn = createPlanet(1.8, 30, 0xffe103, 26, "2k_saturn", true);
+  //     const uranus = createPlanet(1, 30, 0xa855f7, 30, "2k_uranus");
+  //     const neptune = createPlanet(1.2, 30, 0xa855f7, 33, "2k_neptune");
 
-      // Other Planet atrr
-      saturn.planet.rotation.set(0, 0, 10);
+  //     // Other Planet atrr
+  //     saturn.planet.rotation.set(0, 0, 10);
 
-      const canvas = document.querySelector(".canva");
-      const renderer = new THREE.WebGLRenderer({ canvas });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(sizes.width, sizes.height);
+  //     const canvas = document.querySelector(".canva");
+  //     const renderer = new THREE.WebGLRenderer({ canvas });
+  //     renderer.setPixelRatio(window.devicePixelRatio);
+  //     renderer.setSize(sizes.width, sizes.height);
 
-      const controls = new OrbitControls(camera, renderer.domElement);
-      // controls.enableZoom = false;
-      controls.enableDamping = true;
-      // controls.enablePan = false;
+  //     const controls = new OrbitControls(camera, renderer.domElement);
+  //     // controls.enableZoom = false;
+  //     controls.enableDamping = true;
+  //     // controls.enablePan = false;
 
-      window.addEventListener("resize", () => {
-        sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
+  //     window.addEventListener("resize", () => {
+  //       sizes.width = window.innerWidth;
+  //       sizes.height = window.innerHeight;
 
-        camera.aspect = sizes.width / sizes.height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(sizes.width, sizes.height);
-      });
+  //       camera.aspect = sizes.width / sizes.height;
+  //       camera.updateProjectionMatrix();
+  //       renderer.setSize(sizes.width, sizes.height);
+  //     });
 
-      function moveCamera() {
-        const top = document.body.getBoundingClientRect().top;
+  //     function moveCamera() {
+  //       const top = document.body.getBoundingClientRect().top;
 
-        if (top <= -30) {
-          camera.position.z = top * -0.05;
-        }
-      }
+  //       if (top <= -30) {
+  //         camera.position.z = top * -0.05;
+  //       }
+  //     }
 
-      document.body.onscroll = moveCamera;
+  //     document.body.onscroll = moveCamera;
 
-      const animate = () => {
-        requestAnimationFrame(animate);
+  //     const animate = () => {
+  //       requestAnimationFrame(animate);
 
-        sun.rotation.y += 0.009;
+  //       sun.rotation.y += 0.009;
 
-        mercury.holder.rotation.y += 0.03;
-        mercury.planet.rotation.y += 0.08;
+  //       mercury.holder.rotation.y += 0.03;
+  //       mercury.planet.rotation.y += 0.08;
 
-        venus.holder.rotation.y += 0.02;
-        venus.planet.rotation.y += 0.08;
+  //       venus.holder.rotation.y += 0.02;
+  //       venus.planet.rotation.y += 0.08;
 
-        earth.holder.rotation.y += 0.01;
-        earth.planet.rotation.y += 0.1;
+  //       earth.holder.rotation.y += 0.01;
+  //       earth.planet.rotation.y += 0.1;
 
-        mars.holder.rotation.y += 0.011;
-        mars.planet.rotation.y += 0.01;
+  //       mars.holder.rotation.y += 0.011;
+  //       mars.planet.rotation.y += 0.01;
 
-        jupiter.holder.rotation.y += 0.001;
-        jupiter.planet.rotation.y += 0.009;
+  //       jupiter.holder.rotation.y += 0.001;
+  //       jupiter.planet.rotation.y += 0.009;
 
-        jupiter.holder.rotation.y += 0.009;
-        jupiter.planet.rotation.y += 0.005;
+  //       jupiter.holder.rotation.y += 0.009;
+  //       jupiter.planet.rotation.y += 0.005;
 
-        saturn.holder.rotation.y += 0.008;
-        saturn.planet.rotation.y += 0.008;
+  //       saturn.holder.rotation.y += 0.008;
+  //       saturn.planet.rotation.y += 0.008;
 
-        uranus.holder.rotation.y += 0.02;
+  //       uranus.holder.rotation.y += 0.02;
 
-        neptune.holder.rotation.y += 0.007;
-        neptune.planet.rotation.y += 0.005;
+  //       neptune.holder.rotation.y += 0.007;
+  //       neptune.planet.rotation.y += 0.005;
 
-        controls.update();
-        renderer.render(scene, camera);
-      };
+  //       controls.update();
+  //       renderer.render(scene, camera);
+  //     };
 
-      animate();
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
+  //     animate();
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }, []);
 
   return (
     <>
@@ -191,7 +190,7 @@ const HomeContent = () => {
         className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section bg-[#0f0f0f44]"
         id="me"
       >
-        <div className="flex justify-between items-center w-full gap-4">
+        <div className="sm:flex justify-between items-center w-full sm:gap-4 gap-2">
           <div className="max-w-2xl py-10 space-y-3 text-center md:text-start md:py-0">
             <motion.div
               initial={{ opacity: 0 }}
@@ -233,12 +232,12 @@ const HomeContent = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.75, type: "linear" }}
             >
-              <p className="text-lg text-shadow">
+              <p className="sm:text-lg text-base text-shadow">
                 I&apos;m A Fullstack Web Developer. I build responsive, highly scalable and maintainable web
                 applications.
               </p>
 
-              <p className="mt-8">
+              <p className="md:mt-8 mt-4">
                 Ready to take your <span className="text-cyan-500 font-bold">brand/project</span> to the next level?
                 I&apos;m the guy for the job <span className="text-cyan-500 font-bold">.</span> 😉
               </p>
@@ -265,7 +264,7 @@ const HomeContent = () => {
               initial={"hidden"}
               whileInView="show"
               viewport={{ once: true }}
-              className="flex flex-col space-y-6 overflow-hidden"
+              className="flex sm:flex-col justify-center items-center sm:justify-start space-x-4 sm:space-x-0 sm:space-y-6 overflow-hidden"
             >
               <Link href="https://web.facebook.com/etzbenjamin.nkem" target="_blank">
                 <motion.li variants={logosVariants} className="overflow-hidden">
@@ -282,7 +281,7 @@ const HomeContent = () => {
                   <i className="duration-200 hover:text-cyan-500 ri-whatsapp-line text-xl"></i>
                 </motion.li>
               </Link>
-              <Link href={"https://wa.me/+2348133961439"} target="_blank" title="Meet me on LinkedIn">
+              <Link href={"https://www.linkedin.com/in/benjamin-nkem-23526720b/"} target="_blank" title="Meet me on LinkedIn">
                 <motion.li variants={logosVariants} className="overflow-hidden">
                   <i className="duration-200 hover:text-cyan-500 ri-linkedin-box-fill text-xl"></i>
                 </motion.li>
@@ -526,87 +525,141 @@ const HomeContent = () => {
         <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
           <div>
             <motion.div
-              initial={{ opacity: 0, x: 0, scale: 1.2 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.25, type: "linear" }}
             >
               <h3 className="mb-5 text-3xl font-bold text-center uppercase md:text-4xl md:text-start">
-                Personal Statistics<span className="text-cyan-500">.</span>
+                Personal Stats<span className="text-cyan-500">.</span>
               </h3>
             </motion.div>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, type: "linear" }}
               >
-                <div className="p-4 border border-cyan-500 rounded-md">
+                <div className="p-4 border border-cyan-500 rounded-md bg-[#0f0f0f6f]">
+                  <h3 className="text-3xl font-bold mb-4">
+                    Languages<span className="font-semibold text-cyan-500">.</span>
+                  </h3>
                   <div className="space-y-8">
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">English</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md progress"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "100%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
                       <p>100%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Igbo</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-3/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress1"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "60%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
                       <p>60%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Yoruba</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-4/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress2"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "80%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
                       <p>80%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Spanish</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-1/3 h-2 duration-200 bg-cyan-500 rounded-r-md progress3"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "20%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
-                      <p>33%</p>
+                      <p>20%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Turkish</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-1/3 h-2 duration-200 bg-cyan-500 rounded-r-md progress3"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "20%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
-                      <p>33%</p>
+                      <p>20%</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 0 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1, type: "linear" }}
-              >
-                <div className="p-4 border border-cyan-500 rounded-md">
+              <motion.div initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "linear" }}>
+                <div className="p-4 border border-cyan-500 rounded-md bg-[#0f0f0f6f]">
+                  <h3 className="text-3xl font-bold mb-4">
+                    Hobbies<span className="font-semibold text-cyan-500">.</span>
+                  </h3>
                   <div className="space-y-8">
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
+                      <p className="font-semibold">Coding</p>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "100%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
+                      </div>
+                      <p>100%</p>
+                    </div>
+                    <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Reading</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md progress"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "100%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
                       <p>100%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Games</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-3/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress1"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "60%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="w-3/5 h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
                       <p>60%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Traveling</p>
-                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
-                        <div className="w-4/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress2"></div>
+                      <div className="w-full h-4 overflow-hidden border border-cyan-500 rounded-md">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "80%" }}
+                          transition={{ type: "linear", duration: 1 }}
+                          className="w-4/5 h-2 duration-200 bg-cyan-500 rounded-r-md"
+                        ></motion.div>
                       </div>
                       <p>80%</p>
                     </div>
@@ -619,9 +672,7 @@ const HomeContent = () => {
       </section>
 
       {/* Three */}
-      <div className="relative min-h-[10rem] grid place-content-center">
-        <canvas className="bg-transparent border-none canva"></canvas>
-      </div>
+      <canvas className="bg-transparent border-none canva"></canvas>
 
       {/* Projects */}
       <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20 section" id="projects">

@@ -32,13 +32,13 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
         <div className="md:max-w-[1024px] w-11/12 md:py-4 py-3 mx-auto">
-          <ul className="grid items-center grid-cols-3">
-            <li>
+          <div className="flex items-center justify-between">
+            <div>
               <Link href={"/"} className="text-3xl font-bold md:text-4xl">
                 B<span className="text-cyan-500">.</span>{" "}
               </Link>
-            </li>
-            <li className="hidden mx-auto md:block">
+            </div>
+            {/* <li className="hidden mx-auto md:block">
               <div className="flex items-center space-x-4">
                 <div className="group">
                   <Link href={"/"}>
@@ -50,7 +50,7 @@ const Navbar = () => {
                       }`}
                     >
                       <i className="overflow-hidden text-xl duration-200 ri-home-2-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[52px]">
+                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[58px]">
                         <span>Home</span>
                       </div>
                     </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
                       }`}
                     >
                       <i className="overflow-hidden text-xl duration-200 ri-phone-fill"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
+                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[78px]">
                         <span>Contact</span>
                       </div>
                     </div>
@@ -98,16 +98,16 @@ const Navbar = () => {
                       }`}
                     >
                       <i className="overflow-hidden text-xl duration-200 ri-game-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[60px]">
+                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
                         <span>Games</span>
                       </div>
                     </div>
                   </Link>
                 </div>
               </div>
-            </li>
+            </li> */}
 
-            <li className="flex ml-auto space-x-5 text-lg font-light">
+            {/* <li className="flex ml-auto space-x-5 text-lg font-light">
               <Link
                 href={"https://web.facebook.com/etzbenjamin.nkem"}
                 target="_blank"
@@ -136,9 +136,46 @@ const Navbar = () => {
               >
                 <i className="cursor-pointer ri-github-fill"></i>
               </Link>
-            </li>
+            </li> */}
 
-            <li className="relative z-40 block w-10 ml-auto md:hidden">
+            <ul className="sm:flex ml-auto space-x-2 text-sm font-semibold hidden">
+              <div>
+                <Link href={"/"}>
+                  <li>
+                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/" && "text-cyan-500"}`}>Home</p>
+                  </li>
+                </Link>
+              </div>
+              <div>
+                <Link href={"/projects"}>
+                  <li>
+                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/projects" && "text-cyan-500"}`}>
+                      Projects
+                    </p>
+                  </li>
+                </Link>
+              </div>
+              <div>
+                <Link href={"/contact"}>
+                  <li>
+                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/contact" && "text-cyan-500"}`}>
+                      Contact
+                    </p>
+                  </li>
+                </Link>
+              </div>
+              <div>
+                <Link href={"/games"}>
+                  <li>
+                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/games" && "text-cyan-500"}`}>
+                      Games
+                    </p>
+                  </li>
+                </Link>
+              </div>
+            </ul>
+
+            <div className="relative z-40 block w-10 ml-auto sm:hidden">
               <div className="flex items-center pr-4">
                 <div>
                   <svg
@@ -169,12 +206,13 @@ const Navbar = () => {
                   </svg>
                 </div>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </nav>
+
       <div
-        className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-200 place-content-center overflow-hidden ${
+        className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-300 ease-in place-content-center overflow-hidden ${
           isMenuOpen
             ? "text-cyan-50 bg-black z-20 bg-opacity-75 w-full"
             : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
@@ -207,10 +245,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div
-          onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/games" ? "text-cyan-500" : "text-white"}`}
-        >
+        <div onClick={toggleMenu} className={`duration-200 ${pathName === "/games" ? "text-cyan-500" : "text-white"}`}>
           <Link href={"/games"}>
             <p>Games</p>
           </Link>
@@ -220,8 +255,8 @@ const Navbar = () => {
           <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank">
             <i className="cursor-pointer ri-facebook-circle-fill"></i>
           </Link>
-          <Link href={"https://www.instagram.com/iambenjaminnkem/"} target="_blank">
-            <i className="cursor-pointer ri-instagram-fill"></i>
+          <Link href={"https://www.linkedin.com/in/benjamin-nkem-23526720b/"} target="_blank">
+            <i className="cursor-pointer ri-linkedin-line"></i>
           </Link>
           <Link href={"https://twitter.com/MainNkem"} target="_blank">
             <i className="cursor-pointer ri-twitter-fill"></i>

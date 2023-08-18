@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-.progress {
+/* .progress {
   animation: progress 1.5s linear;
 }
 .progress1 {
@@ -34,7 +34,7 @@
 }
 .progress3 {
   animation: progress3 1.5s linear;
-}
+} */
 
 #me1 {
   background: url("/images/uploads/me_.jpg") no-repeat center;
@@ -83,7 +83,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.951), rgba(0, 0, 0, 0.527), rgba(255, 255, 255, 0.103));
 }
 
-@keyframes progress {
+/* @keyframes progress {
   0% {
     width: 0.1%;
   }
@@ -114,7 +114,7 @@
   80% {
     width: 33%;
   }
-}
+} */
 
 
 /* main {
