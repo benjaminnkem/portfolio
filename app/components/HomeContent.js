@@ -145,13 +145,13 @@ const HomeContent = () => {
 
         sun.rotation.y += 0.009;
 
-        mercury.holder.rotation.y += 0.01;
+        mercury.holder.rotation.y += 0.03;
         mercury.planet.rotation.y += 0.08;
 
-        venus.holder.rotation.y += 0.005;
+        venus.holder.rotation.y += 0.02;
         venus.planet.rotation.y += 0.08;
 
-        earth.holder.rotation.y += 0.02;
+        earth.holder.rotation.y += 0.01;
         earth.planet.rotation.y += 0.1;
 
         mars.holder.rotation.y += 0.011;
@@ -194,11 +194,11 @@ const HomeContent = () => {
             >
               <h2 className="text-5xl font-extrabold sm:text-6xl lg:text-8xl text-shadow">
                 Hey, I&apos;m <span id="ben">Ben</span>
-                <span className="text-orange-500">.</span>
+                <span className="text-cyan-500">.</span>
               </h2>
               <p className="mt-1 text-xl select-none text-shadow md:text-3xl">
                 I&apos;m a{" "}
-                <span className="relative font-extrabold text-orange-400" id="stack">
+                <span className="relative font-extrabold text-cyan-400" id="stack">
                   <TypeAnimation
                     sequence={[
                       "Frontend Developer 🌎📺",
@@ -241,7 +241,7 @@ const HomeContent = () => {
               transition={{ delay: 1.5 }}
             >
               <Link href={"/contact"}>
-                <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 hover:bg-orange-500 hover:text-black">
+                <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-500 hover:bg-cyan-500 hover:text-black">
                   Get In Touch <i className="ri-rocket-line"></i>
                 </button>
               </Link>
@@ -253,21 +253,14 @@ const HomeContent = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 1 }}
-            className="bg-transparent border border-orange-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 w-full"
+            className="bg-transparent border border-cyan-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 w-full"
             id="me1"
           ></motion.div> */}
         </div>
       </section>
 
-      {/* <section className="my-10 section" id="about">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#3D3D3D"
-            fillOpacity="1"
-            d="M0,256L120,256C240,256,480,256,720,224C960,192,1200,128,1320,96L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-          ></path>
-        </svg>
-        <div style={{ backgroundColor: "#3D3D3D" }}>
+      <section className="min-h-screen" id="about">
+        <div className="bg-[#0f0f0fe6] py-10">
           <div className="md:max-w-[1024px] w-11/12 mx-auto min-h-[32rem]">
             <div>
               <motion.div
@@ -276,15 +269,15 @@ const HomeContent = () => {
                 transition={{ type: "linear" }}
                 className="flex items-center justify-center"
               >
-                <span className="flex-1 h-1 bg-orange-500 rounded-md"></span>
+                <span className="flex-1 h-1 bg-cyan-500 rounded-md"></span>
                 <h3 className="px-4 mb-5 text-4xl font-bold uppercase">
-                  About Me<span className="text-orange-500">.</span>
+                  About Me<span className="text-cyan-500">.</span>
                 </h3>
-                <span className="flex-1 h-1 bg-orange-500 rounded-md"></span>
+                <span className="flex-1 h-1 bg-cyan-500 rounded-md"></span>
               </motion.div>
 
               <div className="grid md:grid-cols-2">
-                <div className="p-4 border-b border-opacity-50 md:border-r md:border-b-0 border-orange-50">
+                <div className="p-4 border-b border-opacity-50 md:border-r md:border-b-0 border-cyan-50">
                   <div>
                     <motion.div
                       initial={{ opacity: 0, x: 0 }}
@@ -298,7 +291,7 @@ const HomeContent = () => {
                         <Link
                           href={"https://ceelyrics.com"}
                           target="_blank"
-                          className="font-bold text-orange-500 duration-200 hover:text-orange-400"
+                          className="font-bold text-cyan-500 duration-200 hover:text-cyan-400"
                         >
                           Ceelyrics
                         </Link>{" "}
@@ -347,7 +340,7 @@ const HomeContent = () => {
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           transition={{ delay: 0.5 }}
-                          className="px-4 py-2 mt-4 duration-200 border border-orange-500 rounded-md hover:bg-orange-600 text-orange-50"
+                          className="px-4 py-2 mt-4 duration-200 border border-cyan-500 rounded-md hover:bg-cyan-600 text-cyan-50"
                         >
                           Contact Me <i className="ri-link-m"></i>
                         </motion.button>
@@ -362,9 +355,9 @@ const HomeContent = () => {
                     transition={{ delay: 0.5, type: "linear" }}
                   >
                     <div className="flex items-center md:justify-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
                       <h3 className="px-4 mb-2 text-2xl font-bold text-center">Skills</h3>
-                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
                     </div>
 
                     <motion.div>
@@ -443,14 +436,7 @@ const HomeContent = () => {
             </div>
           </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#3D3D3D"
-            fillOpacity="1"
-            d="M0,288L120,256C240,224,480,160,720,128C960,96,1200,96,1320,96L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-          ></path>
-        </svg>
-      </section> */}
+      </section>
 
       {/* Statistics */}
       <section className="my-10 section" id="stats__">
@@ -463,7 +449,7 @@ const HomeContent = () => {
               transition={{ delay: 0.25, type: "linear" }}
             >
               <h3 className="mb-5 text-3xl font-bold text-center uppercase md:text-4xl md:text-start">
-                Personal Statistics<span className="text-orange-500">.</span>
+                Personal Statistics<span className="text-cyan-500">.</span>
               </h3>
             </motion.div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -472,40 +458,40 @@ const HomeContent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, type: "linear" }}
               >
-                <div className="p-4 border border-orange-500 rounded-md">
+                <div className="p-4 border border-cyan-500 rounded-md">
                   <div className="space-y-8">
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">English</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md progress"></div>
                       </div>
                       <p>100%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Igbo</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-3/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress1"></div>
                       </div>
                       <p>60%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Yoruba</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-4/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress2"></div>
                       </div>
                       <p>80%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Spanish</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-1/3 h-2 duration-200 bg-cyan-500 rounded-r-md progress3"></div>
                       </div>
                       <p>33%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Turkish</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-1/3 h-2 duration-200 bg-orange-500 rounded-r-md progress3"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-1/3 h-2 duration-200 bg-cyan-500 rounded-r-md progress3"></div>
                       </div>
                       <p>33%</p>
                     </div>
@@ -518,26 +504,26 @@ const HomeContent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, type: "linear" }}
               >
-                <div className="p-4 border border-orange-500 rounded-md">
+                <div className="p-4 border border-cyan-500 rounded-md">
                   <div className="space-y-8">
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Reading</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-full h-2 duration-200 bg-orange-500 rounded-r-md progress"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md progress"></div>
                       </div>
                       <p>100%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Games</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-3/5 h-2 duration-200 bg-orange-500 rounded-r-md progress1"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-3/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress1"></div>
                       </div>
                       <p>60%</p>
                     </div>
                     <div className="grid items-center gap-4" style={{ gridTemplateColumns: "1fr 5fr 1fr" }}>
                       <p className="font-semibold">Traveling</p>
-                      <div className="w-full h-2 overflow-hidden border border-orange-500 rounded-md">
-                        <div className="w-4/5 h-2 duration-200 bg-orange-500 rounded-r-md progress2"></div>
+                      <div className="w-full h-2 overflow-hidden border border-cyan-500 rounded-md">
+                        <div className="w-4/5 h-2 duration-200 bg-cyan-500 rounded-r-md progress2"></div>
                       </div>
                       <p>80%</p>
                     </div>
@@ -563,7 +549,7 @@ const HomeContent = () => {
             transition={{ delay: 0.25, type: "linear" }}
           >
             <h3 className="mb-5 text-4xl font-bold uppercase">
-              Projects<span className="text-orange-500">.</span>
+              Projects<span className="text-cyan-500">.</span>
             </h3>
           </motion.div>
 
@@ -571,9 +557,8 @@ const HomeContent = () => {
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              whileTap={{ scale: 0.9 }}
               transition={{ type: "ease-in-out", duration: 0.2 }}
-              className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
+              className="z-10 self-start overflow-hidden border border-cyan-500 rounded-md"
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
@@ -586,7 +571,7 @@ const HomeContent = () => {
               </div>
               <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-orange-500">BStore</h4>
+                  <h4 className="text-lg font-bold text-cyan-500">BStore</h4>
                   <div className="flex items-center space-x-1 text-xl">
                     <Link href={"https://github.com/benjaminnkem/bstore"} target="_blank" title="View On Github">
                       <i className="ri-github-fill" title="View On Github"></i>
@@ -603,7 +588,7 @@ const HomeContent = () => {
                 </p>
 
                 <Link href={"/projects#bstore"}>
-                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-cyan-500 hover:bg-cyan-600 hover:rounded-md">
                     View
                   </button>
                 </Link>
@@ -613,9 +598,8 @@ const HomeContent = () => {
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              whileTap={{ scale: 0.9 }}
               transition={{ type: "linear" }}
-              className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
+              className="z-10 self-start overflow-hidden border border-cyan-500 rounded-md"
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
@@ -628,7 +612,7 @@ const HomeContent = () => {
               </div>
               <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-orange-500">Typimon</h4>
+                  <h4 className="text-lg font-bold text-cyan-500">Typimon</h4>
                   <div className="flex items-center space-x-1 text-xl">
                     <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
                       <i className="ri-github-fill" title="View On Github"></i>
@@ -646,7 +630,7 @@ const HomeContent = () => {
                 </p>
 
                 <Link href={"/projects#typimon"}>
-                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-cyan-500 hover:bg-cyan-600 hover:rounded-md">
                     View
                   </button>
                 </Link>
@@ -656,9 +640,8 @@ const HomeContent = () => {
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              whileTap={{ scale: 0.9 }}
               transition={{ type: "linear" }}
-              className="z-10 self-start overflow-hidden border border-orange-500 rounded-md"
+              className="z-10 self-start overflow-hidden border border-cyan-500 rounded-md"
             >
               <div className="w-full h-32 overflow-hidden">
                 <Image
@@ -671,7 +654,7 @@ const HomeContent = () => {
               </div>
               <div className="p-4 space-y-3 bg-[#121212]">
                 <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-orange-500">KaygreyKennel</h4>
+                  <h4 className="text-lg font-bold text-cyan-500">KaygreyKennel</h4>
                   <div className="flex items-center space-x-1 text-xl">
                     <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
                       <i className="ri-github-fill" title="View On Github"></i>
@@ -688,7 +671,7 @@ const HomeContent = () => {
                 </p>
 
                 <Link href={"/projects#kaygrey"}>
-                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-orange-500 hover:bg-orange-600 hover:rounded-md">
+                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-cyan-500 hover:bg-cyan-600 hover:rounded-md">
                     View
                   </button>
                 </Link>
@@ -702,7 +685,7 @@ const HomeContent = () => {
             className="mt-5 text-center"
           >
             <Link href={"/projects"}>
-              <button className="px-3 py-1 text-orange-500 duration-200 border border-orange-500 rounded-sm hover:bg-orange-500 hover:text-black group">
+              <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-500 rounded-sm hover:bg-cyan-500 hover:text-black group">
                 View More Projects <i className="ri-arrow-right-circle-line"></i>
               </button>
             </Link>

@@ -115,9 +115,8 @@
     width: 33%;
   }
 }
-
-/* main {
-  position: absolute;
+/* 
+main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 } */
@@ -126,7 +125,8 @@
 #stats__,
 #projects {
   align-items: center;
-  grid-column: 1 / 13;
+  grid-column: 1 / 12;
+  margin-inline: auto;
 }
 
 /* #me div:first-child {

@@ -21,11 +21,11 @@ body {
 }
 
 ::selection {
-  background-color: #f9741669;
+  background-color: #16a2f969;
 }
 
 ::-moz-selection {
-  background-color: #f9741669;
+  background-color: #16a2f969;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #f97316;
+  background-color: #16e2f9;
   border-radius: 2px;
 }
 
@@ -45,8 +45,8 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px #ff8000 solid;
-  background-color: #ff800019;
+  border: 2px #00b7ff solid;
+  background-color: #00b3ff19;
   transform: translate(-50%, -50%);
   transition: all 0.1s;
   z-index: -1;
@@ -61,7 +61,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #ff8000;
+  background-color: #00b7ff;
   transform: translate(-50%, -50%);
   transition: all 0.2s;
   z-index: -1;

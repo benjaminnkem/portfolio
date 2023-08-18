@@ -35,7 +35,7 @@ const Navbar = () => {
           <ul className="grid items-center grid-cols-3">
             <li>
               <Link href={"/"} className="text-3xl font-bold md:text-4xl">
-                B<span className="text-orange-500">.</span>{" "}
+                B<span className="text-cyan-500">.</span>{" "}
               </Link>
             </li>
             <li className="hidden mx-auto md:block">
@@ -45,7 +45,7 @@ const Navbar = () => {
                     <div
                       className={`flex items-center space-x-1 border border-transparent  group-hover:rounded-md group-hover:px-1 ${
                         pathName === "/"
-                          ? "text-orange-500 group-hover:border-orange-500"
+                          ? "text-cyan-500 group-hover:border-cyan-500"
                           : "text-white group-hover:border-white"
                       }`}
                     >
@@ -61,7 +61,7 @@ const Navbar = () => {
                     <div
                       className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
                         pathName === "/projects"
-                          ? "text-orange-500 group-hover:border-orange-500"
+                          ? "text-cyan-500 group-hover:border-cyan-500"
                           : "text-white group-hover:border-white"
                       }`}
                     >
@@ -77,7 +77,7 @@ const Navbar = () => {
                     <div
                       className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
                         pathName === "/contact"
-                          ? "text-orange-500 group-hover:border-orange-500"
+                          ? "text-cyan-500 group-hover:border-cyan-500"
                           : "text-white group-hover:border-white"
                       }`}
                     >
@@ -93,7 +93,7 @@ const Navbar = () => {
                     <div
                       className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
                         pathName === "/games"
-                          ? "text-orange-500 group-hover:border-orange-500"
+                          ? "text-cyan-500 group-hover:border-cyan-500"
                           : "text-white group-hover:border-white"
                       }`}
                     >
@@ -176,7 +176,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-200 place-content-center overflow-hidden ${
           isMenuOpen
-            ? "text-orange-50 bg-black z-20 bg-opacity-75 w-full"
+            ? "text-cyan-50 bg-black z-20 bg-opacity-75 w-full"
             : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
         }`}
         variants={parentMobileMenuVariant}
@@ -184,14 +184,14 @@ const Navbar = () => {
         animate="show"
         exit="exit"
       >
-        <div onClick={toggleMenu} className={`duration-200  ${pathName === "/" ? "text-orange-500" : "text-white"}`}>
+        <div onClick={toggleMenu} className={`duration-200  ${pathName === "/" ? "text-cyan-500" : "text-white"}`}>
           <Link href={"/"}>
             <p>Home</p>
           </Link>
         </div>
         <div
           onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/projects" ? "text-orange-500" : "text-white"}`}
+          className={`duration-200 ${pathName === "/projects" ? "text-cyan-500" : "text-white"}`}
         >
           <Link href={"/projects"}>
             <p>Projects</p>
@@ -200,7 +200,7 @@ const Navbar = () => {
 
         <div
           onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/contact" ? "text-orange-500" : "text-white"}`}
+          className={`duration-200 ${pathName === "/contact" ? "text-cyan-500" : "text-white"}`}
         >
           <Link href={"/contact"}>
             <p>Contact</p>
@@ -209,7 +209,7 @@ const Navbar = () => {
 
         <div
           onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/games" ? "text-orange-500" : "text-white"}`}
+          className={`duration-200 ${pathName === "/games" ? "text-cyan-500" : "text-white"}`}
         >
           <Link href={"/games"}>
             <p>Games</p>

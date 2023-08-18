@@ -23,7 +23,7 @@ const Games = () => {
         <main>
           <div className="md:max-w-[1024px] w-11/12 mx-auto my-10 section mt-28 md:mt-32">
             <h1 className="mb-8 text-4xl font-bold text-center md:text-start">
-              Games 🎮<span className="text-orange-500">.</span>
+              Games 🎮<span className="text-cyan-500">.</span>
             </h1>
 
             <section id="game_sect" className="mt-5">
