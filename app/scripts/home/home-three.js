@@ -1,4 +1,7 @@
-try {
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+export const solarSystem = () => {
   const sizes = {
     width: window.innerWidth,
     height: window.innerHeight,
@@ -49,31 +52,6 @@ try {
       planet.add(ring);
     }
 
-    // let moonBase;
-    // if (moon) {
-    //   // const moonMesh = new THREE.Mesh(
-    //   //   new THREE.Sphere(1, 20, 20),
-    //   //   new THREE.MeshStandardMaterial({
-    //   //     color: 0xffffff,
-    //   //   })
-    //   // );
-    //   // moonMesh.position.set(10, 0, 0);
-    //   // planet.add(moonMesh);
-
-    //   moonBase = new THREE.Object3D();
-
-    //   const moonGeo = new THREE.SphereGeometry(0.3, 20, 20);
-    //   const moonMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
-    //   const moonMesh = new THREE.Mesh(moonGeo, moonMat);
-    //   moonMesh.position.x = 2;
-
-    //   moonBase.add(moonMesh);
-    // }
-
-    // if (moon) {
-    //   console.log(moonBase);
-    //   holder.add(planet, moonBase);
-    // }
     holder.add(planet);
     scene.add(holder);
     return { holder, planet };
@@ -134,13 +112,13 @@ try {
 
     sun.rotation.y += 0.009;
 
-    mercury.holder.rotation.y += 0.01;
+    mercury.holder.rotation.y += 0.03;
     mercury.planet.rotation.y += 0.08;
 
-    venus.holder.rotation.y += 0.005;
+    venus.holder.rotation.y += 0.02;
     venus.planet.rotation.y += 0.08;
 
-    earth.holder.rotation.y += 0.02;
+    earth.holder.rotation.y += 0.01;
     earth.planet.rotation.y += 0.1;
 
     mars.holder.rotation.y += 0.011;
@@ -165,6 +143,10 @@ try {
   };
 
   animate();
+};
+
+try {
+  solarSystem();
 } catch (e) {
   console.log(e);
 }

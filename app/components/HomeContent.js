@@ -1,13 +1,12 @@
 "use client";
-import { faCalendar, faCalendarDay, faCalendarDays, faGift } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays, faExpand } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { solarSystem } from "../scripts/home/home-three";
 
 const container = {
   hidden: { opacity: 0 },
@@ -36,153 +35,7 @@ const logosVariants = {
 };
 
 const HomeContent = () => {
-  // useEffect(() => {
-  //   try {
-  //     const sizes = {
-  //       width: window.innerWidth,
-  //       height: window.innerHeight,
-  //     };
-
-  //     const scene = new THREE.Scene();
-  //     const cubeTextureLoader = new THREE.CubeTextureLoader();
-  //     // scene.background = new THREE.TextureLoader().load("/textures/2k_stars_milky_way.jpg");
-  //     scene.background = cubeTextureLoader
-  //       .setPath("/textures/")
-  //       .load(["stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg", "stars.jpg"]);
-
-  //     const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 1000);
-  //     camera.position.set(0, 30, 1.5);
-  //     scene.add(camera);
-
-  //     const ambientLight = new THREE.AmbientLight(0x555555);
-  //     const light = new THREE.PointLight(0xffffff, 200);
-  //     scene.add(light, ambientLight);
-
-  //     const textureLoader = new THREE.TextureLoader();
-
-  //     // const gridHelper = new THREE.GridHelper(200, 50);
-  //     // scene.add(gridHelper);
-
-  //     const createPlanet = (radius, roundness, color, distanceFromOrigin, textureFileName, ring, moon) => {
-  //       const holder = new THREE.Object3D();
-
-  //       const planetGeometry = new THREE.SphereGeometry(radius, roundness, roundness);
-  //       const material = new THREE.MeshStandardMaterial({
-  //         color: textureFileName ? 0xffffff : color,
-  //         roughness: 20,
-  //         map: textureLoader.load(textureFileName ? `/textures/${textureFileName}.jpg` : "/textures/2k_mercury.jpg"),
-  //       });
-  //       const planet = new THREE.Mesh(planetGeometry, material);
-  //       planet.position.x = distanceFromOrigin;
-
-  //       if (ring) {
-  //         const ringGeo = new THREE.RingGeometry(1.8, 2.5);
-  //         const material = new THREE.MeshStandardMaterial({
-  //           color: 0xffffff,
-  //           map: textureLoader.load("/textures/2k_saturn_ring_alpha.png"),
-  //           side: THREE.DoubleSide,
-  //         });
-  //         const ring = new THREE.Mesh(ringGeo, material);
-  //         ring.rotation.x = Math.PI * -0.5;
-
-  //         planet.add(ring);
-  //       }
-
-  //       holder.add(planet);
-  //       scene.add(holder);
-  //       return { holder, planet };
-  //     };
-
-  //     const sunGeo = new THREE.SphereGeometry(5, 30, 30);
-  //     const sunMaterial = new THREE.MeshBasicMaterial({
-  //       map: textureLoader.load("/textures/2k_sun.jpg"),
-  //     });
-
-  //     const sun = new THREE.Mesh(sunGeo, sunMaterial);
-  //     scene.add(sun);
-
-  //     // Planets
-  //     const mercury = createPlanet(0.8, 30, 0xda4000, 8, "2k_mercury");
-  //     const venus = createPlanet(0.9, 30, 0xda4000, 11, "2k_venus_surface");
-  //     const earth = createPlanet(1.2, 30, 0x029340, 14, "2k_earth_daymap", false, true);
-  //     const mars = createPlanet(0.9, 30, 0xfce2dc, 17, "2k_mars");
-  //     const jupiter = createPlanet(1.8, 30, 0xbe123c, 20, "2k_jupiter");
-  //     const saturn = createPlanet(1.8, 30, 0xffe103, 26, "2k_saturn", true);
-  //     const uranus = createPlanet(1, 30, 0xa855f7, 30, "2k_uranus");
-  //     const neptune = createPlanet(1.2, 30, 0xa855f7, 33, "2k_neptune");
-
-  //     // Other Planet atrr
-  //     saturn.planet.rotation.set(0, 0, 10);
-
-  //     const canvas = document.querySelector(".canva");
-  //     const renderer = new THREE.WebGLRenderer({ canvas });
-  //     renderer.setPixelRatio(window.devicePixelRatio);
-  //     renderer.setSize(sizes.width, sizes.height);
-
-  //     const controls = new OrbitControls(camera, renderer.domElement);
-  //     // controls.enableZoom = false;
-  //     controls.enableDamping = true;
-  //     // controls.enablePan = false;
-
-  //     window.addEventListener("resize", () => {
-  //       sizes.width = window.innerWidth;
-  //       sizes.height = window.innerHeight;
-
-  //       camera.aspect = sizes.width / sizes.height;
-  //       camera.updateProjectionMatrix();
-  //       renderer.setSize(sizes.width, sizes.height);
-  //     });
-
-  //     function moveCamera() {
-  //       const top = document.body.getBoundingClientRect().top;
-
-  //       if (top <= -30) {
-  //         camera.position.z = top * -0.05;
-  //       }
-  //     }
-
-  //     document.body.onscroll = moveCamera;
-
-  //     const animate = () => {
-  //       requestAnimationFrame(animate);
-
-  //       sun.rotation.y += 0.009;
-
-  //       mercury.holder.rotation.y += 0.03;
-  //       mercury.planet.rotation.y += 0.08;
-
-  //       venus.holder.rotation.y += 0.02;
-  //       venus.planet.rotation.y += 0.08;
-
-  //       earth.holder.rotation.y += 0.01;
-  //       earth.planet.rotation.y += 0.1;
-
-  //       mars.holder.rotation.y += 0.011;
-  //       mars.planet.rotation.y += 0.01;
-
-  //       jupiter.holder.rotation.y += 0.001;
-  //       jupiter.planet.rotation.y += 0.009;
-
-  //       jupiter.holder.rotation.y += 0.009;
-  //       jupiter.planet.rotation.y += 0.005;
-
-  //       saturn.holder.rotation.y += 0.008;
-  //       saturn.planet.rotation.y += 0.008;
-
-  //       uranus.holder.rotation.y += 0.02;
-
-  //       neptune.holder.rotation.y += 0.007;
-  //       neptune.planet.rotation.y += 0.005;
-
-  //       controls.update();
-  //       renderer.render(scene, camera);
-  //     };
-
-  //     animate();
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }, []);
+  // useEffect(() => solarSystem(), []);
 
   return (
     <>
@@ -681,203 +534,213 @@ const HomeContent = () => {
         </h3>
 
         <div className="timeline relative">
-          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative left-0 group">
+          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
               <h4 className="font-bold text-xl">Computer Science</h4>
-              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+              <p className="mt-2">Federal University of Agriculture, Abeokuta.</p>
 
               <div className="mt-4 text-slate-300 opacity-75 flex items-center">
                 <span>
                   <FontAwesomeIcon icon={faCalendarDays} />
                 </span>{" "}
-                <span className="ml-2">2022 - Current Time</span>
+                <span className="ml-2">2022 - Date</span>
               </div>
             </div>
           </div>
-          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
+          <div className="p-6 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
-              <h4 className="font-bold text-xl">Computer Science</h4>
-              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+              <h4 className="font-bold text-xl">Web Development</h4>
+              <p className="mt-2">Udemy</p>
               <div className="mt-4 text-slate-300 opacity-75 flex items-center">
                 <span>
                   <FontAwesomeIcon icon={faCalendarDays} />
                 </span>{" "}
-                <span className="ml-2">2022 - Current Time</span>
+                <span className="ml-2">2019 - 2021</span>
               </div>
             </div>
           </div>
-          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative left-0 group">
+          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
-              <h4 className="font-bold text-xl">Computer Science</h4>
-              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+              <h4 className="font-bold text-xl">Meta Frontend Developer</h4>
+              <p className="mt-2">Coursera</p>
               <div className="mt-4 text-slate-300 opacity-75 flex items-center">
                 <span>
                   <FontAwesomeIcon icon={faCalendarDays} />
                 </span>{" "}
-                <span className="ml-2">2022 - Current Time</span>
-              </div>
-            </div>
-          </div>
-          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
-            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
-            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
-              <h4 className="font-bold text-xl">Computer Science</h4>
-              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
-              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
-                <span>
-                  <FontAwesomeIcon icon={faCalendarDays} />
-                </span>{" "}
-                <span className="ml-2">2022 - Current Time</span>
+                <span className="ml-2">2022 - 2023</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Three */}
-      <canvas className="bg-transparent border-none canva"></canvas>
+      {/* Amplified project */}
+      <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
+        <h3 className="mb-5 text-3xl px-6 font-bold uppercase md:text-4xl text-start">
+          Projects <span className="text-cyan-500">.</span>
+        </h3>
 
-      {/* Projects */}
-      <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20" id="projects">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, x: 0, scale: 1.2 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ delay: 0.25, type: "linear" }}
-          >
-            <h3 className="mb-5 text-4xl font-bold uppercase">
-              Projects<span className="text-cyan-500">.</span>
-            </h3>
-          </motion.div>
-
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "ease-in-out", duration: 0.2 }}
-              className="z-10 self-start overflow-hidden border border-cyan-500 rounded-md"
-            >
-              <div className="w-full h-32 overflow-hidden">
+        <div className="timeline relative">
+          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
+              <div className="w-full overflow-hidden rounded-lg border border-opacity-25 border-cyan-500">
                 <Image
                   src={"/images/projects/bstore/4.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
                   className="object-cover w-full"
+                  draggable="false"
                 ></Image>
               </div>
-              <div className="p-4 space-y-3 bg-[#121212]">
-                <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-cyan-500">BStore</h4>
-                  <div className="flex items-center space-x-1 text-xl">
-                    <Link href={"https://github.com/benjaminnkem/bstore"} target="_blank" title="View On Github">
-                      <i className="ri-github-fill" title="View On Github"></i>
-                    </Link>
-                  </div>
-                </div>
-                <p className="text-sm font-light">
-                  BStore is an online store, where users find products and services, It comes with an
-                  administrator&apos;s dashboard for creating, deleting, updating posts basically it performs CRUD
-                  operations. Users can also sign up as a seller and sell products to other users. <br />
-                  <br />
-                  It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase
-                  online.
-                </p>
+
+              <div className="flex justify-between items-center py-2">
+                <h4 className="font-bold text-2xl">BStore</h4>
 
                 <Link href={"/projects#bstore"}>
-                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-cyan-500 hover:bg-cyan-600 hover:rounded-md">
-                    View
-                  </button>
+                  <p className="border-cyan-500 border duration-200 hover:bg-cyan-500 px-2 py-1 text-sm hover:text-black rounded-md flex space-x-1 items-center">
+                    <span>View</span> <FontAwesomeIcon icon={faExpand} />
+                  </p>
                 </Link>
               </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "linear" }}
-              className="z-10 self-start overflow-hidden border border-cyan-500 rounded-md"
-            >
-              <div className="w-full h-32 overflow-hidden">
+              <p className="text-sm font-light">
+                BStore is an online store, where users find products and services, It comes with an administrator&apos;s
+                dashboard for creating, deleting, updating posts basically it performs CRUD operations. Users can also
+                sign up as a seller and sell products to other users. <br />
+                <br />
+                It also comes with a checkout functionality using stripe which makes it easy to pay for a purchase
+                online.
+              </p>
+
+              <div className="flex flex-wrap">
+                {["NextJs", "Mongoose", "MongoDB", "Stripe", "TailwindCSS"].map((tech, idx) => (
+                  <p
+                    key={idx}
+                    className="mt-2 mr-2 border border-opacity-25 cursor-pointer duration-200 hover:bg-cyan-500 hover:text-black hover:border-transparent border-white px-2 py-1 text-sm rounded-xl"
+                  >
+                    {tech}
+                  </p>
+                ))}
+              </div>
+
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">Jun 2023 - Date</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
+              <div className="w-full overflow-hidden rounded-lg border border-opacity-25 border-cyan-500">
                 <Image
-                  src={"/images/projects/typimon/typimonreal.png"}
+                  src={"/images/projects/ceelyrics/cee1.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
                   className="object-cover w-full"
+                  draggable="false"
                 ></Image>
               </div>
-              <div className="p-4 space-y-3 bg-[#121212]">
-                <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-cyan-500">Typimon</h4>
-                  <div className="flex items-center space-x-1 text-xl">
-                    <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
-                      <i className="ri-github-fill" title="View On Github"></i>
-                    </Link>
-                    <Link href={"https://adorable-biscuit-b109dd.netlify.app/"} target="_blank">
-                      <i className="ri-link-m" title="View Live"></i>
-                    </Link>
-                  </div>
-                </div>
-                <p className="font-light">
-                  Typimon: The typing challenge bot is a basic bot that challenge users to typing contents <br />
-                  <br />
-                  It was built using HTML, CSS, Vanilla Javascript and uses the <em>fetch</em> API to get random
-                  words...
-                </p>
 
-                <Link href={"/projects#typimon"}>
-                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-cyan-500 hover:bg-cyan-600 hover:rounded-md">
-                    View
-                  </button>
+              <div className="flex justify-between items-center py-2">
+                <h4 className="font-bold text-2xl">Ceelyrics</h4>
+
+                <Link href={"/projects#ceelyrics"}>
+                  <p className="border-cyan-500 border duration-200 hover:bg-cyan-500 px-2 py-1 text-sm hover:text-black rounded-md flex space-x-1 items-center">
+                    <span>View</span> <FontAwesomeIcon icon={faExpand} />
+                  </p>
                 </Link>
               </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "linear" }}
-              className="z-10 self-start overflow-hidden border border-cyan-500 rounded-md"
-            >
-              <div className="w-full h-32 overflow-hidden">
+              <p className="text-sm font-light">
+                Ceelyrics is a fast-growing lyrics provider website personally managed and owned by me, it&apos;s
+                constantly being updated. <br /> <br /> Ceelyrics was inspired by Azlyrics.com, but Ceelyrics is Azyrics
+                on steroid because It&apos;s faster, more user friendly and easy to access.
+              </p>
+
+              <div className="flex flex-wrap">
+                {["Node.js", "MySQL", "Ejs", "TailwindCSS"].map((tech, idx) => (
+                  <p
+                    key={idx}
+                    className="mt-2 mr-2 border border-opacity-25 cursor-pointer duration-200 hover:bg-cyan-500 hover:text-black hover:border-transparent border-white px-2 py-1 text-sm rounded-xl"
+                  >
+                    {tech}
+                  </p>
+                ))}
+              </div>
+
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">Jun 2023 - Date</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
+              <div className="w-full overflow-hidden rounded-lg border border-opacity-25 border-cyan-500">
                 <Image
-                  src={"/images/projects/kaygrey/kaygrey.png"}
+                  src={"/images/projects/kaygrey/kaygrey1.png"}
                   alt="BenCalc Screenshot"
                   width={500}
                   height={500}
                   className="object-cover w-full"
+                  draggable="false"
                 ></Image>
               </div>
-              <div className="p-4 space-y-3 bg-[#121212]">
-                <div className="grid items-center gap-2" style={{ gridTemplateColumns: "6fr 1fr" }}>
-                  <h4 className="text-lg font-bold text-cyan-500">KaygreyKennel</h4>
-                  <div className="flex items-center space-x-1 text-xl">
-                    <Link href={"https://github.com/benjaminnkem/bjncalc"} target="_blank" title="View On Github">
-                      <i className="ri-github-fill" title="View On Github"></i>
-                    </Link>
-                    <Link href={"https://adorable-biscuit-b109dd.netlify.app/"} target="_blank">
-                      <i className="ri-link-m" title="View Live"></i>
-                    </Link>
-                  </div>
-                </div>
-                <p className="font-light">
-                  KaygreyKennel is a lightweight pet store, mostly dogs. <br />
-                  <br /> It comes with an administrator&apos;s dashboard for creating, deleting, updating posts about
-                  pets...
-                </p>
+
+              <div className="flex justify-between items-center py-2">
+                <h4 className="font-bold text-2xl">KaygreyKennel</h4>
 
                 <Link href={"/projects#kaygrey"}>
-                  <button className="w-full py-2 mt-2 text-gray-900 duration-200 bg-cyan-500 hover:bg-cyan-600 hover:rounded-md">
-                    View
-                  </button>
+                  <p className="border-cyan-500 border duration-200 hover:bg-cyan-500 px-2 py-1 text-sm hover:text-black rounded-md flex space-x-1 items-center">
+                    <span>View</span> <FontAwesomeIcon icon={faExpand} />
+                  </p>
                 </Link>
               </div>
-            </motion.div>
+
+              <p className="text-sm font-light">
+                KaygreyKennel is a pet store (mostly dogs), KaygreyKennel was inspired by my love for dogs and pets in
+                general. It also comes with an admin interface for admins to perform CRUD operations on posts data.{" "}
+                <br />
+                <br /> It also has search & sort functionality, which makes users to search for things easily, improving
+                User Experience.
+              </p>
+
+              <div className="flex flex-wrap">
+                {["NodeJs", "MySQL", "Ejs"].map((tech, idx) => (
+                  <p
+                    key={idx}
+                    className="mt-2 mr-2 border border-opacity-25 cursor-pointer duration-200 hover:bg-cyan-500 hover:text-black hover:border-transparent border-white px-2 py-1 text-sm rounded-xl"
+                  >
+                    {tech}
+                  </p>
+                ))}
+              </div>
+
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">Jun 2023 - Date</span>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div>
           <motion.div
             initial={{ opacity: 0, x: 0, y: 100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
@@ -885,13 +748,16 @@ const HomeContent = () => {
             className="mt-5 text-center"
           >
             <Link href={"/projects"}>
-              <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-500 rounded-sm hover:bg-cyan-500 hover:text-black group">
+              <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-600 rounded-sm hover:bg-cyan-600 hover:text-black group">
                 View More Projects <i className="ri-arrow-right-circle-line"></i>
               </button>
             </Link>
           </motion.div>
         </div>
       </section>
+
+      {/* Three */}
+      <canvas className="bg-transparent border-none canva"></canvas>
     </>
   );
 };
