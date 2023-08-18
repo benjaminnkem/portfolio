@@ -1,5 +1,5 @@
 "use client";
-import { faGift } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faCalendarDay, faCalendarDays, faGift } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -281,7 +281,11 @@ const HomeContent = () => {
                   <i className="duration-200 hover:text-cyan-500 ri-whatsapp-line text-xl"></i>
                 </motion.li>
               </Link>
-              <Link href={"https://www.linkedin.com/in/benjamin-nkem-23526720b/"} target="_blank" title="Meet me on LinkedIn">
+              <Link
+                href={"https://www.linkedin.com/in/benjamin-nkem-23526720b/"}
+                target="_blank"
+                title="Meet me on LinkedIn"
+              >
                 <motion.li variants={logosVariants} className="overflow-hidden">
                   <i className="duration-200 hover:text-cyan-500 ri-linkedin-box-fill text-xl"></i>
                 </motion.li>
@@ -671,11 +675,73 @@ const HomeContent = () => {
         </div>
       </section>
 
+      <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
+        <h3 className="mb-5 text-3xl px-6 font-bold uppercase md:text-4xl text-start">
+          Education <span className="text-cyan-500">.</span>
+        </h3>
+
+        <div className="timeline relative">
+          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative left-0 group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
+              <h4 className="font-bold text-xl">Computer Science</h4>
+              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">2022 - Current Time</span>
+              </div>
+            </div>
+          </div>
+          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
+              <h4 className="font-bold text-xl">Computer Science</h4>
+              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">2022 - Current Time</span>
+              </div>
+            </div>
+          </div>
+          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative left-0 group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
+              <h4 className="font-bold text-xl">Computer Science</h4>
+              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">2022 - Current Time</span>
+              </div>
+            </div>
+          </div>
+          <div className="px-6 py-4 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
+            <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
+            <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
+              <h4 className="font-bold text-xl">Computer Science</h4>
+              <p className="mt-2">Federal University of Agriculture, Abeokute.</p>
+              <div className="mt-4 text-slate-300 opacity-75 flex items-center">
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDays} />
+                </span>{" "}
+                <span className="ml-2">2022 - Current Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Three */}
       <canvas className="bg-transparent border-none canva"></canvas>
 
       {/* Projects */}
-      <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20 section" id="projects">
+      <section className="md:max-w-[1024px] w-11/12  mx-auto min-h-[32rem] my-20" id="projects">
         <div>
           <motion.div
             initial={{ opacity: 0, x: 0, scale: 1.2 }}

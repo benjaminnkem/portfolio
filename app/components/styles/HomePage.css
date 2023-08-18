@@ -23,19 +23,6 @@
   width: 100%;
 }
 
-/* .progress {
-  animation: progress 1.5s linear;
-}
-.progress1 {
-  animation: progress1 1.5s linear;
-}
-.progress2 {
-  animation: progress2 1.5s linear;
-}
-.progress3 {
-  animation: progress3 1.5s linear;
-} */
-
 #me1 {
   background: url("/images/uploads/me_.jpg") no-repeat center;
   background-size: cover;
@@ -83,40 +70,6 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.951), rgba(0, 0, 0, 0.527), rgba(255, 255, 255, 0.103));
 }
 
-/* @keyframes progress {
-  0% {
-    width: 0.1%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes progress1 {
-  0% {
-    width: 0.1%;
-  }
-  60% {
-    width: 60%;
-  }
-}
-@keyframes progress2 {
-  0% {
-    width: 0.1%;
-  }
-  80% {
-    width: 80%;
-  }
-}
-@keyframes progress3 {
-  0% {
-    width: 0.1%;
-  }
-  80% {
-    width: 33%;
-  }
-} */
-
-
 /* main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -136,14 +89,38 @@
   margin-inline: auto;
 }
 
-/* #me div:first-child {
-  grid-column: 1 / 6;
-}
-
-#me div:last-child {
-  grid-column: 6 / 13;
-} */
-
 #about {
   grid-column: 1 / 13;
+}
+
+.bullet-edu {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  right: -7px;
+  z-index: 10;
+}
+
+.right-con .bullet-edu {
+  left: -7px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: rgba(6, 100, 163, 0.975);
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 640px) {
+  .timeline::after {
+    display: none;
+  }
 }
