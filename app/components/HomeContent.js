@@ -1,12 +1,10 @@
 "use client";
-import { faCalendarDays, faExpand } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays, faEarth, faExpand, faRocket, faServer } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { solarSystem } from "../scripts/home/home-three";
 
 const container = {
   hidden: { opacity: 0 },
@@ -18,15 +16,12 @@ const container = {
   },
 };
 
-const item = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
+const item = { hidden: { opacity: 0 }, show: { opacity: 1 } };
 
 const logosVariants = {
   hidden: {
     opacity: 0,
-    x: -100,
+    x: 100,
   },
   show: {
     opacity: 1,
@@ -35,14 +30,9 @@ const logosVariants = {
 };
 
 const HomeContent = () => {
-  // useEffect(() => solarSystem(), []);
-
   return (
     <>
-      <section
-        className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section bg-[#0f0f0f44]"
-        id="me"
-      >
+      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section" id="me">
         <div className="sm:flex justify-between items-center w-full sm:gap-4 gap-2">
           <div className="max-w-2xl py-10 space-y-3 text-center md:text-start md:py-0">
             <motion.div
@@ -64,11 +54,9 @@ const HomeContent = () => {
                       1000,
                       "Backend Developer 👷",
                       1000,
-                      "2D Unity Game Developer 🕹🎮",
+                      "2D Unity Game Developer 🎮",
                       1000,
                       "C# Developer 💙",
-                      1000,
-                      "Graphics Designer 🎨",
                       1000,
                     ]}
                     wrapper="span"
@@ -86,13 +74,13 @@ const HomeContent = () => {
               transition={{ delay: 0.75, type: "linear" }}
             >
               <p className="sm:text-lg text-base text-shadow">
-                I&apos;m A Fullstack Web Developer. I build responsive, highly scalable and maintainable web
-                applications.
+                I&apos;m A Fullstack Web <span className="text-cyan-500 font-bold">Developer</span>. I build responsive,{" "}
+                <span className="text-cyan-500 font-bold">highly scalable</span> and maintainable web applications.
               </p>
 
               <p className="md:mt-8 mt-4">
                 Ready to take your <span className="text-cyan-500 font-bold">brand/project</span> to the next level?
-                I&apos;m the guy for the job <span className="text-cyan-500 font-bold">.</span> 😉
+                I&apos;m the guy for the job<span className="text-cyan-500 font-bold">.</span> 😉
               </p>
             </motion.div>
 
@@ -530,11 +518,16 @@ const HomeContent = () => {
 
       <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
         <h3 className="mb-5 text-3xl px-6 font-bold uppercase md:text-4xl text-start">
-          Education <span className="text-cyan-500">.</span>
+          Education<span className="text-cyan-500">.</span>
         </h3>
 
         <div className="timeline relative">
-          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 1 }}
+            className="p-6 sm:w-1/2 w-full relative left-0 group"
+          >
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
               <h4 className="font-bold text-xl">Computer Science</h4>
@@ -547,8 +540,13 @@ const HomeContent = () => {
                 <span className="ml-2">2022 - Date</span>
               </div>
             </div>
-          </div>
-          <div className="p-6 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 1 }}
+            className="p-6 sm:w-1/2 w-full relative sm:left-1/2 right-con group"
+          >
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
               <h4 className="font-bold text-xl">Web Development</h4>
@@ -560,8 +558,13 @@ const HomeContent = () => {
                 <span className="ml-2">2019 - 2021</span>
               </div>
             </div>
-          </div>
-          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
+          </motion.div>
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 1 }}
+            className="p-6 sm:w-1/2 w-full relative left-0 group"
+          >
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
               <h4 className="font-bold text-xl">Meta Frontend Developer</h4>
@@ -573,18 +576,23 @@ const HomeContent = () => {
                 <span className="ml-2">2022 - 2023</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Amplified project */}
+      {/* Projects */}
       <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
         <h3 className="mb-5 text-3xl px-6 font-bold uppercase md:text-4xl text-start">
           Projects <span className="text-cyan-500">.</span>
         </h3>
 
         <div className="timeline relative">
-          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="p-6 sm:w-1/2 w-full relative left-0 group"
+          >
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
               <div className="w-full overflow-hidden rounded-lg border border-opacity-25 border-cyan-500">
@@ -635,9 +643,14 @@ const HomeContent = () => {
                 <span className="ml-2">Jun 2023 - Date</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-6 sm:w-1/2 w-11/12 relative sm:left-1/2 right-con group">
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="p-6 sm:w-1/2 w-full relative sm:left-1/2 right-con group"
+          >
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
               <div className="w-full overflow-hidden rounded-lg border border-opacity-25 border-cyan-500">
@@ -685,9 +698,14 @@ const HomeContent = () => {
                 <span className="ml-2">Jun 2023 - Date</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-6 sm:w-1/2 w-11/12 relative left-0 group">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="p-6 sm:w-1/2 w-full relative left-0 group"
+          >
             <span className="bullet-edu sm:block hidden duration-200 bg-cyan-100 group-hover:bg-cyan-500"></span>
             <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
               <div className="w-full overflow-hidden rounded-lg border border-opacity-25 border-cyan-500">
@@ -737,23 +755,74 @@ const HomeContent = () => {
                 <span className="ml-2">Jun 2023 - Date</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div>
-          <motion.div
-            initial={{ opacity: 0, x: 0, y: 100 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ delay: 0.1, type: "linear" }}
-            className="mt-5 text-center"
-          >
-            <Link href={"/projects"}>
-              <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-600 rounded-sm hover:bg-cyan-600 hover:text-black group">
-                View More Projects <i className="ri-arrow-right-circle-line"></i>
-              </button>
-            </Link>
           </motion.div>
         </div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 text-center">
+          <Link href={"/projects"}>
+            <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-600 rounded-sm hover:bg-cyan-600 hover:text-black group">
+              View More Projects <i className="ri-arrow-right-circle-line"></i>
+            </button>
+          </Link>
+        </motion.div>
+      </section>
+
+      <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
+        <div className="mb-5">
+          <h3 className="text-3xl font-bold uppercase md:text-4xl text-start">
+            Services<span className="text-cyan-500">.</span>
+          </h3>
+          <p className="font-semibold text-sm text-cyan-500">What I Offer.</p>
+        </div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8"
+        >
+          <motion.div
+            variants={item}
+            className="p-4 rounded-md shadow-sm hover:border-cyan-600 border-2 border-transparent duration-200 group shadow-cyan-600 self-start bg-[#0f0f0f94]"
+          >
+            <div className="space-y-3 text-cyan-100">
+              <FontAwesomeIcon icon={faEarth} className="text-5xl group-hover:animate-bounce" />
+
+              <h4 className="font-semibold text-3xl">Web Development</h4>
+              <p className="text-opacity-75 text-sm leading-relaxed">
+                Are you ready to take your brand to the next level? I can develop fullstack web applications for you or
+                your <span className="text-cyan-500">brand</span>.
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            variants={item}
+            className="p-4 rounded-md shadow-sm hover:border-cyan-600 border-2 border-transparent duration-200 group shadow-cyan-600 self-start bg-[#0f0f0f94]"
+          >
+            <div className="space-y-3 text-cyan-100">
+              <FontAwesomeIcon icon={faServer} className="text-5xl group-hover:animate-bounce" />
+
+              <h4 className="font-semibold text-3xl">Website Management</h4>
+              <p className="text-opacity-75 text-sm leading-relaxed">
+                Do you have and existing website need a <span className="text-cyan-500">website manager</span>? I&apos;m
+                that guy!
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            variants={item}
+            className="p-4 rounded-md shadow-sm hover:border-cyan-600 border-2 border-transparent duration-200 group shadow-cyan-600 self-start bg-[#0f0f0f94]"
+          >
+            <div className="space-y-3 text-cyan-100">
+              <FontAwesomeIcon icon={faRocket} className="text-5xl group-hover:animate-bounce" />
+
+              <h4 className="font-semibold text-3xl">API</h4>
+              <p className="text-opacity-75 text-sm leading-relaxed">
+                I build robust, scalable, secure and easily accessible REST APIs.
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Three */}

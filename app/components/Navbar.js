@@ -38,105 +38,6 @@ const Navbar = () => {
                 B<span className="text-cyan-500">.</span>{" "}
               </Link>
             </div>
-            {/* <li className="hidden mx-auto md:block">
-              <div className="flex items-center space-x-4">
-                <div className="group">
-                  <Link href={"/"}>
-                    <div
-                      className={`flex items-center space-x-1 border border-transparent  group-hover:rounded-md group-hover:px-1 ${
-                        pathName === "/"
-                          ? "text-cyan-500 group-hover:border-cyan-500"
-                          : "text-white group-hover:border-white"
-                      }`}
-                    >
-                      <i className="overflow-hidden text-xl duration-200 ri-home-2-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[58px]">
-                        <span>Home</span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-                <div className="group">
-                  <Link href={"/projects"}>
-                    <div
-                      className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
-                        pathName === "/projects"
-                          ? "text-cyan-500 group-hover:border-cyan-500"
-                          : "text-white group-hover:border-white"
-                      }`}
-                    >
-                      <i className="overflow-hidden text-xl duration-200 ri-tools-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[76px]">
-                        <span>Projects</span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-                <div className="group">
-                  <Link href={"/contact"}>
-                    <div
-                      className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
-                        pathName === "/contact"
-                          ? "text-cyan-500 group-hover:border-cyan-500"
-                          : "text-white group-hover:border-white"
-                      }`}
-                    >
-                      <i className="overflow-hidden text-xl duration-200 ri-phone-fill"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[78px]">
-                        <span>Contact</span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-                <div className="group">
-                  <Link href={"/games"}>
-                    <div
-                      className={`flex items-center space-x-1 border border-transparent group-hover:rounded-md group-hover:px-1 ${
-                        pathName === "/games"
-                          ? "text-cyan-500 group-hover:border-cyan-500"
-                          : "text-white group-hover:border-white"
-                      }`}
-                    >
-                      <i className="overflow-hidden text-xl duration-200 ri-game-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
-                        <span>Games</span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </li> */}
-
-            {/* <li className="flex ml-auto space-x-5 text-lg font-light">
-              <Link
-                href={"https://web.facebook.com/etzbenjamin.nkem"}
-                target="_blank"
-                className="duration-200 hover:text-blue-600 hover:animate-pulse"
-              >
-                <i className="cursor-pointer ri-facebook-circle-fill"></i>
-              </Link>
-              <Link
-                href={"https://www.instagram.com/iambenjaminnkem/"}
-                target="_blank"
-                className="duration-200 hover:text-pink-600 hover:animate-pulse"
-              >
-                <i className="cursor-pointer ri-instagram-fill"></i>
-              </Link>
-              <Link
-                href={"https://twitter.com/MainNkem"}
-                target="_blank"
-                className="duration-200 hover:text-cyan-600 hover:animate-pulse"
-              >
-                <i className="cursor-pointer ri-twitter-fill"></i>
-              </Link>
-              <Link
-                href={"https://github.com/benjaminnkem"}
-                target="_blank"
-                className="duration-200 hover:text-slate-600 hover:animate-pulse"
-              >
-                <i className="cursor-pointer ri-github-fill"></i>
-              </Link>
-            </li> */}
 
             <ul className="sm:flex ml-auto space-x-2 text-sm font-semibold hidden">
               <div>
@@ -214,7 +115,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-300 ease-in place-content-center overflow-hidden ${
           isMenuOpen
-            ? "text-cyan-50 bg-black z-20 bg-opacity-75 w-full"
+            ? "text-cyan-50 bg-black z-20 bg-opacity-90 w-full"
             : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
         }`}
         variants={parentMobileMenuVariant}

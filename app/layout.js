@@ -9,7 +9,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; 
 
 const poppins = Poppins({
-  weight: ["200", "400", "600", "800"],
+  weight: ["200", "400", "600", "700", "800"],
   subsets: ["latin"],
 });
 

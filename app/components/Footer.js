@@ -6,15 +6,15 @@ const Footer = () => {
       <footer className="py-10 border-t border-cyan-500 bg-[#0f0f0f6f]">
         <div className="md:max-w-[1024px] w-11/12 mx-auto">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-            <div className="mr-auto">
-              <p className="md:text-5xl text-4xl font-extrabold">
+            <div className="md:mr-auto">
+              <p className="md:text-5xl text-4xl text-center md:text-start font-extrabold">
                 Ben<span className="text-cyan-500">.</span>
               </p>
             </div>
 
-            <div className="text-center text-white md:text-start ml-auto">
+            <div className="text-center text-white md:text-start md:ml-auto">
               <div>
-                <ul className="space-x-4 flex">
+                <ul className="space-x-4 flex justify-center md:justify-start">
                   <li>
                     <Link href={"/"}>
                       <p className="duration-200 inline-block hover:text-cyan-500">Home</p>
