@@ -117,10 +117,10 @@
 }
 
 
-main {
+/* main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
+} */
 
 .panel-c {
   border-image-source: url("/images/others/panel-type.png");

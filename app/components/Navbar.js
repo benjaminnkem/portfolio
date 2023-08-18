@@ -66,7 +66,7 @@ const Navbar = () => {
                       }`}
                     >
                       <i className="overflow-hidden text-xl duration-200 ri-tools-line"></i>
-                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[68px]">
+                      <div className="flex items-center w-0 overflow-hidden duration-200 group-hover:w-[76px]">
                         <span>Projects</span>
                       </div>
                     </div>

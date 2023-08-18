@@ -1,4 +1,6 @@
 "use client";
+import { faGift } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +8,33 @@ import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+
+const logosVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+  },
+};
 
 const HomeContent = () => {
   useEffect(() => {
@@ -60,31 +89,6 @@ const HomeContent = () => {
           planet.add(ring);
         }
 
-        // let moonBase;
-        // if (moon) {
-        //   // const moonMesh = new THREE.Mesh(
-        //   //   new THREE.Sphere(1, 20, 20),
-        //   //   new THREE.MeshStandardMaterial({
-        //   //     color: 0xffffff,
-        //   //   })
-        //   // );
-        //   // moonMesh.position.set(10, 0, 0);
-        //   // planet.add(moonMesh);
-
-        //   moonBase = new THREE.Object3D();
-
-        //   const moonGeo = new THREE.SphereGeometry(0.3, 20, 20);
-        //   const moonMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
-        //   const moonMesh = new THREE.Mesh(moonGeo, moonMat);
-        //   moonMesh.position.x = 2;
-
-        //   moonBase.add(moonMesh);
-        // }
-
-        // if (moon) {
-        //   console.log(moonBase);
-        //   holder.add(planet, moonBase);
-        // }
         holder.add(planet);
         scene.add(holder);
         return { holder, planet };
@@ -187,7 +191,7 @@ const HomeContent = () => {
         className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section bg-[#0f0f0f44]"
         id="me"
       >
-        <div className="grid items-center w-full gap-4">
+        <div className="flex justify-between items-center w-full gap-4">
           <div className="max-w-2xl py-10 space-y-3 text-center md:text-start md:py-0">
             <motion.div
               initial={{ opacity: 0 }}
@@ -204,15 +208,15 @@ const HomeContent = () => {
                 <span className="relative font-extrabold text-cyan-400" id="stack">
                   <TypeAnimation
                     sequence={[
-                      "Frontend Developer 🌎📺",
+                      "Frontend Developer 🌎",
                       1000,
-                      "Backend Developer ⚒👷",
+                      "Backend Developer 👷",
                       1000,
                       "2D Unity Game Developer 🕹🎮",
                       1000,
                       "C# Developer 💙",
                       1000,
-                      "Graphics Designer 🎨🖌",
+                      "Graphics Designer 🎨",
                       1000,
                     ]}
                     wrapper="span"
@@ -235,8 +239,8 @@ const HomeContent = () => {
               </p>
 
               <p className="mt-8">
-                Ready to take your <span className="text-cyan-500 font-bold">brand/project</span> to the next level? I&apos;m the
-                guy for the job <span className="text-cyan-500 font-bold">.</span> 😉
+                Ready to take your <span className="text-cyan-500 font-bold">brand/project</span> to the next level?
+                I&apos;m the guy for the job <span className="text-cyan-500 font-bold">.</span> 😉
               </p>
             </motion.div>
 
@@ -255,14 +259,41 @@ const HomeContent = () => {
             </motion.div>
           </div>
 
-          {/* <motion.div
-            initial={{ opacity: 0, x: 0 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 1, duration: 1 }}
-            className="bg-transparent border border-cyan-500 rounded-3xl min-h-[18rem] md:min-h-[24rem] place-content-center -z-20 w-full"
-            id="me1"
-          ></motion.div> */}
+          <div>
+            <motion.ul
+              variants={container}
+              initial={"hidden"}
+              whileInView="show"
+              viewport={{ once: true }}
+              className="flex flex-col space-y-6 overflow-hidden"
+            >
+              <Link href="https://web.facebook.com/etzbenjamin.nkem" target="_blank">
+                <motion.li variants={logosVariants} className="overflow-hidden">
+                  <i className="ri-facebook-box-fill duration-200 hover:text-cyan-500 text-xl"></i>
+                </motion.li>
+              </Link>
+              <Link href={"https://twitter.com/MainNkem"} target="_blank" title="Meet me on X">
+                <motion.li variants={logosVariants} className="overflow-hidden">
+                  <i className="duration-200 hover:text-cyan-500 ri-twitter-fill text-xl"></i>
+                </motion.li>
+              </Link>
+              <Link href={"https://wa.me/+2348133961439"} target="_blank" title="Let's talk on WhatsApp">
+                <motion.li variants={logosVariants} className="overflow-hidden">
+                  <i className="duration-200 hover:text-cyan-500 ri-whatsapp-line text-xl"></i>
+                </motion.li>
+              </Link>
+              <Link href={"https://wa.me/+2348133961439"} target="_blank" title="Meet me on LinkedIn">
+                <motion.li variants={logosVariants} className="overflow-hidden">
+                  <i className="duration-200 hover:text-cyan-500 ri-linkedin-box-fill text-xl"></i>
+                </motion.li>
+              </Link>
+              <Link href={"https://github.com/benjaminnkem"} target="_blank" title="Github">
+                <motion.li variants={logosVariants} className="overflow-hidden">
+                  <i className="duration-200 hover:text-cyan-500 ri-github-fill text-xl"></i>
+                </motion.li>
+              </Link>
+            </motion.ul>
+          </div>
         </div>
       </section>
 
@@ -355,89 +386,134 @@ const HomeContent = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="p-4">
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.5, type: "linear" }}
-                  >
-                    <div className="flex items-center md:justify-center">
-                      <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
-                      <h3 className="px-4 mb-2 text-2xl font-bold text-center">Skills</h3>
-                      <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                  <div>
+                    <div className="space-y-6">
+                      <div>
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                          <h3 className="px-4 mb-2 text-2xl font-bold text-center">Frontend Skills</h3>
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                        </div>
+
+                        <div>
+                          <motion.ul
+                            variants={container}
+                            initial={"hidden"}
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="flex flex-wrap"
+                          >
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-html5-fill"></i> <span>HTML</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-css3-fill"></i> <span>CSS</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-css3-fill"></i> <span>Tailwind CSS</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-css3-fill"></i> <span>Bootstrap</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-css3-fill"></i> <span>SASS</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-javascript-fill"></i> <span>Javascript</span>
+                              </div>
+                            </motion.li>
+
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-reactjs-fill"></i> <span>ReactJs</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-reactjs-fill"></i> <span>NextJs</span>
+                              </div>
+                            </motion.li>
+                          </motion.ul>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                          <h3 className="px-4 mb-2 text-2xl font-bold text-center">Backend Skills</h3>
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                        </div>
+
+                        <div>
+                          <motion.ul
+                            variants={container}
+                            initial={"hidden"}
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="flex flex-wrap"
+                          >
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-node-tree"></i> <span>NodeJS</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <span>MongoDB</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-database-2-line"></i> <span>MySQL</span>
+                              </div>
+                            </motion.li>
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <span>Rest APIs</span>
+                              </div>
+                            </motion.li>
+                          </motion.ul>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                          <h3 className="px-4 mb-2 text-2xl font-bold text-center">Other Skills</h3>
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                        </div>
+
+                        <div>
+                          <motion.ul
+                            variants={container}
+                            initial={"hidden"}
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="flex flex-wrap"
+                          >
+                            <motion.li variants={item}>
+                              <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer mr-1 hover:bg-white hover:text-black">
+                                <i className="ri-gamepad-line"></i> <span>2D Unity</span>
+                              </div>
+                            </motion.li>
+                          </motion.ul>
+                        </div>
+                      </div>
                     </div>
-
-                    <motion.div>
-                      <ul className="flex flex-wrap space-x-2 md:justify-center">
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-html5-fill"></i> <span>HTML</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-css3-fill"></i> <span>CSS</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-css3-fill"></i> <span>Tailwind CSS</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-css3-fill"></i> <span>Bootstrap</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-javascript-fill"></i> <span>Javascript</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-node-tree"></i> <span>NodeJS</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-reactjs-fill"></i> <span>ReactJs</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <span>NextJs</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <span>VueJs</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <span>MongoDB</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-database-2-line"></i> <span>MySQL</span>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <i className="ri-gamepad-line"></i> <span>Unity 2D</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="inline-block px-2 py-2 my-1 duration-200 border rounded-md cursor-pointer hover:bg-white hover:text-black">
-                            <span>Rest APIs</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </motion.div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
