@@ -183,17 +183,20 @@ const HomeContent = () => {
 
   return (
     <>
-      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section" id="me">
+      <section
+        className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section bg-[#0f0f0f44]"
+        id="me"
+      >
         <div className="grid items-center w-full gap-4">
-          <div className="max-w-3xl py-10 space-y-3 text-center md:text-start md:py-0">
+          <div className="max-w-2xl py-10 space-y-3 text-center md:text-start md:py-0">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25, type: "linear" }}
             >
-              <h2 className="text-5xl font-extrabold sm:text-6xl lg:text-8xl text-shadow">
-                Hey, I&apos;m <span id="ben">Ben</span>
+              <h2 className="text-5xl font-extrabold sm:text-6xl lg:text-7xl text-shadow">
+                Hi, I&apos;m <span id="ben">Ben</span>
                 <span className="text-cyan-500">.</span>
               </h2>
               <p className="mt-1 text-xl select-none text-shadow md:text-3xl">
@@ -227,9 +230,13 @@ const HomeContent = () => {
               transition={{ delay: 0.75, type: "linear" }}
             >
               <p className="text-lg text-shadow">
-                I&apos;m A Computer Science Student at the Federal University of Agriculture, Abeokuta, Nigeria{" "}
-                <span className="font-semibold">(FUNAAB)</span>. And I&apos;ve been into Fullstack Web development for
-                about 3+ years.
+                I&apos;m A Fullstack Web Developer. I build responsive, highly scalable and maintainable web
+                applications.
+              </p>
+
+              <p className="mt-8">
+                Ready to take your <span className="text-cyan-500 font-bold">brand/project</span> to the next level? I&apos;m the
+                guy for the job <span className="text-cyan-500 font-bold">.</span> 😉
               </p>
             </motion.div>
 
@@ -241,8 +248,8 @@ const HomeContent = () => {
               transition={{ delay: 1.5 }}
             >
               <Link href={"/contact"}>
-                <button className="px-3 py-1 text-cyan-500 duration-200 border border-cyan-500 hover:bg-cyan-500 hover:text-black">
-                  Get In Touch <i className="ri-rocket-line"></i>
+                <button className="px-3 py-1 panel-c text-cyan-500 duration-200 border border-cyan-500 hover:text-cyan-50 bg-[#0f0f0fe6]">
+                  Hire Me <i className="ri-rocket-line"></i>
                 </button>
               </Link>
             </motion.div>
