@@ -190,7 +190,7 @@ const ProjectCon = ({ project, index }) => {
               {project.techs.map((tech, index) => (
                 <div
                   key={index}
-                  className="inline-block px-2 py-1 text-sm border rounded-md cursor-pointer select-none text-cyan-500 border-cyan-500 md:rounded-lg md:text-base"
+                  className="inline-block px-2 py-1 text-sm font-semibold duration-200 border rounded-md cursor-pointer select-none text-cyan-500 border-cyan-500 hover:bg-cyan-500 hover:text-black md:rounded-lg md:text-base"
                 >
                   {tech}
                 </div>
@@ -204,3 +204,4 @@ const ProjectCon = ({ project, index }) => {
 };
 
 export default ProjectCon;
+ 

@@ -25,7 +25,7 @@ export const projects = [
     id: "bstore",
     techs: ["NextJs", "MongoDB", "NodeJs", "TailwindCSS"],
     github_repo: "https://github.com/benjaminnkem/bquiz",
-    live_:  {
+    live_: {
       url: "https://bquiz.vercel.app/",
       name: "BQuiz",
     },
@@ -63,7 +63,6 @@ export const projects = [
       name: "Bjn Web Scrapper",
     },
   },
-
   {
     name: "KaygreyKennel",
     description: `KaygreyKennel is a pet store (mostly dogs), KaygreyKennel was inspired by my love for dogs and pets in general. It also comes with an admin interface for admins to perform CRUD operations on posts data.
@@ -78,6 +77,19 @@ export const projects = [
     techs: ["NodeJs", "ExpressJs", "MySQL", "TailwindCSS"],
     github_repo: "",
     live_: {},
+  },
+  {
+    name: "BSolor",
+    description: `BSolor is a website built using the basic principles of THREE.js`,
+    images: [1, 2, 3].map((num) => `/images/projects/bsolar/${num}.png`),
+    alt_attr: "BSolor Illustration",
+    id: "bsolar",
+    techs: ["Vite", "THREE.js"],
+    github_repo: "https://github.com/benjaminnkem/solar-journey",
+    live_: {
+      url: "https://solar-journey.vercel.app",
+      name: "BSolar Journey",
+    },
   },
   {
     name: "Typimon",
