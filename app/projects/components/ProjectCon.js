@@ -19,7 +19,7 @@ const ProjectCon = ({ project, index }) => {
       {/* Global Image Prev */}
       <div className="z-[100] -z-[100]"></div>
       <div
-        className={`fixed left-0 h-full -top-10 bg-black bg-opacity-70 grid place-content-center duration-300 overflow-hidden z-[100] ${
+        className={`fixed left-0 h-full -top-10 bg-black bg-opacity-70 grid place-content-center duration-150 overflow-hidden z-[100] ${
           selectedImage ? "opacity-100 z-[100] img-prev-con w-full" : "opacity-0 -z-[100] w-0"
         }`}
         onClick={closePrev}
@@ -64,7 +64,7 @@ const ProjectCon = ({ project, index }) => {
 
             {(project.github_repo.length > 0 || Object.keys(project.live_) > 0) && (
               <>
-                <hr className="text-cyan-500 bg-cyan-500 opacity-50" />
+                <hr className="opacity-50 text-cyan-500 bg-cyan-500" />
                 <div className="text-center">
                   <p className="text-xl font-bold">
                     Links <i className="ri-link"></i>
@@ -190,7 +190,7 @@ const ProjectCon = ({ project, index }) => {
               {project.techs.map((tech, index) => (
                 <div
                   key={index}
-                  className="inline-block px-2 py-1 text-sm text-cyan-500 border border-cyan-500 rounded-md cursor-pointer select-none md:rounded-lg md:text-base"
+                  className="inline-block px-2 py-1 text-sm border rounded-md cursor-pointer select-none text-cyan-500 border-cyan-500 md:rounded-lg md:text-base"
                 >
                   {tech}
                 </div>
