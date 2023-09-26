@@ -62,35 +62,31 @@ const ProjectCon = ({ project, index }) => {
               </div>
             </div>
 
-            {(project.github_repo.length > 0 || Object.keys(project.live_) > 0) && (
-              <>
-                <hr className="opacity-50 text-cyan-500 bg-cyan-500" />
-                <div className="text-center">
-                  <p className="text-xl font-bold">
-                    Links <i className="ri-link"></i>
+            <hr className="opacity-50 text-cyan-500 bg-cyan-500" />
+            <div className="text-center">
+              <p className="text-xl font-bold">
+                Links <i className="ri-link"></i>
+              </p>
+              <div>
+                {project.live_.url && (
+                  <p>
+                    <i className="ri-link"></i>:{" "}
+                    <a href={project.live_.url} className="duration-100 hover:text-cyan-200" target="_blank">
+                      Test Live
+                    </a>
                   </p>
-                  <div>
-                    {project.live_.url && (
-                      <p>
-                        <i className="ri-link"></i>:{" "}
-                        <a href={project.live_.url} className="duration-100 hover:text-cyan-200" target="_blank">
-                          Test Live
-                        </a>
-                      </p>
-                    )}
+                )}
 
-                    {project.github_repo && (
-                      <p>
-                        <i className="ri-github-line"></i>:{" "}
-                        <a href={project.github_repo} className="duration-100 hover:text-cyan-200" target="_blank">
-                          Source Code
-                        </a>
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
+                {project.github_repo && (
+                  <p>
+                    <i className="ri-github-line"></i>:{" "}
+                    <a href={project.github_repo} className="duration-100 hover:text-cyan-200" target="_blank">
+                      Source Code
+                    </a>
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -204,4 +200,3 @@ const ProjectCon = ({ project, index }) => {
 };
 
 export default ProjectCon;
- 
