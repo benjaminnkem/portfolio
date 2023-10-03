@@ -1,7 +1,18 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
+const parentVariant = {
+  hide: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const childVariant = {
+  hide: { opacity: 0 },
+  show: { opacity: 1 },
+};
 
 const ProjectCon = ({ project, index }) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -40,9 +51,16 @@ const ProjectCon = ({ project, index }) => {
           <div className="space-y-2">
             <div>
               <p className="mt-4 font-semibold text-center">Screenshot(s)</p>
-              <div className="flex flex-wrap items-center">
+              <motion.div
+                variants={parentVariant}
+                initial="hide"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-wrap items-center"
+              >
                 {project.images.map((image, i) => (
-                  <div
+                  <motion.div
+                    variants={childVariant}
                     key={i}
                     className={`w-20 h-20 rounded overflow-hidden inline-block m-2 ${
                       i === currentImgIndex && "border-2 border-cyan-500"
@@ -57,9 +75,9 @@ const ProjectCon = ({ project, index }) => {
                       className="static object-cover w-full h-full"
                       draggable="false"
                     />
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
 
             <hr className="opacity-50 text-cyan-500 bg-cyan-500" />

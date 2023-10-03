@@ -1,4 +1,3 @@
-import CursorControl from "./components/CursorControl";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import Navbar from "./components/Navbar";
@@ -6,7 +5,7 @@ import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Poppins } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false; 
+config.autoAddCss = false;
 
 const poppins = Poppins({
   weight: ["200", "400", "600", "700", "800"],
@@ -20,8 +19,6 @@ export default function RootLayout({ children }) {
         <div className="cursor1"></div>
         <div className="cursor2"></div>
 
-        {/* <CursorControl /> */}
-        {/* <ScrollProgress /> */}
         <Navbar />
 
         {children}
