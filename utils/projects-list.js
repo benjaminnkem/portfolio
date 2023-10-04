@@ -32,7 +32,22 @@ export const projects = [
       name: "Ceelyrics",
     },
   },
-
+  {
+    name: "MovieMex",
+    description: `Moviemex is a move finding website that consumes the TMDB API. It comes with a decent UI and showcase latest movies.
+    
+    Users are also able to search for movies and find the details of a particular movie.
+    `,
+    images: [1, 2, 3, 4, 5, 6, 7].map((num) => `/images/projects/moviemex/moviemex${num}.png`),
+    alt_attr: "MovieMex Illustration",
+    id: "moviemex",
+    techs: ["Nextjs", "TMDB API", "TailwindCSS"],
+    github_repo: "",
+    live_: {
+      url: "https://moviemex.vercel.app/",
+      name: "MovieMex",
+    },
+  },
   {
     name: "BSolor",
     description: `BSolor is a website built using the basic principles of THREE.js`,
