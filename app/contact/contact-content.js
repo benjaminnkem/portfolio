@@ -70,10 +70,22 @@ const ContactContent = () => {
           Contact Me 📞🤙<span className="text-cyan-500">.</span>
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-10">
-          <div className="space-y-6 mt-6">
-            <div className="border rounded-md p-4 border-cyan-700">
-              <h2 className="font-semibold text-2xl">Social Handle</h2>
+        <div className="grid grid-cols-1 gap-4 mt-10 sm:grid-cols-2 sm:gap-6 md:gap-8">
+          <div className="mt-6 space-y-6">
+            <div className="p-4 border rounded-md border-cyan-700">
+              <h2 className="text-2xl font-semibold">Dev Handle</h2>
+              <ul className="mt-1 space-y-2">
+                <li className="text-lg font-light">
+                  <span>Github</span> (<i className="ri-github-fill"></i>):{" "}
+                  <Link target="_blank" href={"https://github.com/benjaminnkem"}>
+                    <span className="font-bold text-cyan-600">benjaminnkem</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-4 border rounded-md border-cyan-700">
+              <h2 className="text-2xl font-semibold">Social Handle</h2>
               <ul className="mt-1 space-y-2">
                 <li className="text-lg font-light">
                   <span>Facebook</span> (<i className="ri-facebook-circle-fill"></i>):{" "}
@@ -107,22 +119,10 @@ const ContactContent = () => {
                 </li>
               </ul>
             </div>
-
-            <div className="border rounded-md p-4 border-cyan-700">
-              <h2 className="font-semibold text-2xl">Dev Handle</h2>
-              <ul className="mt-1 space-y-2">
-                <li className="text-lg font-light">
-                  <span>Github</span> (<i className="ri-github-fill"></i>):{" "}
-                  <Link target="_blank" href={"https://github.com/benjaminnkem"}>
-                    <span className="font-bold text-cyan-600">benjaminnkem</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </div>
 
           <div>
-            <h3 className="py-3 sm:hidden block font-semibold text-xl">Send Me A Message</h3>
+            <h3 className="block py-3 text-xl font-semibold sm:hidden">Send Me A Message</h3>
             <form onSubmit={(event) => handleSubmit(event)}>
               <div className="space-y-4">
                 <div className="space-y-2">
@@ -142,7 +142,7 @@ const ContactContent = () => {
                     value={formData.name}
                     onChange={(e) => handleChange(e)}
                   />
-                  {errors.name && <p className="text-red-700 font-bold text-sm">{errors.name}</p>}
+                  {errors.name && <p className="text-sm font-bold text-red-700">{errors.name}</p>}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="font-semibold">
@@ -161,7 +161,7 @@ const ContactContent = () => {
                     value={formData.email}
                     onChange={(e) => handleChange(e)}
                   />
-                  {errors.email && <p className="text-red-700 font-bold text-sm">{errors.email}</p>}
+                  {errors.email && <p className="text-sm font-bold text-red-700">{errors.email}</p>}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="content" className="font-semibold">
@@ -179,7 +179,7 @@ const ContactContent = () => {
                     value={formData.content}
                     onChange={(e) => handleChange(e)}
                   ></textarea>
-                  {errors.content && <p className="text-red-700 font-bold text-sm">{errors.content}</p>}
+                  {errors.content && <p className="text-sm font-bold text-red-700">{errors.content}</p>}
                 </div>
 
                 <input
