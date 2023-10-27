@@ -36,7 +36,7 @@ const container = {
 const HomeContent = () => {
   return (
     <>
-      <section className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-screen section" id="me">
+      <section className="md:max-w-[1488px] w-11/12 flex justify-center mx-auto min-h-screen section" id="me">
         <div className="items-center justify-between w-full gap-2 sm:flex sm:gap-4">
           <TransitionParent addClass="max-w-2xl py-10 space-y-3 text-center md:text-start md:py-0">
             <TransitionOpacity>
@@ -54,9 +54,9 @@ const HomeContent = () => {
                       "Backend Developer 👷",
                       1000,
                       "2D Unity Game Developer 🎮",
-                      1000,
-                      "C# Developer 💙",
-                      1000,
+                      1500,
+                      // "C# Developer 💙",
+                      // 1000,
                     ]}
                     wrapper="span"
                     speed={50}
@@ -105,7 +105,7 @@ const HomeContent = () => {
 
       <section className="min-h-screen" id="about">
         <div className="bg-[#0f0f0fe6] py-10">
-          <div className="md:max-w-[1024px] w-11/12 mx-auto min-h-[32rem]">
+          <div className="md:max-w-[1488px] w-11/12 mx-auto min-h-[32rem]">
             <div>
               <TransitionOpacityInView addClass="flex items-center justify-center">
                 <span className="flex-1 h-1 rounded-md bg-cyan-500"></span>
@@ -214,7 +214,7 @@ const HomeContent = () => {
 
       {/* Statistics */}
       <section className="my-10 section" id="stats__">
-        <div className="md:max-w-[1024px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
+        <div className="md:max-w-[1488px] w-11/12 flex justify-center mx-auto min-h-[32rem]">
           <div>
             <TransitionOpacityInView>
               <h3 className="mb-5 text-3xl font-bold text-center uppercase md:text-4xl md:text-start">
@@ -271,7 +271,7 @@ const HomeContent = () => {
         </div>
       </section>
 
-      <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
+      <section className="md:max-w-[1488px] w-11/12 my-20 mx-auto">
         <h3 className="px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
           Education<span className="text-cyan-500">.</span>
         </h3>
@@ -307,7 +307,7 @@ const HomeContent = () => {
       </section>
 
       {/* Projects */}
-      <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
+      <section className="md:max-w-[1488px] w-11/12 my-20 mx-auto">
         <TransitionOpacityInView>
           <h3 className="px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
             Projects <span className="text-cyan-500">.</span>
@@ -384,7 +384,7 @@ const HomeContent = () => {
         </motion.div>
       </section>
 
-      <section className="md:max-w-[1024px] w-11/12 my-20 mx-auto">
+      <section className="md:max-w-[1488px] w-11/12 my-20 mx-auto">
         <div className="mb-5">
           <h3 className="text-3xl font-bold uppercase md:text-4xl text-start">
             Services<span className="text-cyan-500">.</span>

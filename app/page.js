@@ -1,5 +1,5 @@
-import HomeContent from "./components/HomeContent";
-import HomePage from "./components/HomePage";
+import HomeContent from "../components/HomeContent";
+import HomePage from "../components/HomePage";
 
 export const metadata = {
   title: "Benjamin Nkem - Home 🏠",

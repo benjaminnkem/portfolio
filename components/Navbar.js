@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import { useLayoutEffect, useRef, useState } from "react";
+import { useAnimationControls } from "framer-motion";
+import { gsap } from "gsap";
 
 const parentMobileMenuVariant = {
   hidden: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
@@ -14,6 +15,16 @@ const Navbar = () => {
   const pathName = usePathname();
   const hamburger = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Refs
+  const navRef = useRef();
+
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
+    { label: "Games", href: "/games" },
+  ];
 
   const controls = useAnimationControls();
 
@@ -28,52 +39,37 @@ const Navbar = () => {
     }
   }
 
+  // Effects
+  useLayoutEffect(() => {
+    const t1 = gsap.timeline();
+    t1.from("#logo", { opacity: 0, xPercent: -100, rotate: 360 }).from(".navLink", {
+      opacity: 0,
+      xPercent: 100,
+      stagger: { amount: 0.5 },
+    });
+  }, []);
+
   return (
     <>
-      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur">
-        <div className="md:max-w-[1024px] w-11/12 md:py-4 py-3 mx-auto">
-          <div className="flex items-center justify-between">
-            <div>
+      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur" ref={navRef}>
+        <div className="md:max-w-[1488px] w-11/12 md:py-4 py-3 mx-auto">
+          <div className="flex items-center justify-between" id="navContainer">
+            <div id="logo">
               <Link href={"/"} className="text-3xl font-bold md:text-4xl">
                 B<span className="text-cyan-500">.</span>{" "}
               </Link>
             </div>
 
-            <ul className="sm:flex ml-auto space-x-2 text-sm font-semibold hidden">
-              <div>
-                <Link href={"/"}>
-                  <li>
-                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/" && "text-cyan-500"}`}>Home</p>
-                  </li>
-                </Link>
-              </div>
-              <div>
-                <Link href={"/projects"}>
-                  <li>
-                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/projects" && "text-cyan-500"}`}>
-                      Projects
+            <ul className="hidden ml-auto space-x-4 text-sm font-semibold sm:flex">
+              {navLinks.map((item, idx) => (
+                <Link href={item.href} key={idx}>
+                  <li className="navLink">
+                    <p className={`duration-200 hover:text-cyan-500 ${pathName === item.href && "text-cyan-500"}`}>
+                      {item.label}
                     </p>
                   </li>
                 </Link>
-              </div>
-              <div>
-                <Link href={"/contact"}>
-                  <li>
-                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/contact" && "text-cyan-500"}`}>
-                      Contact
-                    </p>
-                  </li>
-                </Link>
-              </div>
-              <div>
-                <Link href={"/games"}>
-                  <li>
-                    <p className={`duration-200 hover:text-cyan-500 ${pathName === "/games" && "text-cyan-500"}`}>
-                      Games
-                    </p>
-                  </li>
-                </Link>
-              </div>
+              ))}
             </ul>
 
             <div className="relative z-40 block w-10 ml-auto sm:hidden">
@@ -123,34 +119,17 @@ const Navbar = () => {
         animate="show"
         exit="exit"
       >
-        <div onClick={toggleMenu} className={`duration-200  ${pathName === "/" ? "text-cyan-500" : "text-white"}`}>
-          <Link href={"/"}>
-            <p>Home</p>
-          </Link>
-        </div>
-        <div
-          onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/projects" ? "text-cyan-500" : "text-white"}`}
-        >
-          <Link href={"/projects"}>
-            <p>Projects</p>
-          </Link>
-        </div>
-
-        <div
-          onClick={toggleMenu}
-          className={`duration-200 ${pathName === "/contact" ? "text-cyan-500" : "text-white"}`}
-        >
-          <Link href={"/contact"}>
-            <p>Contact</p>
-          </Link>
-        </div>
-
-        <div onClick={toggleMenu} className={`duration-200 ${pathName === "/games" ? "text-cyan-500" : "text-white"}`}>
-          <Link href={"/games"}>
-            <p>Games</p>
-          </Link>
-        </div>
+        {navLinks.map((item, idx) => (
+          <div
+            onClick={toggleMenu}
+            key={idx}
+            className={`duration-200  ${pathName === item.href ? "text-cyan-500" : "text-white"}`}
+          >
+            <Link href={item.href}>
+              <p>{item.label}</p>
+            </Link>
+          </div>
+        ))}
 
         <div className="mt-4 space-x-5 text-2xl">
           <Link href={"https://web.facebook.com/etzbenjamin.nkem"} target="_blank">
