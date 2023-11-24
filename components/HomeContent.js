@@ -13,25 +13,12 @@ import {
   TransitionParentFast,
   TransitionFromBottom,
 } from "@/utils/transitions";
-import { fromRightVariant } from "@/utils/variants";
-import { faCalendarDays, faEarth, faExpand, faRocket, faServer } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays, faExpand } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-
-const item = { hidden: { opacity: 0 }, show: { opacity: 1 } };
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
 
 const HomeContent = () => {
   return (
