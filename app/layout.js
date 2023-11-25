@@ -7,6 +7,7 @@ import { Poppins } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import SmoothScroll from "@/components/Common/Shared/smooth-scroll";
 import Gsap from "@/components/Common/Shared/gsap-plugin";
+import CursorControl from "@/components/Common/Shared/cursor-control";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -18,16 +19,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="cursor1"></div>
-        <div className="cursor2"></div>
-
         <Navbar />
 
         {children}
         <Footer />
 
         {/* Others */}
-        {/* <CursorControl /> */}
+        <CursorControl />
         <Gsap />
         <SmoothScroll />
         <Analytics />

@@ -1,23 +1,39 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+
+import { gsap } from "gsap";
 
 const CursorControl = () => {
-  const cursorEffect = (e) => {
-    if (window.innerWidth <= 768) return;
-    const cursor1 = document.querySelector(".cursor1");
-    const cursor2 = document.querySelector(".cursor2");
+  const cursorRef = useRef(null);
+  const followerRef = useRef(null);
 
-    cursor1.style.left = cursor2.style.left = `${e.clientX}px`;
-    cursor1.style.top = cursor2.style.top = `${e.clientY}px`;
+  const mouseMove = (e) => {
+    gsap.to(cursorRef.current, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.4,
+    });
+    gsap.to(followerRef.current, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.6,
+    });
   };
 
   useEffect(() => {
-    document.addEventListener("mousemove", (e) => cursorEffect(e));
+    document.addEventListener("mousemove", (e) => mouseMove(e));
 
     return () => {
-      document.removeEventListener("mousemove", (e) => cursorEffect(e));
+      document.removeEventListener("mousemove", (e) => mouseMove(e));
     };
   }, []);
+
+  return (
+    <>
+      <div className="cursor1" ref={cursorRef}></div>
+      <div className="cursor2" ref={followerRef}></div>
+    </>
+  );
 };
 
 export default CursorControl;
