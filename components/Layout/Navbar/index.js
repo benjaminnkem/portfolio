@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useAnimationControls } from "framer-motion";
 import { gsap } from "gsap";
+import { create } from "zustand";
 
 const parentMobileMenuVariant = {
   hidden: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
@@ -11,10 +12,17 @@ const parentMobileMenuVariant = {
   exit: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
 };
 
+export const useNavbar = create((set) => ({
+  dark: true,
+  toggleDark: () => set((state) => ({ ...state, dark: !state.dark })),
+}));
+
 const Navbar = () => {
   const pathName = usePathname();
   const hamburger = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { dark } = useNavbar();
 
   // Refs
   const navRef = useRef();
@@ -39,16 +47,6 @@ const Navbar = () => {
     }
   }
 
-  // Effects
-  // useLayoutEffect(() => {
-  //   const t1 = gsap.timeline();
-  //   t1.from("#logo", { opacity: 0, xPercent: -100 }).from(".navLink", {
-  //     opacity: 0,
-  //     xPercent: 100,
-  //     stagger: { amount: 0.5 },
-  //   });
-  // }, []);
-
   return (
     <>
       <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold" ref={navRef}>
@@ -64,7 +62,11 @@ const Navbar = () => {
               {navLinks.map((item, idx) => (
                 <Link href={item.href} key={idx}>
                   <li className="navLink">
-                    <p className={`duration-200 hover:text-primary ${pathName === item.href && "text-primary"}`}>
+                    <p
+                      className={`duration-200 ${dark ? "text-primary" : "text-primaryBlack-100"} ${
+                        pathName === item.href && "font-medium"
+                      }`}
+                    >
                       {item.label}
                     </p>
                   </li>

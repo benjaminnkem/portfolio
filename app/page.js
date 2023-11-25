@@ -6,9 +6,5 @@ export const metadata = {
 };
 
 export default function Home() {
-  return (
-    <main>
-      <HomeContent />
-    </main>
-  );
+  return <HomeContent />;
 }

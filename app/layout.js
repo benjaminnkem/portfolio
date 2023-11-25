@@ -8,6 +8,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import SmoothScroll from "@/components/Common/Shared/smooth-scroll";
 import Gsap from "@/components/Common/Shared/gsap-plugin";
 import CursorControl from "@/components/Common/Shared/cursor-control";
+import Providers from "@/lib/utils/providers";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -19,16 +20,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar />
+        <Providers>
+          <Navbar />
 
-        {children}
-        <Footer />
+          {children}
+          <Footer />
 
-        {/* Others */}
-        <CursorControl />
-        <Gsap />
-        <SmoothScroll />
-        <Analytics />
+          {/* Others */}
+          <CursorControl />
+          <Gsap />
+          <SmoothScroll />
+          <Analytics />
+        </Providers>
       </body>
     </html>
   );

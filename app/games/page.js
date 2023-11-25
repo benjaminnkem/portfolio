@@ -1,4 +1,4 @@
-import PageContainer from "../page-container";
+import PageContainer from "../../components/Common/Shared/page-container";
 import GameContainer from "./game-container";
 
 export const metadata = {

@@ -1,5 +1,5 @@
 import { projects } from "@/lib/utils/projects-list";
-import PageContainer from "../page-container";
+import PageContainer from "../../components/Common/Shared/page-container";
 import ProjectCon from "./components/ProjectCon";
 import "./projects.css";
 

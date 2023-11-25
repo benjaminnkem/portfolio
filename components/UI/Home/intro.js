@@ -23,7 +23,15 @@ const Intro = () => {
           0.1
         )
         .from("#dev_text", { yPercent: -100, opacity: 0, ease: "power1.inOut" })
-        .from(".land_likkle", { yPercent: -40, opacity: 0, stagger: { amount: 0.1 } });
+        .from(".land_likkle span", {
+          y: 100,
+          ease: "power4.out",
+          skewY: 7,
+          duration: 1,
+          stagger: {
+            amount: 0.3,
+          },
+        });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -56,9 +64,9 @@ const Intro = () => {
             <p className={`land_t`}>CRAFTING</p>
             <p className="land_modern">MODERNIZED</p>
           </div>
-          <div className="flex justify-center gap-2 text-center">
-            <span className={`${cormorant.className} font-bold text-7xl land_likkle`}>Websites</span>
-            <span className="land_likkle">
+          <div className="flex justify-center gap-2 overflow-hidden text-center land_likkle">
+            <span className={`${cormorant.className} font-bold text-7xl`}>Websites</span>
+            <span>
               For your <span className="font-extrabold">business</span>.
             </span>
           </div>

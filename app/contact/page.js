@@ -1,4 +1,4 @@
-import PageContainer from "../page-container";
+import PageContainer from "../../components/Common/Shared/page-container";
 import ContactContent from "./contact-content";
 import "./contact.css";
 

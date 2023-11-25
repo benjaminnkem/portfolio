@@ -2,14 +2,11 @@
 import education from "@/lib/store/education";
 import projectPreviews from "@/lib/store/project-previews";
 import services from "@/lib/store/services";
-import skills from "@/lib/store/skills";
 import stats from "@/lib/store/stats";
 import {
   TransitionParent,
-  TransitionFromRight,
   TransitionOpacity,
   TransitionOpacityInView,
-  TransitionParentFast,
   TransitionFromBottom,
 } from "@/lib/utils/transitions";
 import { faCalendarDays, faExpand } from "@fortawesome/free-solid-svg-icons";
@@ -27,7 +24,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomeContent = () => {
   return (
-    <>
+    <main className="relative">
+      {/* Background */}
+      <div id="home_bg" className="fixed top-0 left-0 w-full h-full bg-primaryBlack -z-[10]"></div>
+
       <Intro />
       <About />
 
@@ -230,7 +230,7 @@ const HomeContent = () => {
 
       {/* Three */}
       <canvas className="bg-transparent border-none canva"></canvas>
-    </>
+    </main>
   );
 };
 
