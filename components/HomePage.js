@@ -1,5 +1,5 @@
 import "/public/styles/HomePage.css";
-import HomeContent from "./HomeContent";
+import HomeContent from "./UI/Home";
 import PageContainer from "../app/page-container";
 
 const HomePage = () => {

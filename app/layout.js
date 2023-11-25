@@ -1,7 +1,7 @@
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/Layout/Navbar";
+import Footer from "../components/Layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Poppins } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 
         {children}
         <Analytics />
-        <Footer></Footer>
+        <Footer />
       </body>
     </html>
   );

@@ -1,8 +1,7 @@
-import HomeContent from "../components/HomeContent";
-import HomePage from "../components/HomePage";
+import HomeContent from "../components/UI/Home";
 
 export const metadata = {
-  title: "Benjamin Nkem - Home 🏠",
+  title: "Benjamin Nkem - Portfolio",
   description: "Nkem Benjamin's portfolio website",
 };
 

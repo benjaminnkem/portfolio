@@ -1,5 +1,5 @@
-import Message from "@/utils/schema/Message";
-import connectToDB from "@/utils/schema/db";
+import Message from "@/lib/schemas/Message";
+import connectToDB from "@/lib/schemas/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req, res) {

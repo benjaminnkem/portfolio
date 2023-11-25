@@ -1,4 +1,4 @@
-import { projects } from "@/utils/projects-list";
+import { projects } from "@/lib/utils/projects-list";
 import PageContainer from "../page-container";
 import ProjectCon from "./components/ProjectCon";
 import "./projects.css";
