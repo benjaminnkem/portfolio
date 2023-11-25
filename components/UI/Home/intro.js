@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { cormorant } from "@/lib/utils/fonts";
 
-const Landing = () => {
+const Intro = () => {
   const meRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -41,11 +41,11 @@ const Landing = () => {
     }, meRef);
 
     return () => cxt.revert();
-  });
+  }, []);
 
   return (
     <WidthClamp>
-      <section className="flex items-center justify-center min-h-screen section p-4" id="me" ref={meRef}>
+      <section className="flex items-center justify-center min-h-screen p-4 section" id="me" ref={meRef}>
         <div>
           <h1 className={`${cormorant.className} text-center font-semibold`} id="dev_text">
             FullStack Web Developer
@@ -56,7 +56,7 @@ const Landing = () => {
             <p className={`land_t`}>CRAFTING</p>
             <p className="land_modern">MODERNIZED</p>
           </div>
-          <div className="text-center flex gap-2 justify-center">
+          <div className="flex justify-center gap-2 text-center">
             <span className={`${cormorant.className} font-bold text-7xl land_likkle`}>Websites</span>
             <span className="land_likkle">
               For your <span className="font-extrabold">business</span>.
@@ -68,4 +68,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Intro;

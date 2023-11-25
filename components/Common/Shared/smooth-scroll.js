@@ -1,6 +1,8 @@
 "use client";
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 
 const SmoothScroll = () => {
   useEffect(() => {
