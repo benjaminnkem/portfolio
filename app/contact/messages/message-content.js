@@ -1,5 +1,5 @@
 "use client";
-import DateFormatter from "@/components/DateFormatter";
+import DateFormatter from "@/lib/utils/fns/date-formatter";
 import { useState } from "react";
 
 const MessageContent = () => {
