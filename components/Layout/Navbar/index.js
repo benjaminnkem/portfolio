@@ -51,12 +51,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold navbarBlur" ref={navRef}>
+      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold" ref={navRef}>
         <div className="md:max-w-[1488px] w-11/12 md:py-4 py-3 mx-auto">
           <div className="flex items-center justify-between" id="navContainer">
             <div id="logo">
               <Link href={"/"} className="text-3xl font-bold md:text-4xl">
-                B<span className="text-cyan-500">.</span>{" "}
+                B<span className="text-primary">.</span>{" "}
               </Link>
             </div>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
               {navLinks.map((item, idx) => (
                 <Link href={item.href} key={idx}>
                   <li className="navLink">
-                    <p className={`duration-200 hover:text-cyan-500 ${pathName === item.href && "text-cyan-500"}`}>
+                    <p className={`duration-200 hover:text-primary ${pathName === item.href && "text-primary"}`}>
                       {item.label}
                     </p>
                   </li>
@@ -111,7 +111,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-300 ease-in place-content-center overflow-hidden ${
           isMenuOpen
-            ? "text-cyan-50 bg-black z-20 bg-opacity-90 w-full"
+            ? "text-primary bg-black z-20 bg-opacity-90 w-full"
             : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
         }`}
         variants={parentMobileMenuVariant}
@@ -123,7 +123,7 @@ const Navbar = () => {
           <div
             onClick={toggleMenu}
             key={idx}
-            className={`duration-200  ${pathName === item.href ? "text-cyan-500" : "text-white"}`}
+            className={`duration-200  ${pathName === item.href ? "text-primary" : "text-white"}`}
           >
             <Link href={item.href}>
               <p>{item.label}</p>

@@ -19,6 +19,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Landing from "./landing";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const HomeContent = () => {
   return (
     <>
@@ -29,11 +34,11 @@ const HomeContent = () => {
           <div className="md:max-w-[1488px] w-11/12 mx-auto min-h-[32rem]">
             <div>
               <TransitionOpacityInView addClass="flex items-center justify-center">
-                <span className="flex-1 h-1 rounded-md bg-cyan-500"></span>
+                <span className="flex-1 h-1 rounded-md bg-primary"></span>
                 <h3 className="px-4 mb-5 text-4xl font-bold uppercase">
-                  About Me<span className="text-cyan-500">.</span>
+                  About Me<span className="text-primary">.</span>
                 </h3>
-                <span className="flex-1 h-1 rounded-md bg-cyan-500"></span>
+                <span className="flex-1 h-1 rounded-md bg-primary"></span>
               </TransitionOpacityInView>
 
               <div className="grid md:grid-cols-2">
@@ -62,7 +67,7 @@ const HomeContent = () => {
 
                     <TransitionFromRight addClass="mt-4">
                       <Link href={"/contact"}>
-                        <button className="px-4 py-2 mt-4 duration-200 border rounded-md border-cyan-500 hover:bg-cyan-600 text-cyan-50">
+                        <button className="px-4 py-2 mt-4 duration-200 border rounded-md border-primary hover:bg-cyan-600 text-cyan-50">
                           Contact Me <i className="ri-link-m"></i>
                         </button>
                       </Link>
@@ -74,15 +79,15 @@ const HomeContent = () => {
                   <div className="space-y-6">
                     <div>
                       <TransitionOpacityInView addClass="flex items-center">
-                        <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-primary"></span>
                         <h3 className="px-4 mb-2 text-2xl font-bold text-center">Frontend Skills</h3>
-                        <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-primary"></span>
                       </TransitionOpacityInView>
 
                       <TransitionParentFast addClass="flex flex-wrap items-center gap-2">
                         {skills.frontend.map((skill, idx) => (
                           <TransitionOpacity key={idx}>
-                            <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-cyan-500 hover:bg-white hover:text-black">
+                            <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
                               {skill.icon} <span>{skill.label}</span>
                             </div>
                           </TransitionOpacity>
@@ -92,15 +97,15 @@ const HomeContent = () => {
 
                     <div>
                       <TransitionOpacityInView addClass="flex items-center">
-                        <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-primary"></span>
                         <h3 className="px-4 mb-2 text-2xl font-bold text-center">Backend Skills</h3>
-                        <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-primary"></span>
                       </TransitionOpacityInView>
 
                       <TransitionParentFast addClass="flex flex-wrap items-center gap-2">
                         {skills.backend.map((skill, idx) => (
                           <TransitionOpacity key={idx}>
-                            <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-cyan-500 hover:bg-white hover:text-black">
+                            <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
                               {skill.icon} <span>{skill.label}</span>
                             </div>
                           </TransitionOpacity>
@@ -110,15 +115,15 @@ const HomeContent = () => {
 
                     <div>
                       <TransitionOpacityInView addClass="flex items-center">
-                        <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-primary"></span>
                         <h3 className="px-4 mb-2 text-2xl font-bold text-center">Databases</h3>
-                        <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-primary"></span>
                       </TransitionOpacityInView>
 
                       <TransitionParentFast addClass="flex flex-wrap items-center gap-2">
                         {skills.databases.map((skill, idx) => (
                           <TransitionOpacity key={idx}>
-                            <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-cyan-500 hover:bg-white hover:text-black">
+                            <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
                               {skill.icon} <span>{skill.label}</span>
                             </div>
                           </TransitionOpacity>
@@ -139,25 +144,25 @@ const HomeContent = () => {
           <div>
             <TransitionOpacityInView>
               <h3 className="mb-5 text-3xl font-bold text-center uppercase md:text-4xl md:text-start">
-                Personal Stats<span className="text-cyan-500">.</span>
+                Personal Stats<span className="text-primary">.</span>
               </h3>
             </TransitionOpacityInView>
 
             <TransitionParent addClass="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <TransitionFromBottom addClass="p-4 border border-cyan-500 rounded-md bg-[#0f0f0f6f]">
+              <TransitionFromBottom addClass="p-4 border border-primary rounded-md bg-[#0f0f0f6f]">
                 <h3 className="mb-4 text-3xl font-bold">
-                  Languages<span className="font-semibold text-cyan-500">.</span>
+                  Languages<span className="font-semibold text-primary">.</span>
                 </h3>
                 <TransitionParent addClass="space-y-8">
                   {stats.languages.map((stat, idx) => (
                     <TransitionOpacity key={idx} addClass="grid items-center gap-10 grid-cols-7">
                       <p className="col-span-1 font-semibold">{stat.label}</p>
-                      <div className="h-4 col-span-5 overflow-hidden border rounded-md border-cyan-500">
+                      <div className="h-4 col-span-5 overflow-hidden border rounded-md border-primary">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: stat.percentage }}
                           transition={{ type: "linear", duration: 1 }}
-                          className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md"
+                          className="w-full h-2 duration-200 bg-primary rounded-r-md"
                         ></motion.div>
                       </div>
                       <p className="col-span-1">{stat.percentage}</p>
@@ -166,20 +171,20 @@ const HomeContent = () => {
                 </TransitionParent>
               </TransitionFromBottom>
 
-              <TransitionFromBottom addClass="p-4 border border-cyan-500 rounded-md bg-[#0f0f0f6f]">
+              <TransitionFromBottom addClass="p-4 border border-primary rounded-md bg-[#0f0f0f6f]">
                 <h3 className="mb-4 text-3xl font-bold">
-                  Hobbies<span className="font-semibold text-cyan-500">.</span>
+                  Hobbies<span className="font-semibold text-primary">.</span>
                 </h3>
                 <TransitionParent addClass="space-y-8">
                   {stats.hobbies.map((stat, idx) => (
                     <TransitionOpacity key={idx} addClass="grid items-center gap-10 grid-cols-7">
                       <p className="col-span-1 font-semibold">{stat.label}</p>
-                      <div className="h-4 col-span-5 overflow-hidden border rounded-md border-cyan-500">
+                      <div className="h-4 col-span-5 overflow-hidden border rounded-md border-primary">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: stat.percentage }}
                           transition={{ type: "linear", duration: 1 }}
-                          className="w-full h-2 duration-200 bg-cyan-500 rounded-r-md"
+                          className="w-full h-2 duration-200 bg-primary rounded-r-md"
                         ></motion.div>
                       </div>
                       <p className="col-span-1">{stat.percentage}</p>
@@ -194,7 +199,7 @@ const HomeContent = () => {
 
       <section className="md:max-w-[1488px] w-11/12 my-20 mx-auto">
         <h3 className="px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
-          Education<span className="text-cyan-500">.</span>
+          Education<span className="text-primary">.</span>
         </h3>
 
         <div className="relative timeline">
@@ -210,7 +215,7 @@ const HomeContent = () => {
                   : `relative left-0 w-full p-6 sm:w-1/2 group`
               }
             >
-              <span className="hidden duration-200 bullet-edu sm:block bg-cyan-100 group-hover:bg-cyan-500"></span>
+              <span className="hidden duration-200 bullet-edu sm:block bg-cyan-100 group-hover:bg-primary"></span>
               <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
                 <h4 className="text-xl font-bold">{edu.title}</h4>
                 <p className="mt-2">{edu.institution}</p>
@@ -231,7 +236,7 @@ const HomeContent = () => {
       <section className="md:max-w-[1488px] w-11/12 my-20 mx-auto">
         <TransitionOpacityInView>
           <h3 className="px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
-            Projects <span className="text-cyan-500">.</span>
+            Projects <span className="text-primary">.</span>
           </h3>
         </TransitionOpacityInView>
 
@@ -249,9 +254,9 @@ const HomeContent = () => {
                   : `relative left-0 w-full p-6 sm:w-1/2 group`
               }
             >
-              <span className="hidden duration-200 bullet-edu sm:block bg-cyan-100 group-hover:bg-cyan-500"></span>
+              <span className="hidden duration-200 bullet-edu sm:block bg-cyan-100 group-hover:bg-primary"></span>
               <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
-                <div className="w-full overflow-hidden border border-opacity-25 rounded-lg border-cyan-500">
+                <div className="w-full overflow-hidden border border-opacity-25 rounded-lg border-primary">
                   <Image
                     src={project.imageSrc}
                     alt={project.imageText}
@@ -266,7 +271,7 @@ const HomeContent = () => {
                   <h4 className="text-2xl font-bold">{project.name}</h4>
 
                   <Link href={project.viewLink}>
-                    <p className="flex items-center px-2 py-1 space-x-1 text-sm duration-200 border rounded-md border-cyan-500 hover:bg-cyan-500 hover:text-black">
+                    <p className="flex items-center px-2 py-1 space-x-1 text-sm duration-200 border rounded-md border-primary hover:bg-primary hover:text-black">
                       <span>View</span> <FontAwesomeIcon icon={faExpand} />
                     </p>
                   </Link>
@@ -278,7 +283,7 @@ const HomeContent = () => {
                   {project.techStack.map((tech, idx) => (
                     <p
                       key={idx}
-                      className="px-2 py-1 mt-2 mr-2 text-sm duration-200 border border-white border-opacity-25 cursor-pointer hover:bg-cyan-500 hover:text-black hover:border-transparent rounded-xl"
+                      className="px-2 py-1 mt-2 mr-2 text-sm duration-200 border border-white border-opacity-25 cursor-pointer hover:bg-primary hover:text-black hover:border-transparent rounded-xl"
                     >
                       {tech}
                     </p>
@@ -298,7 +303,7 @@ const HomeContent = () => {
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 text-center">
           <Link href={"/projects"}>
-            <button className="px-3 py-1 duration-200 border rounded-sm text-cyan-500 border-cyan-600 hover:bg-cyan-600 hover:text-black group">
+            <button className="px-3 py-1 duration-200 border rounded-sm text-primary border-cyan-600 hover:bg-cyan-600 hover:text-black group">
               View More Projects <i className="ri-arrow-right-circle-line"></i>
             </button>
           </Link>
@@ -308,9 +313,9 @@ const HomeContent = () => {
       <section className="md:max-w-[1488px] w-11/12 my-20 mx-auto">
         <div className="mb-5">
           <h3 className="text-3xl font-bold uppercase md:text-4xl text-start">
-            Services<span className="text-cyan-500">.</span>
+            Services<span className="text-primary">.</span>
           </h3>
-          <p className="text-sm font-semibold text-cyan-500">What I Offer.</p>
+          <p className="text-sm font-semibold text-primary">What I Offer.</p>
         </div>
 
         <TransitionParent addClass="grid grid-cols-1 gap-8 md:grid-cols-3 sm:grid-cols-2">

@@ -1,10 +1,11 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+console.log("something");
 
 const Gsap = () => {
-  return null;
+  gsap.registerPlugin(ScrollTrigger);
+  return <></>;
 };
 
 export default Gsap;

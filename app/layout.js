@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
         <Footer />
 
         {/* Others */}
+        {/* <CursorControl /> */}
         <Gsap />
         <SmoothScroll />
         <Analytics />
