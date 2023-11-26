@@ -111,7 +111,7 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`fixed top-0 right-0 grid h-full space-y-8 text-2xl font-semibold text-center uppercase duration-300 ease-in place-content-center overflow-hidden ${
+        className={`fixed top-0 right-0 grid h-full space-y-8 md:text-2xl text-lg font-semibold text-center uppercase duration-300 ease-in place-content-center overflow-hidden ${
           isMenuOpen
             ? "text-primary bg-black z-20 bg-opacity-90 w-full"
             : "text-transparent bg-transparent -z-50 opacity-0 w-[.025px]"
@@ -125,7 +125,7 @@ const Navbar = () => {
           <div
             onClick={toggleMenu}
             key={idx}
-            className={`duration-200  ${pathName === item.href ? "text-primary" : "text-white"}`}
+            className={`duration-200 ${pathName === item.href ? "text-primary" : "text-white"}`}
           >
             <Link href={item.href}>
               <p>{item.label}</p>

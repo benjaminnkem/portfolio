@@ -1,5 +1,5 @@
 import PageContainer from "../../components/Common/Shared/page-container";
-import ContactContent from "./contact-content";
+import ContactContent from "../../components/UI/Contact/contact-content";
 import "./contact.css";
 
 export const metadata = {

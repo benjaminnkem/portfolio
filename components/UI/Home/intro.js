@@ -59,15 +59,15 @@ const Intro = () => {
             FullStack Web Developer
           </h1>
           <div
-            className={`space-y-1 font-extrabold text-primary text-[10rem] tracking-wider leading-tight text-center`}
+            className={`space-y-1 font-extrabold text-primary lg:text-[10rem] md:text-[7rem] sm:text-[6rem] text-[15vw] tracking-wider leading-tight text-center`}
           >
             <p className={`land_t`}>CRAFTING</p>
             <p className="land_modern">MODERNIZED</p>
           </div>
           <div className="flex justify-center gap-2 overflow-hidden text-center land_likkle">
-            <span className={`${cormorant.className} font-bold text-7xl`}>Websites</span>
+            <span className={`${cormorant.className} font-bold md:text-7xl text-4xl`}>Websites</span>
             <span>
-              For your <span className="font-extrabold">business</span>.
+              For your <span className="font-bold">business/brand</span>.
             </span>
           </div>
         </div>
