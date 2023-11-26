@@ -19,6 +19,7 @@ import Intro from "./intro";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./about";
+import Skills from "./skills";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,7 @@ const HomeContent = () => {
 
       <Intro />
       <About />
+      {/* <Skills /> */}
 
       {/* Statistics */}
       <section className="my-10 section" id="stats__">
@@ -108,7 +110,7 @@ const HomeContent = () => {
                   : `relative left-0 w-full p-6 sm:w-1/2 group`
               }
             >
-              <span className="hidden duration-200 bullet-edu sm:block bg-cyan-100 group-hover:bg-primary"></span>
+              <span className="hidden duration-200 bullet-edu sm:block bg-primary group-hover:bg-primary"></span>
               <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90">
                 <h4 className="text-xl font-bold">{edu.title}</h4>
                 <p className="mt-2">{edu.institution}</p>
@@ -147,7 +149,7 @@ const HomeContent = () => {
                   : `relative left-0 w-full p-6 sm:w-1/2 group`
               }
             >
-              <span className="hidden duration-200 bullet-edu sm:block bg-cyan-100 group-hover:bg-primary"></span>
+              <span className="hidden duration-200 bullet-edu sm:block bg-primary group-hover:bg-primary"></span>
               <div className="p-2 rounded-md bg-[#0f0f0f6f] duration-200 opacity-90 space-y-2">
                 <div className="w-full overflow-hidden border border-opacity-25 rounded-lg border-primary">
                   <Image
@@ -196,7 +198,7 @@ const HomeContent = () => {
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 text-center">
           <Link href={"/projects"}>
-            <button className="px-3 py-1 duration-200 border rounded-sm text-primary border-cyan-600 hover:bg-cyan-600 hover:text-black group">
+            <button className="px-3 py-1 duration-200 border rounded-sm text-primary border-primary hover:bg-primary hover:text-black group">
               View More Projects <i className="ri-arrow-right-circle-line"></i>
             </button>
           </Link>
@@ -215,9 +217,9 @@ const HomeContent = () => {
           {services.map((service, idx) => (
             <TransitionFromBottom
               key={idx}
-              addClass="p-6 rounded-md shadow-sm hover:border-cyan-600 border-2 border-transparent duration-200 group shadow-cyan-600 self-start bg-[#0f0f0f94]"
+              addClass="p-6 rounded-md shadow-sm hover:border-primary border-2 border-transparent duration-200 group shadow-primary self-start bg-[#0f0f0f94]"
             >
-              <div className="space-y-5 text-cyan-100">
+              <div className="space-y-5 text-primary">
                 <>{service.icon}</>
 
                 <h4 className="text-3xl font-semibold">{service.type}</h4>

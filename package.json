@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node api.js && next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node api.js && next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -30,5 +30,8 @@
     "tailwindcss": "3.3.2",
     "three": "^0.155.0",
     "zustand": "^4.4.6"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
   }
 }

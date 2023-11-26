@@ -6,11 +6,15 @@
   --bg-color: #121212;
   --fg-color: #f1f5f9;
 }
+/* 
+html,
+body {
+  cursor: none;
+} */
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  cursor: none;
 }
 
 body {
