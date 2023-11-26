@@ -1,5 +1,5 @@
 "use client";
-import DateFormatter from "@/lib/utils/fns/date-formatter";
+import DateFormatter from "@/lib/utils/helper/date-formatter";
 import { useState } from "react";
 
 const MessageContent = () => {
@@ -62,13 +62,13 @@ const MessageContent = () => {
 
   return (
     <>
-      <div className="my-28 grid place-content-center">
+      <div className="grid my-28 place-content-center">
         {!showMessages && (
           <div className="shadow-md rounded-md p-6 border border-orange-500 space-y-1 min-w-[md]">
             <input
               type="text"
               placeholder="Enter Passkey..."
-              className="bg-transparent p-2 my-1 outline-none border-b border-orange-500 block"
+              className="block p-2 my-1 bg-transparent border-b border-orange-500 outline-none"
               onChange={(e) => validateKey(e)}
             />
 
@@ -90,7 +90,7 @@ const MessageContent = () => {
             <div className="p-2 rounded-md border-2 border-orange-500 bg-black overflow-x-hidden min-w-[24rem] max-w-3xl mx-2">
               {messages.length > 0 ? (
                 <>
-                  <div className="text-center py-2">
+                  <div className="py-2 text-center">
                     <h1 className="text-3xl ">Your messages ({messages.length})</h1>
                     {messageTip && <p className="text-sm">Tip: {messageTip}</p>}
                   </div>
@@ -98,16 +98,16 @@ const MessageContent = () => {
                     {messages.map((message) => (
                       <div
                         key={message.id}
-                        className="p-3 rounded-md duration-200 even:bg-orange-400 even:bg-opacity-10"
+                        className="p-3 duration-200 rounded-md even:bg-orange-400 even:bg-opacity-10"
                       >
-                        <h2 className="font-bold text-lg">
+                        <h2 className="text-lg font-bold">
                           {message.name} <span className="text-sm font-light">{message.email}</span>
                         </h2>
                         <div className="text-gray-300">
                           <p className="mt-1 font-semibold">
                             Content: <span className="font-light">{message.content}</span>
                           </p>
-                          <p className="font-bold text-sm mt-1">
+                          <p className="mt-1 text-sm font-bold">
                             {<DateFormatter dateAsString={message.date.split(", ")[0]} />} {message.date.split(", ")[1]}
                           </p>
                         </div>
@@ -122,8 +122,8 @@ const MessageContent = () => {
               )}
             </div>
 
-            <button onClick={fetchMessages} className="my-2 py-2" title="Refresh Messages" disabled={status.loading}>
-              {!status.loading ? <i className="ri-refresh-line text-3xl text-orange-500"></i> : "Fetching..."}
+            <button onClick={fetchMessages} className="py-2 my-2" title="Refresh Messages" disabled={status.loading}>
+              {!status.loading ? <i className="text-3xl text-orange-500 ri-refresh-line"></i> : "Fetching..."}
             </button>
           </>
         )}

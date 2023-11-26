@@ -9,6 +9,7 @@ import SmoothScroll from "@/components/Common/Shared/smooth-scroll";
 import Gsap from "@/components/Common/Shared/gsap-plugin";
 import CursorControl from "@/components/Common/Shared/cursor-control";
 import Providers from "@/lib/utils/providers";
+import { dmSans } from "@/lib/utils/fonts";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -19,7 +20,7 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={dmSans.className}>
         <Providers>
           <Navbar />
 
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
           {/* Others */}
           <CursorControl />
           <Gsap />
-          <SmoothScroll />
+          {/* <SmoothScroll /> */}
           <Analytics />
         </Providers>
       </body>

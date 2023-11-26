@@ -42,23 +42,6 @@ const About = () => {
 
       tl.to(".star_icon", { rotate: 360 });
       tl2.from("#about_text", { xPercent: -100, opacity: 0 });
-
-      const statTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#stats",
-          start: "top center",
-          end: "+=500",
-          scrub: 1,
-        },
-      });
-
-      statTl.to("#stats", { width: "100%", height: "100%", color: "black", borderRadius: 0 }).to(
-        "#home_bg",
-        {
-          backgroundColor: "#E9DFCE",
-        },
-        0
-      );
     }, homeRef);
 
     return () => cxt.revert();
@@ -88,7 +71,7 @@ const About = () => {
                   clients and companies, by developing high quality web apps for any type of brand or business.
                 </p>
 
-                <div>
+                <div className="w-fit">
                   <a download={true} href={"/docs/Nkem_Benjamin_Resume.pdf"}>
                     <button className="flex items-center gap-2 px-4 py-2 transition-colors duration-300 bg-transparent border rounded-md hover:bg-primary hover:text-primaryBlack-100 border-primary text-primary">
                       <span>Download CV</span> <DownloadIcon />
@@ -119,7 +102,7 @@ const About = () => {
         </div>
       </section>
 
-      <div className="w-10 h-10 mx-auto overflow-hidden rounded-full bg-primary text-primary py-[10rem]" id="stats">
+      <div className="" id="stats">
         <section className="h-screen" id="about">
           <div className="py-10">
             <div className="md:max-w-[1488px] w-11/12 mx-auto min-h-[32rem]">
@@ -229,8 +212,10 @@ const About = () => {
           </div>
         </section>
       </div>
+      <div className="reset_bg"></div>
     </>
   );
 };
 
 export default About;
+// w-10 h-10 mx-auto overflow-hidden rounded-full bg-primary text-primary py-[10rem]
