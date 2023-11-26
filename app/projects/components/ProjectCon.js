@@ -44,7 +44,7 @@ const ProjectCon = ({ project, index }) => {
 
       <div className="flex items-center">
         <span className="mx-4 text-xl font-bold">{index + 1}</span>
-        <span className="flex-1 bg-cyan-500 h-[0.5px]"></span>
+        <span className="flex-1 bg-primary h-[0.5px]"></span>
       </div>
       <div className="grid gap-1 md:gap-6" id="all-projects">
         <div className="hidden space-y-2 md:block">
@@ -63,7 +63,7 @@ const ProjectCon = ({ project, index }) => {
                     variants={childVariant}
                     key={i}
                     className={`w-20 h-20 rounded overflow-hidden inline-block m-2 ${
-                      i === currentImgIndex && "border-2 border-cyan-500"
+                      i === currentImgIndex && "border-2 border-primary"
                     }`}
                     onClick={() => changeImg(i)}
                   >
@@ -80,7 +80,7 @@ const ProjectCon = ({ project, index }) => {
               </motion.div>
             </div>
 
-            <hr className="opacity-50 text-cyan-500 bg-cyan-500" />
+            <hr className="opacity-50 text-primary bg-primary" />
             <div className="text-center">
               <p className="text-xl font-bold">
                 Links <i className="ri-link"></i>
@@ -89,7 +89,7 @@ const ProjectCon = ({ project, index }) => {
                 {project.live_.url && (
                   <p>
                     <i className="ri-link"></i>:{" "}
-                    <a href={project.live_.url} className="duration-100 hover:text-cyan-200" target="_blank">
+                    <a href={project.live_.url} className="duration-100 hover:text-primary" target="_blank">
                       Test Live
                     </a>
                   </p>
@@ -98,7 +98,7 @@ const ProjectCon = ({ project, index }) => {
                 {project.github_repo && (
                   <p>
                     <i className="ri-github-line"></i>:{" "}
-                    <a href={project.github_repo} className="duration-100 hover:text-cyan-200" target="_blank">
+                    <a href={project.github_repo} className="duration-100 hover:text-primary" target="_blank">
                       Source Code
                     </a>
                   </p>
@@ -144,7 +144,7 @@ const ProjectCon = ({ project, index }) => {
                 <div
                   key={i}
                   className={`sm:w-16 w-12 md:w-20 sm:h-16 h-12 md:h-20 duration-100 rounded overflow-hidden inline-block m-2 ${
-                    i === currentImgIndex ? "border-2 border-cyan-500" : ""
+                    i === currentImgIndex ? "border-2 border-primary" : ""
                   }`}
                   onClick={() => changeImg(i)}
                 >
@@ -178,7 +178,7 @@ const ProjectCon = ({ project, index }) => {
                     {project.live_.url && (
                       <p>
                         <i className="ri-link"></i>:{" "}
-                        <a href={project.live_.url} className="duration-100 hover:text-cyan-200" target="_blank">
+                        <a href={project.live_.url} className="duration-100 hover:text-primary" target="_blank">
                           Test Live
                         </a>
                       </p>
@@ -187,7 +187,7 @@ const ProjectCon = ({ project, index }) => {
                     {project.github_repo && (
                       <p>
                         <i className="ri-github-line"></i>:{" "}
-                        <a href={project.github_repo} className="duration-100 hover:text-cyan-200" target="_blank">
+                        <a href={project.github_repo} className="duration-100 hover:text-primary" target="_blank">
                           Source Code
                         </a>
                       </p>
@@ -204,7 +204,7 @@ const ProjectCon = ({ project, index }) => {
               {project.techs.map((tech, index) => (
                 <div
                   key={index}
-                  className="inline-block px-2 py-1 text-sm font-semibold duration-200 border rounded-md cursor-pointer select-none text-cyan-500 border-cyan-500 hover:bg-cyan-500 hover:text-black md:rounded-lg md:text-base"
+                  className="inline-block px-2 py-1 text-sm font-semibold duration-200 border rounded-md cursor-pointer select-none text-primary border-primary hover:bg-primary hover:text-black md:rounded-lg md:text-base"
                 >
                   {tech}
                 </div>

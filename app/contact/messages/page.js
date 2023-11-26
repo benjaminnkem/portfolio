@@ -1,4 +1,4 @@
-import MessageContent from "./message-content";
+import MessageContent from "@/components/UI/Contact/message-content";
 
 export const metadata = { title: "Benjamin Nkem - Check Messages 📩", robots: "noindex" };
 
