@@ -63,7 +63,7 @@ const About = () => {
           </div>
 
           <WidthClamp>
-            <div className="z-50 grid items-center grid-cols-2 gap-16">
+            <div className="z-50 flex flex-col-reverse items-center grid-cols-2 gap-16 md:grid">
               <TransitionReveal addClass="space-y-8">
                 <p className="text-lg leading-loose text-primary/80">
                   <span className="text-4xl font-semibold leading-normal">Hi</span> I&lsquo;m Benjamin Nkem, a Fullstack
@@ -84,7 +84,7 @@ const About = () => {
                   <Star />
                 </div>
 
-                <div className="absolute top-0 left-0 grid w-full h-full place-content-center">
+                <div className="top-0 left-0 grid w-full h-full md:absolute place-content-center">
                   <div className="w-[300px] h-[300px] rounded-full flex items-center overflow-hidden border-8 border-primary/20">
                     <Image
                       src={"/images/bg/me.jpg"}
@@ -103,14 +103,14 @@ const About = () => {
       </section>
 
       <div className="" id="stats">
-        <section className="h-screen" id="about">
+        <section className="min-h-screen" id="about">
           <div className="py-10">
             <div className="md:max-w-[1488px] w-11/12 mx-auto min-h-[32rem]">
               <div>
                 <TransitionOpacityInView addClass="flex items-center justify-center">
                   <span className="flex-1 h-1 rounded-md bg-primary"></span>
                   <h3 className="px-4 mb-5 text-4xl font-bold uppercase">
-                    About Me<span className="text-primary">.</span>
+                    <span className="text-primary">.</span>
                   </h3>
                   <span className="flex-1 h-1 rounded-md bg-primary"></span>
                 </TransitionOpacityInView>
@@ -141,8 +141,8 @@ const About = () => {
 
                       <TransitionFromRight addClass="mt-4">
                         <Link href={"/contact"}>
-                          <button className="px-4 py-2 mt-4 duration-200 border rounded-md border-primary hover:bg-cyan-600 text-cyan-50">
-                            Contact Me <i className="ri-link-m"></i>
+                          <button className="px-4 md:py-2 py-[6px] mt-4 duration-200 border rounded-xl border-primary hover:bg-primary/90">
+                            Contact Me
                           </button>
                         </Link>
                       </TransitionFromRight>

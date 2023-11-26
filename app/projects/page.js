@@ -15,7 +15,7 @@ const ProjectsPage = () => {
         <main>
           <div className="md:max-w-[1024px] w-11/12 mx-auto my-10 section mt-28 md:mt-32">
             <h1 className="mb-8 text-4xl font-bold text-center md:text-start">
-              Projects<span className="text-cyan-500">.</span>
+              Projects<span className="text-primary">.</span>
             </h1>
 
             <div id="project-container" className="space-y-10">

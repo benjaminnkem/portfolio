@@ -1,3 +1,15 @@
 {
-  "cSpell.words": ["playfair", "wght"]
+  "cSpell.words": [
+    "playfair",
+    "wght"
+  ],
+  "task.allowAutomaticTasks": true,
+  "debug.openDebug": "neverOpen",
+  "terminal.integrated.inheritEnv": false,
+  "tasks": {
+    "label": "lint on open",
+    "type": "shell",
+    "command": "npm run lint",
+    "runOn": "folderOpen"
+  }
 }
