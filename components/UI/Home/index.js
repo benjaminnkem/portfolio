@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Intro from "./intro";
+import "./styles/HomePage.css";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -31,7 +32,7 @@ const HomeContent = () => {
 
       <Intro />
       <About />
-      {/* <Skills /> */}
+      <Skills />
 
       {/* Statistics */}
       <section className="my-10 section" id="stats__">
@@ -106,8 +107,8 @@ const HomeContent = () => {
               transition={{ type: "spring", duration: 1 }}
               className={
                 (idx + 1) % 2 === 0
-                  ? `relative w-full p-6 sm:w-1/2 sm:left-1/2 right-con group`
-                  : `relative left-0 w-full p-6 sm:w-1/2 group`
+                  ? `relative w-full p-10 sm:w-1/2 sm:left-1/2 right-con group`
+                  : `relative left-0 w-full p-10 sm:w-1/2 group`
               }
             >
               <span className="hidden duration-200 bullet-edu sm:block bg-primary group-hover:bg-primary"></span>
@@ -142,7 +143,7 @@ const HomeContent = () => {
               initial={{ x: (idx + 1) % 2 === 0 ? 100 : -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ type: "spring", duration: 0.5, damping: 6 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={
                 (idx + 1) % 2 === 0
                   ? `relative w-full p-6 sm:w-1/2 sm:left-1/2 right-con group`
