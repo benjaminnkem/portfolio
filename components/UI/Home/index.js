@@ -15,14 +15,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Intro from "./intro";
-import "./styles/HomePage.css";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./about";
 import Skills from "./skills";
-
-gsap.registerPlugin(ScrollTrigger);
+import "./styles/HomePage.css";
+import AfterIntro3D from "./after-intro-3d";
 
 const HomeContent = () => {
   return (
@@ -31,6 +27,7 @@ const HomeContent = () => {
       <div id="home_bg" className="fixed top-0 left-0 w-full h-full bg-[#1e2125] -z-[10]"></div>
 
       <Intro />
+      {/* <AfterIntro3D /> */}
       <About />
       <Skills />
 

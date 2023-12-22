@@ -1,10 +1,7 @@
 "use client";
 import Star from "@/components/Common/Icons/star";
 import WidthClamp from "@/components/Common/Shared/width-clamp";
-import {
- 
-  TransitionReveal,
-} from "@/lib/utils/transitions";
+import { TransitionReveal } from "@/lib/utils/transitions";
 import { gsap } from "gsap";
 import { useLayoutEffect } from "react";
 import { DownloadIcon } from "lucide-react";
@@ -47,7 +44,7 @@ const About = () => {
       <section className="relative min-h-screen pt-[15rem]" id="about_">
         <div>
           <h3
-            className="absolute top-0 -left-5 -z-10 font-extrabold text-[9rem] text-primaryBlack-200/70"
+            className="absolute top-0 -left-5 -z-10 font-extrabold md:text-[9rem] text-[6rem] text-primaryBlack-200/70"
             id="about_text"
           >
             About
@@ -97,7 +94,6 @@ const About = () => {
         </div>
       </section>
 
-     
       <div className="reset_bg"></div>
     </>
   );

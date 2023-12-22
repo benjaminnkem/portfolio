@@ -11,6 +11,7 @@ const Intro = () => {
     const cxt = gsap.context(() => {
       gsap
         .timeline()
+        .set(meRef.current, { visibility: "visible" })
         .from(".land_t", { xPercent: 100, opacity: 0, ease: "power1.inOut", duration: 1 })
         .from(
           ".land_modern",
@@ -53,7 +54,7 @@ const Intro = () => {
 
   return (
     <WidthClamp>
-      <section className="flex items-center justify-center min-h-screen p-4 section" id="me" ref={meRef}>
+      <section className="flex items-center justify-center min-h-screen p-4 section invisible" id="me" ref={meRef}>
         <div>
           <h1 className={`${cormorant.className} text-center font-semibold`} id="dev_text">
             FullStack Web Developer
