@@ -27,7 +27,7 @@ const HomeContent = () => {
       <div id="home_bg" className="fixed top-0 left-0 w-full h-full bg-[#1e2125] -z-[10]"></div>
 
       <Intro />
-      {/* <AfterIntro3D /> */}
+      <AfterIntro3D />
       <About />
       <Skills />
 
