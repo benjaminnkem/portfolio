@@ -5,6 +5,8 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { useAnimationControls } from "framer-motion";
 import { gsap } from "gsap";
 import { create } from "zustand";
+import { motion } from "framer-motion";
+import { baseParentObj, opacityVariant, parentVariant } from "@/lib/utils/variants";
 
 const parentMobileMenuVariant = {
   hidden: { opacity: 0, transition: { staggerChildren: 0.5, delay: 2 } },
@@ -14,7 +16,7 @@ const parentMobileMenuVariant = {
 
 export const useNavbar = create((set) => ({
   dark: true,
-  toggleDark: () => set((state) => ({ ...state, dark: !state.dark })),
+  toggleColor: () => set((state) => ({ ...state, dark: !state.dark })),
 }));
 
 const navLinks = [
@@ -51,9 +53,12 @@ const Navbar = () => {
     const cxt = gsap.context(() => {
       const t1 = gsap.timeline();
 
-      t1.set(ref.current, { visibility: "visible" })
-        .from("#logo", { opacity: 0, xPercent: -50, ease: "power4", duration: 1 })
-        .from(".navLink", { opacity: 0, y: 5, stagger: { amount: 0.4 } });
+      t1.set(ref.current, { visibility: "visible" }).from("#logo", {
+        opacity: 0,
+        xPercent: -50,
+        ease: "power4",
+        duration: 1,
+      });
     }, ref);
 
     return () => cxt.revert();
@@ -70,21 +75,21 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <ul className="hidden ml-auto space-x-4 text-sm font-semibold sm:flex">
+            <motion.ul {...parentVariant} className="hidden ml-auto space-x-4 text-sm font-semibold sm:flex">
               {navLinks.map((item, idx) => (
-                <Link href={item.href} key={idx}>
-                  <li className="navLink">
-                    <p
+                <motion.li key={idx} variants={opacityVariant} className="navLink">
+                  <Link href={item.href}>
+                    <span
                       className={`duration-200 ${dark ? "text-primary" : "text-primaryBlack-100"} ${
-                        pathName === item.href && "font-medium"
+                        pathName === item.href ? "font-medium" : ""
                       }`}
                     >
                       {item.label}
-                    </p>
-                  </li>
-                </Link>
+                    </span>
+                  </Link>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
             <div className="relative z-40 block w-10 ml-auto sm:hidden">
               <div className="flex items-center pr-4">

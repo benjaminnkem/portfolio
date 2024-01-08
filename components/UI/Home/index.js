@@ -8,7 +8,7 @@ import Projects from "./projects";
 import Offer from "./offer";
 
 import "./styles/HomePage.css";
-
+import Services from "./services";
 
 const HomeContent = () => {
   return (
@@ -21,7 +21,8 @@ const HomeContent = () => {
       <PersonalStats />
       <Education />
       <Projects />
-      <Offer />
+      {/* <Services /> */}
+      {/* <Offer /> */}
     </main>
   );
 };
