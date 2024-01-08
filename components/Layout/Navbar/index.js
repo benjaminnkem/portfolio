@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useAnimationControls } from "framer-motion";
 import { gsap } from "gsap";
 import { create } from "zustand";
@@ -17,6 +17,13 @@ export const useNavbar = create((set) => ({
   toggleDark: () => set((state) => ({ ...state, dark: !state.dark })),
 }));
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
+  { label: "Games", href: "/games" },
+];
+
 const Navbar = () => {
   const pathName = usePathname();
   const hamburger = useRef(null);
@@ -25,14 +32,7 @@ const Navbar = () => {
   const { dark } = useNavbar();
 
   // Refs
-  const navRef = useRef();
-
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
-    { label: "Contact", href: "/contact" },
-    { label: "Games", href: "/games" },
-  ];
+  const ref = useRef();
 
   const controls = useAnimationControls();
 
@@ -47,13 +47,25 @@ const Navbar = () => {
     }
   }
 
+  useLayoutEffect(() => {
+    const cxt = gsap.context(() => {
+      const t1 = gsap.timeline();
+
+      t1.set(ref.current, { visibility: "visible" })
+        .from("#logo", { opacity: 0, xPercent: -50, ease: "power4", duration: 1 })
+        .from(".navLink", { opacity: 0, y: 5, stagger: { amount: 0.4 } });
+    }, ref);
+
+    return () => cxt.revert();
+  });
+
   return (
     <>
-      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold" ref={navRef}>
-        <div className="md:max-w-[1488px] w-11/12 md:py-4 py-3 mx-auto">
+      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold invisible" ref={ref}>
+        <div className="container md:py-4 py-3 mx-auto">
           <div className="flex items-center justify-between" id="navContainer">
             <div id="logo">
-              <Link href={"/"} className="text-3xl font-bold md:text-4xl">
+              <Link href={"/"} className="text-3xl font-extrabold md:text-4xl">
                 B<span className="text-primary">.</span>{" "}
               </Link>
             </div>

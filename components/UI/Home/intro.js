@@ -11,7 +11,7 @@ const Intro = () => {
     const cxt = gsap.context(() => {
       gsap
         .timeline()
-        .set(meRef.current, { visibility: "visible" })
+        .set(meRef.current, { visibility: "visible", delay: 0.3 })
         .from(".land_t", { xPercent: 100, opacity: 0, ease: "power1.inOut", duration: 1 })
         .from(
           ".land_modern",
@@ -53,7 +53,7 @@ const Intro = () => {
   }, []);
 
   return (
-    <WidthClamp>
+    <div class="container">
       <section className="flex items-center justify-center min-h-screen p-4 section invisible" id="me" ref={meRef}>
         <div>
           <h1 className={`${cormorant.className} text-center font-semibold`} id="dev_text">
@@ -73,7 +73,7 @@ const Intro = () => {
           </div>
         </div>
       </section>
-    </WidthClamp>
+    </div>
   );
 };
 

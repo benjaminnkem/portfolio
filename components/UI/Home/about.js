@@ -1,6 +1,5 @@
 "use client";
 import Star from "@/components/Common/Icons/star";
-import WidthClamp from "@/components/Common/Shared/width-clamp";
 import { TransitionReveal } from "@/lib/utils/transitions";
 import { gsap } from "gsap";
 import { useLayoutEffect } from "react";
@@ -37,14 +36,15 @@ const About = () => {
     }, homeRef);
 
     return () => cxt.revert();
-  });
+  }, []);
 
   return (
     <>
-      <section className="relative min-h-screen pt-[15rem]" id="about_">
+      <div className="h-[4rem] bg-gradient-to-t pt-[15rem] from-black"></div>
+      <section className="relative min-h-screen bg-black" id="about_">
         <div>
           <h3
-            className="absolute top-0 -left-5 -z-10 font-extrabold md:text-[9rem] text-[6rem] text-primaryBlack-200/70"
+            className="absolute -top-[15rem] z-[10] -left-5 font-extrabold md:text-[9rem] text-[6rem] text-primaryBlack-200/70"
             id="about_text"
           >
             About
@@ -54,7 +54,7 @@ const About = () => {
             <Star />
           </div>
 
-          <WidthClamp>
+          <div class="container">
             <div className="z-50 flex flex-col-reverse items-center grid-cols-2 gap-16 md:grid">
               <TransitionReveal addClass="space-y-8">
                 <p className="text-lg leading-loose text-primary/80">
@@ -90,7 +90,7 @@ const About = () => {
                 </div>
               </TransitionReveal>
             </div>
-          </WidthClamp>
+          </div>
         </div>
       </section>
 
