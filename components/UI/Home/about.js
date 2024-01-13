@@ -54,7 +54,7 @@ const About = () => {
             <Star />
           </div>
 
-          <div class="container">
+          <div className="container">
             <div className="z-50 flex flex-col-reverse items-center grid-cols-2 gap-16 md:grid">
               <TransitionReveal addClass="space-y-8">
                 <p className="text-lg leading-loose text-primary/80">

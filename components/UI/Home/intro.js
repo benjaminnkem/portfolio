@@ -53,7 +53,7 @@ const Intro = () => {
   }, []);
 
   return (
-    <div class="container">
+    <div className="container">
       <section className="flex items-center justify-center min-h-screen p-4 section invisible" id="me" ref={meRef}>
         <div>
           <h1 className={`${cormorant.className} text-center font-semibold`} id="dev_text">
