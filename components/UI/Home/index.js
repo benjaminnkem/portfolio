@@ -9,6 +9,7 @@ import Offer from "./offer";
 
 import "./styles/HomePage.css";
 import Services from "./services";
+import ContactContent from "../Contact/contact-content";
 
 const HomeContent = () => {
   return (
@@ -21,8 +22,9 @@ const HomeContent = () => {
       <PersonalStats />
       <Education />
       <Projects />
+      <Offer />
+      <ContactContent />
       {/* <Services /> */}
-      {/* <Offer /> */}
     </main>
   );
 };

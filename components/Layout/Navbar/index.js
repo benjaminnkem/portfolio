@@ -22,7 +22,7 @@ export const useNavbar = create((set) => ({
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  // { label: "Contact", href: "/contact" },
   { label: "Games", href: "/games" },
 ];
 
@@ -66,8 +66,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-20 w-full mx-auto text-lg font-bold invisible" ref={ref}>
-        <div className="container md:py-4 py-3 mx-auto">
+      <nav className="fixed top-0 left-0 z-20 invisible w-full mx-auto text-lg font-bold" ref={ref}>
+        <div className="container py-3 mx-auto md:py-4">
           <div className="flex items-center justify-between" id="navContainer">
             <div id="logo">
               <Link href={"/"} className="text-3xl font-extrabold md:text-4xl">

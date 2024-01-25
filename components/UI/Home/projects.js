@@ -7,7 +7,7 @@ import projectPreviews from "@/lib/store/project-previews";
 
 const Projects = () => {
   return (
-    <section className="container my-20 mx-auto">
+    <section className="container my-32">
       <TransitionOpacityInView>
         <h3 className="px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
           Projects <span className="text-primary">.</span>
@@ -78,7 +78,7 @@ const Projects = () => {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 text-center">
         <Link href={"/projects"}>
           <button className="px-3 py-1 duration-200 border rounded-sm text-primary border-primary hover:bg-primary hover:text-black group">
-            View More Projects <i className="ri-arrow-right-circle-line"></i>
+            View All Projects <i className="ri-arrow-right-circle-line"></i>
           </button>
         </Link>
       </motion.div>

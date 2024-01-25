@@ -5,6 +5,6 @@ export const metadata = {
   description: "Nkem Benjamin's portfolio website",
 };
 
-export default function Home() {
-  return <HomeContent />;
-}
+const Home = () => <HomeContent />;
+
+export default Home;

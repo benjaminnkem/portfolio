@@ -65,7 +65,7 @@ const ContactContent = () => {
 
   return (
     <>
-      <div className="md:max-w-[1024px] w-11/12 mx-auto my-10 section mt-28 md:mt-32">
+      <div className="container my-10 section mt-28 md:mt-32">
         <h1 className="mb-8 text-4xl font-bold text-center md:text-start">
           Contact Me 📞🤙<span className="text-primary">.</span>
         </h1>
@@ -133,10 +133,10 @@ const ContactContent = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className={`block w-full bg-transparent focus:outline-none border-2 duration-200 rounded-md p-2 border-b ${
+                    className={`block w-full bg-transparent outline-none border-2 duration-200 rounded-md p-2 border-b ${
                       errors.name
                         ? "border-red-700 focus:border-red-700 active:border-red-700"
-                        : "border-primary focus:border-purple-700 active:border-purple-700"
+                        : "border-primary focus:border-primary/50 active:border-primary/80"
                     }`}
                     autoComplete="off"
                     value={formData.name}
@@ -152,10 +152,10 @@ const ContactContent = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className={`block w-full bg-transparent focus:outline-none border-2 duration-200 rounded-md p-2 border-b ${
+                    className={`block w-full bg-transparent outline-none border-2 duration-200 rounded-md p-2 border-b ${
                       errors.email
                         ? "border-red-700 focus:border-red-700 active:border-red-700"
-                        : "border-primary focus:border-purple-700 active:border-purple-700"
+                        : "border-primary focus:border-primary/50 active:border-primary/80"
                     }`}
                     autoComplete="off"
                     value={formData.email}
@@ -171,10 +171,10 @@ const ContactContent = () => {
                     name="content"
                     id="content"
                     rows="5"
-                    className={`block w-full bg-transparent focus:outline-none border-2 border-primary focus:border-purple-700 active:border-purple-700 duration-200 rounded-md p-2 border-b resize-none ${
+                    className={`block w-full bg-transparent outline-none border-2 border-primary focus:border-primary/50 active:border-primary/80 duration-200 rounded-md p-2 border-b resize-none ${
                       errors.content
                         ? "border-red-700 focus:border-red-700 active:border-red-700"
-                        : "border-primary focus:border-purple-700 active:border-purple-700"
+                        : "border-primary focus:border-primary/50 active:border-primary/80"
                     }`}
                     value={formData.content}
                     onChange={(e) => handleChange(e)}
@@ -185,7 +185,7 @@ const ContactContent = () => {
                 <input
                   type="submit"
                   value={status.loading ? `Sending... 🕑` : "Send Message 🚀"}
-                  className={`w-full py-2 border-2 border-primary rounded-md duration-200 hover:bg-primary focus:outline-none focus:border-purple-700 focus:hover:bg-purple-700 disabled:bg-primary`}
+                  className={`w-full py-2 border-2 border-primary cursor-pointer rounded-md duration-200 hover:bg-primary hover:text-black outline-none focus:border-primary/50 focus:hover:bg-primary-30 disabled:bg-primary`}
                   disabled={status.loading}
                 />
               </div>
