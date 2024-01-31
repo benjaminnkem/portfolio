@@ -41,7 +41,7 @@ const Skills = () => {
         </h3>
 
         <div className="py-10">
-          <div className="container min-h-[32rem]">
+          <div className="container min-h-[32rem] space-y-40">
             <div className="grid md:grid-cols-2">
               <div className="p-4 border-b border-opacity-50 md:border-r md:border-b-0 border-cyan-50">
                 <TransitionParent>
@@ -75,82 +75,22 @@ const Skills = () => {
                   </TransitionFromRight>
                 </TransitionParent>
               </div>
+            </div>
 
-              <div className="p-4">
-                <div className="space-y-6">
-                  <div>
-                    <TransitionOpacityInView addClass="flex items-center">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <h3 className="px-4 mb-2 text-2xl font-bold text-center">Frontend Skills</h3>
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    </TransitionOpacityInView>
+            <div>
+              <TransitionOpacityInView addClass="text-4xl mb-2 font-bold">
+                <p>Skills</p>
+              </TransitionOpacityInView>
 
-                    <TransitionParentFast addClass="flex flex-wrap items-center gap-4">
-                      {skills.frontend.map((skill, idx) => (
-                        <TransitionOpacity key={idx}>
-                          <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
-                            {skill.icon} <span>{skill.label}</span>
-                          </div>
-                        </TransitionOpacity>
-                      ))}
-                    </TransitionParentFast>
-                  </div>
-
-                  <div>
-                    <TransitionOpacityInView addClass="flex items-center">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <h3 className="px-4 mb-2 text-2xl font-bold text-center">Backend Skills</h3>
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    </TransitionOpacityInView>
-
-                    <TransitionParentFast addClass="flex flex-wrap items-center gap-4">
-                      {skills.backend.map((skill, idx) => (
-                        <TransitionOpacity key={idx}>
-                          <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
-                            {skill.icon} <span>{skill.label}</span>
-                          </div>
-                        </TransitionOpacity>
-                      ))}
-                    </TransitionParentFast>
-                  </div>
-
-                  <div>
-                    <TransitionOpacityInView addClass="flex items-center">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <h3 className="px-4 mb-2 text-2xl font-bold text-center">Others</h3>
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    </TransitionOpacityInView>
-
-                    <TransitionParentFast addClass="flex flex-wrap items-center gap-4">
-                      {skills.others.map((skill, idx) => (
-                        <TransitionOpacity key={idx}>
-                          <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
-                            {skill.icon} <span>{skill.label}</span>
-                          </div>
-                        </TransitionOpacity>
-                      ))}
-                    </TransitionParentFast>
-                  </div>
-
-                  <div>
-                    <TransitionOpacityInView addClass="flex items-center">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <h3 className="px-4 mb-2 text-2xl font-bold text-center">Databases</h3>
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    </TransitionOpacityInView>
-
-                    <TransitionParentFast addClass="flex flex-wrap items-center gap-4">
-                      {skills.databases.map((skill, idx) => (
-                        <TransitionOpacity key={idx}>
-                          <div className="inline-block px-2 py-2 duration-200 border-b-2 rounded-md cursor-pointer border-primary hover:bg-white hover:text-black">
-                            {skill.icon} <span>{skill.label}</span>
-                          </div>
-                        </TransitionOpacity>
-                      ))}
-                    </TransitionParentFast>
-                  </div>
-                </div>
-              </div>
+              <TransitionParentFast addClass="grid grid-cols-8 select-none text-center gap-4">
+                {skills.frontend.map((skill, idx) => (
+                  <TransitionOpacity key={idx}>
+                    <div className="duration-200 border py-5 border-primary/10 rounded-md cursor-pointer space-y-1 hover:bg-primary/10">
+                      <div className="grid place-content-center">{skill.icon}</div> <p>{skill.label}</p>
+                    </div>
+                  </TransitionOpacity>
+                ))}
+              </TransitionParentFast>
             </div>
           </div>
         </div>

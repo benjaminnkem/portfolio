@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const PersonalStats = () => {
   return (
-    <section className="my-10 section" id="stats__">
+    <section className="mb-20 mt-[8rem] section" id="stats__">
       <div className="container flex justify-center mx-auto min-h-[32rem]">
         <div>
           <TransitionOpacityInView>
