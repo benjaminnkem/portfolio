@@ -8,7 +8,6 @@ import Projects from "./projects";
 import Offer from "./offer";
 
 import "./styles/HomePage.css";
-import Services from "./services";
 import ContactContent from "../Contact/contact-content";
 
 const HomeContent = () => {
