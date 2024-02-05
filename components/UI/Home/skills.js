@@ -34,14 +34,14 @@ const Skills = () => {
     <div className="bg-gradient-to-b from-black via-black" id="stats">
       <section className="relative min-h-screen" id="about" ref={ref}>
         <h3
-          className="absolute -top-[15rem] z-[10] -left-5 font-extrabold md:text-[9rem] text-[6rem] text-primaryBlack-200/70"
+          className="absolute md:-top-[15rem] top-8 z-[10] -left-5 font-extrabold md:text-[9rem] text-[6rem] text-primaryBlack-200/70"
           id="summary_text"
         >
           Summary
         </h3>
 
-        <div className="py-10">
-          <div className="container min-h-[32rem] space-y-40">
+        <div className="pb-10 pt-[12rem]">
+          <div className="container min-h-[32rem] space-y-28">
             <div className="grid md:grid-cols-2">
               <div className="p-4 border-b border-opacity-50 md:border-r md:border-b-0 border-cyan-50">
                 <TransitionParent>

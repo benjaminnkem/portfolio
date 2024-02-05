@@ -9,12 +9,12 @@ const Projects = () => {
   return (
     <section className="container my-32">
       <TransitionOpacityInView>
-        <h3 className="px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
+        <h3 className="md:px-6 mb-5 text-3xl font-bold uppercase md:text-4xl text-start">
           Projects <span className="text-primary">.</span>
         </h3>
       </TransitionOpacityInView>
 
-      <div className="relative timeline">
+      <div className="relative timeline space-y-6 md:space-y-0">
         {projectPreviews.map((project, idx) => (
           <motion.div
             key={idx}
@@ -24,8 +24,8 @@ const Projects = () => {
             transition={{ type: "spring", duration: 0.5, stiffness: 50 }}
             className={
               (idx + 1) % 2 === 0
-                ? `relative w-full p-6 sm:w-1/2 sm:left-1/2 right-con group`
-                : `relative left-0 w-full p-6 sm:w-1/2 group`
+                ? `relative w-full md:p-6 sm:w-1/2 sm:left-1/2 right-con group`
+                : `relative left-0 w-full md:p-6 sm:w-1/2 group`
             }
           >
             <span className="hidden duration-200 bullet-edu sm:block bg-primary group-hover:bg-primary"></span>

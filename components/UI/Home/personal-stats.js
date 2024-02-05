@@ -25,12 +25,13 @@ const PersonalStats = () => {
               </h3>
               <TransitionParent addClass="space-y-8">
                 {stats.languages.map((stat, idx) => (
-                  <TransitionOpacity key={idx} addClass="grid items-center gap-10 grid-cols-7">
+                  <TransitionOpacity key={idx} addClass="grid items-center md:gap-10 gap-4 grid-cols-7">
                     <p className="col-span-1 font-semibold">{stat.label}</p>
-                    <div className="h-4 col-span-5 overflow-hidden border rounded-md border-primary">
+                    <div className="h-3 col-span-5 overflow-hidden border rounded-md border-primary">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: stat.percentage }}
+                        viewport={{ once: true }}
                         transition={{ type: "linear", duration: 1 }}
                         className="w-full h-2 duration-200 bg-primary rounded-r-md"
                       ></motion.div>
@@ -47,11 +48,12 @@ const PersonalStats = () => {
               </h3>
               <TransitionParent addClass="space-y-8">
                 {stats.hobbies.map((stat, idx) => (
-                  <TransitionOpacity key={idx} addClass="grid items-center gap-10 grid-cols-7">
+                  <TransitionOpacity key={idx} addClass="grid items-center md:gap-10 gap-4 grid-cols-7">
                     <p className="col-span-1 font-semibold">{stat.label}</p>
-                    <div className="h-4 col-span-5 overflow-hidden border rounded-md border-primary">
+                    <div className="h-3 col-span-5 overflow-hidden border rounded-md border-primary">
                       <motion.div
                         initial={{ width: 0 }}
+                        viewport={{ once: true }}
                         whileInView={{ width: stat.percentage }}
                         transition={{ type: "linear", duration: 1 }}
                         className="w-full h-2 duration-200 bg-primary rounded-r-md"
