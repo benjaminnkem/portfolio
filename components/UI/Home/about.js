@@ -58,9 +58,10 @@ const About = () => {
             <div className="z-50 flex flex-col-reverse items-center grid-cols-2 gap-16 md:grid">
               <TransitionReveal addClass="space-y-8">
                 <p className="text-lg leading-loose text-primary/80">
-                  <span className="text-4xl font-semibold leading-normal">Hi</span> I&lsquo;m Benjamin Nkem, a Fullstack
-                  Web Developer and Unity Game Developer born and brought up in Nigeria. I work remotely for private
-                  clients and companies, by developing high quality web apps for any type of brand or business.
+                  <span className="text-4xl font-semibold leading-normal">Hi</span> I am a passionate full-stack
+                  developer with expertise in building scalable, user-centric applications. With a strong foundation in
+                  Typescript, Next.js, React, Node.js/Express, and Nest.js, I specialize in creating robust and
+                  intuitive solutions that bridge the gap between technology and real-world challenges.
                 </p>
 
                 <div className="w-fit">
@@ -79,7 +80,7 @@ const About = () => {
                 <div className="top-0 left-0 grid w-full h-full md:absolute place-content-center">
                   <div className="w-[300px] h-[300px] rounded-full flex items-center overflow-hidden border-8 border-primary/20">
                     <Image
-                      src={"/images/bg/me.jpg"}
+                      src={"/images/bg/me_.jpg"}
                       alt="benjamin nkem"
                       width={300}
                       height={300}
