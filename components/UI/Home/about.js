@@ -80,7 +80,7 @@ const About = () => {
                 <div className="top-0 left-0 grid w-full h-full md:absolute place-content-center">
                   <div className="w-[300px] h-[300px] rounded-full flex items-center overflow-hidden border-8 border-primary/20">
                     <Image
-                      src={"/images/bg/me_.jpg"}
+                      src={"/images/bg/me.jpg"}
                       alt="benjamin nkem"
                       width={300}
                       height={300}
